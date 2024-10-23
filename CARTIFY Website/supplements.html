@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <title>Supplements & Healthcare</title>
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width,initial-scale=1">
+     <link href="https://fonts.googleapis.com/css2?family=Noto Sans&Roboto&Arvo:wght@700&family=Montserrat:wght@500;700&family=Raleway:wght@500&family=Poppins:wght@500&family=Poppins:wght@600&display=swap" rel="stylesheet">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+	 
+	<link rel="stylesheet" href="css/homepage.css">
+	<link rel="stylesheet" href="css/categories.css">
+	<link rel="stylesheet" href="css/grid1.css">
+	<link rel="stylesheet" href="css/base.css">
+</head>
+<body>
+	<div class="topnav" id="myTopnav">
+		<input type="checkbox" id="check">
+		<label for="check" class="checkbtn">
+			<i class="fa fa-bars"></i>
+		</label>
+		<a href="cartify.html"><img src="images/you name it, we got it!.png" alt="Home Page"></a>
+        <div class="input">
+            <input type="text" placeholder="Search...">
+        </div>
+        <ul>
+            <li><a href="#">Cart</a></li>
+			<i class="fa fa-shopping-cart" id="cart"></i>
+            <li><a href="#">Message</a></li>
+            <li><a href="#">Notifications</a></li>
+            <li><a href="#">Settings</a></li>
+            <li><a href="signup.html">Sign Up</a></li>
+			<li><a href="login.html">Login</a></li>
+        </ul>
+	</div>
+		<div class="slider">
+			<div class="slides">
+				<input type="radio" name="radio-btn" id="radio1">
+				<input type="radio" name="radio-btn" id="radio2">
+				<input type="radio" name="radio-btn" id="radio3">
+				<input type="radio" name="radio-btn" id="radio4">
+				<div class="slide first">
+					<img src="images/1.png" alt="">
+				</div>
+				<div class="slide">
+					<img src="images/2.png" alt="">
+				</div>
+				<div class="slide">
+					<img src="images/3.png" alt="">
+				</div>
+				<div class="slide">
+					<img src="images/4.png" alt="">
+				</div>
+				<div class="navigation-auto">
+					<div class="auto-btn1"></div>
+					<div class="auto-btn2"></div>
+					<div class="auto-btn3"></div>
+					<div class="auto-btn4"></div>
+				</div>
+			</div>
+			<div class="navigation-manual">
+				<label for="radio1" class="manual-btn"></label>
+				<label for="radio2" class="manual-btn"></label>
+				<label for="radio3" class="manual-btn"></label>
+				<label for="radio4" class="manual-btn"></label>
+			</div>
+		</div>
+		<script type="text/javascript">
+			var counter = 1;
+			setInterval(function(){
+				document.getElementById('radio' + counter).checked = true;
+				counter++;
+				if(counter > 4){
+					counter = 1;
+				}
+			}, 4000);
+		</script>
+	
+	
+<div class="app__container">
+        <div class="grid1">
+        <div class="row sm-gutter app__content">
+            <!-- Category -->
+            <div class="filter">
+              <nav class="category">
+                <h3 class="category__heading" style="font-size: 17.5px;"><i style="font-size:22px; margin-right: 6px" class="fa fa-list" aria-hidden="true"></i><b>All Categories</b></h3>
+                <ul class="category-list">
+                  <li>
+                    <a href="petcare.html" class="category-item__link">Pet Care</a>
+                  </li>
+                  <li class="category-item category-item--active">
+                    <a href="supplements.html" class="category-item__link"><svg viewBox="0 0 4 7" class="shopee-svg-icon shopee-category-list__main-category__caret icon-down-arrow-right-filled"><polygon points="4 3.5 0 0 0 7"></polygon></svg>Supplements & Healthcare</a>
+                  </li>
+                  <li class="category-item">
+                    <a href="groceries.html" class="category-item__link">Groceries</a>
+                  </li>
+				  <li class="category-item">
+                    <a href="vouchers.html" class="category-item__link">Vouchers & Discount</a>
+                  </li>
+				  <li class="category-item">
+                    <a href="appliances.html" class="category-item__link">Home Appliances</a>
+                  </li>
+				  <li class="category-item">
+                    <a href="menswear.html" class="category-item__link">Menswear</a>
+                  </li>
+				  <li class="category-item">
+                    <a href="womenswear.html" class="category-item__link">Womenswear</a>
+                  </li>
+				  <li class="category-item">
+                    <a href="kidswear.html" class="category-item__link">Kidswear</a>
+                  </li>
+				  <li class="category-item">
+                    <a href="footwear.html" class="category-item__link">Footwear</a>
+                  </li>
+				  <li class="category-item">
+                    <a href="gadgets.html" class="category-item__link">Gadgets</a>
+                  </li>
+                </ul>
+              </nav>
+		
+              <nav class="category1">
+				<h5 class="category__heading" style="font-size: 18.5px;"><i style="font-size:22px; margin-right: 3px" class="fa">&#xf0b0;</i><b>Search Filter</b></h5>
+                <ul class="category-list">
+				<h4 class="category__heading1">By Category</h4>
+                  <li class="item">
+                    <input type="checkbox">General Health (171K+)
+                  </li>
+				  <li class="item">
+                    <input type="checkbox">Beauty Supplement (117K+)
+                  </li>
+				  <li class="item">
+                    <input type="checkbox">Whitening (102K+)
+                  </li>
+				  <li class="item">
+                    <input type="checkbox">Slimming (89K+)
+                  </li>
+				  <li class="item">
+                    <input type="checkbox">Multivitamins (63K+)
+                  </li>
+				  <li class="item">
+                    <input type="checkbox">Health Supplements (59K+)
+                  </li>
+					<li class="item">
+                    <input type="checkbox">Collagen (56K+)
+                  </li>
+				  <li class="item">
+                    <input type="checkbox">Skin Care (30K+)
+                  </li>
+				  <li class="item">
+                    <input type="checkbox">Babies & Kids (27K+)
+                  </li>
+				  <li class="item">
+                    <input type="checkbox">Sports Nutrition (35K+)
+                  </li>
+				  <li class="item">
+                    <input type="checkbox">Home & Living (10K)
+                  </li>
+				  <hr style="border-top: 1px  #e6e6e6; width: 85%;">
+          <h4 class="category__heading1">Rating</h4>
+          
+                  <li class="item">
+              				<i class="fa fa-star"></i>
+											<i class="fa fa-star"></i>
+											<i class="fa fa-star"></i>
+											<i class="fa fa-star"></i>
+											<i class="fa fa-star"></i>
+                  </li>
+                  <li class="item">
+              				<i class="fa fa-star"></i>
+											<i class="fa fa-star"></i>
+											<i class="fa fa-star"></i>
+											<i class="fa fa-star"></i>
+											<i class="fa fa-star-o"></i>
+                  </li>
+                  <li class="item">
+              				<i class="fa fa-star"></i>
+											<i class="fa fa-star"></i>
+											<i class="fa fa-star"></i>
+											<i class="fa fa-star-o"></i>
+											<i class="fa fa-star-o"></i>
+                  </li>
+                  <li class="item">
+              				<i class="fa fa-star"></i>
+											<i class="fa fa-star"></i>
+											<i class="fa fa-star-o"></i>
+											<i class="fa fa-star-o"></i>
+											<i class="fa fa-star-o"></i>
+                  </li>
+                  <li class="item">
+              				<i class="fa fa-star"></i>
+											<i class="fa fa-star-o"></i>
+											<i class="fa fa-star-o"></i>
+											<i class="fa fa-star-o"></i>
+											<i class="fa fa-star-o"></i>
+                  </li>
+				  <hr style="border-top: 1px  #e6e6e6; width: 85%;">
+          <h4 class="category__heading1">Shipped From</h4>
+          <li class="item">
+                    <input type="checkbox"> Domestics
+                  </li>
+				  <li class="item">
+                    <input type="checkbox">Overseas
+                  </li>
+				  <li class="item">
+                    <input type="checkbox">Metro Manila
+                  </li>
+				  <li class="item">
+                    <input type="checkbox">North Luzon
+                  </li>
+				  <li class="item">
+                    <input type="checkbox">South Luzon
+                  </li>               
+                
+				<button class="apply">
+                  APPLY
+              </button>
+              </nav>
+            </div>
+			
+            <div class="col l-10 m-12 c-12">
+              <!-- Filter -->
+              <div class="home-filter hide-on-mobile-tablet">
+                <span class="home-filter__label">Sort by</span>
+                <button class="home-filter__btn btn">Popular</button>
+                <button class="home-filter__btn btn btn--primary">
+                  Latest
+                </button>
+                <button class="home-filter__btn btn">Top Sales</button>
+                <div class="select-input">
+                  <span class="select-input__label">Price</span>
+                  <i class="select-input__icon fa fa-angle-down"></i>
+                  <!-- List option -->
+                  <ul class="select-input__list">
+                    <li class="select-input__item">
+                      <a href="#" class="select-input__link"
+                        >Price: Lot to High</a
+                      >
+                    </li>
+                    <li class="select-input__item">
+                      <a href="#" class="select-input__link"
+                        >Price: High to Low</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+                <div class="home-filter__page">
+                  <span class="home-filter__page-num">
+                    <span class="home-filter__page-current">1</span>/14
+                  </span>
+
+                  <div class="home-filter__page-control">
+                    <a
+                      href=""
+                      class="home-filter__page-btn home-filter__page-btn--disabled"
+                    >
+                      <i class="home-filter__page-icon fa fa-angle-left"></i>
+                    </a>
+                    <a href="" class="home-filter__page-btn">
+                      <i class="home-filter__page-icon fa fa-angle-right"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+			
+
+              <!-- Product -->
+              <div class="home-product">
+                <div class="sm-gutter">
+                  <!-- Petcare Product item -->
+                <div class="row1" id="row">
+                    <div class="prod-con">
+						<div class="inner-prod-con">
+							<div class="img-con">
+								<img src="images/supp-1.png">
+							</div>
+						<div class="prod-details">
+							<p class="prod-name"> Cuts Fts Premium Supplement (Thermogenic, Supress, Boost, Energy)	</p>
+							<p class="price"> ₱1,800.00 - ₱2,000.00</p>
+							<p class="prod-disc"><span style="color: gray; text-decoration: line-through; text;">₱2,500</span></p>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+						<span class="sold">442.9k sold</span>
+						</div>
+						</div>
+					</div>
+					<div class="prod-con">
+						<div class="inner-prod-con">
+							<div class="img-con">
+								<img src="images/supp-2.png">
+							</div>
+						<div class="prod-details">
+							<p class="prod-name">Nutri Icon Shuttle GDA (Carb Intake Amplifier) Optimise Liptake & Amino Acids</p>
+							<p class="price">₱1,650.00 - ₱1,750.00</p>
+							<p class="prod-disc"><span style="color: gray; text-decoration: line-through; text;">₱1,900</span></p>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+						<span class="sold">252.4k sold</span>
+						</div>
+						</div>
+					</div>
+					<div class="prod-con">
+						<div class="inner-prod-con">
+							<div class="img-con">
+								<img src="images/supp-3.png">
+							</div>
+						<div class="prod-details">
+							<p class="prod-name">ANIMAL Meal Whole Food-Based Protein Powder (Vannila Flavor)</p>
+							<p class="price">₱1,350.00 - ₱1,450.00</p>
+							<p class="prod-disc"><span style="color: gray; text-decoration: line-through; text;">₱1,600</span></p>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star-o"></i>
+						<span class="sold">221.8k sold</span>
+						</div>
+						</div>
+					</div>
+					<div class="prod-con">
+						<div class="inner-prod-con">
+							<div class="img-con">
+								<img src="images/supp-4.png">
+							</div>
+						<div class="prod-details">
+							<p class="prod-name">Natural Options - Multi Vitamin / Mineral Food Supplement (60 Tablets)</p>
+							<p class="price">₱1,500.00 - ₱1,700.00</p>
+							<p class="prod-disc"><span style="color: gray; text-decoration: line-through; text;">₱1,800</span></p>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+						<span class="sold">181.5k sold</span>
+						</div>
+						</div>
+					</div>
+					<div class="prod-con">
+						<div class="inner-prod-con">
+							<div class="img-con">
+								<img src="images/supp-5.png">
+							</div>
+						<div class="prod-details">
+							<p class="prod-name">NutriJet Nature Shield - Multi Vitamins For Women (60 Tablets)</p>
+							<p class="price">₱1,750.00 - ₱1,780.00</p>
+							<p class="prod-disc"><span style="color: gray; text-decoration: line-through; text;">₱1,850</span></p>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+						<span class="sold">156.9k sold</span>
+						</div>
+						</div>
+					</div>
+				
+                    <div class="prod-con">
+						<div class="inner-prod-con">
+							<div class="img-con">
+								<img src="images/supp-6.png">
+							</div>
+						<div class="prod-details">
+							<p class="prod-name">NutriJet Nature Shield - Multi Vitamins Immunity Booster (120 Tablets)</p>
+							<p class="price">₱1,800.00 - ₱1.900.00</p>
+							<p class="prod-disc"><span style="color: gray; text-decoration: line-through; text;">₱2,000</span></p>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star-o"></i>
+							<i class="fa fa-star-o"></i>
+						<span class="sold">126.2k sold</span>
+						</div>
+						</div>
+					</div>
+					<div class="prod-con">
+						<div class="inner-prod-con">
+							<div class="img-con">
+								<img src="images/supp-7.png">
+							</div>
+						<div class="prod-details">
+							<p class="prod-name">Natures Aid Food Supplement ( Multi Vitamins & Minerals Without Iron) 60 Tablets</p>
+							<p class="price">₱2,400.00 - ₱2,500.00</p>
+							<p class="prod-disc"><span style="color: gray; text-decoration: line-through; text;">₱2,600</span></p>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+						<span class="sold">311.6k sold</span>
+						</div>
+						</div>
+					</div>
+					<div class="prod-con">
+						<div class="inner-prod-con">
+							<div class="img-con">
+								<img src="images/supp-8.png">
+							</div>
+						<div class="prod-details">
+							<p class="prod-name">Pure Nutrition Vitals Daily Multi Vitamin Supports Immune System</p>
+							<p class="price">₱2,350.00 - ₱2,560.00</p>
+							<p class="prod-disc"><span style="color: gray; text-decoration: line-through; text;">₱2,700</span></p>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star-o"></i>
+						<span class="sold">91.2k sold</span>
+						</div>
+						</div>
+					</div>
+					<div class="prod-con">
+						<div class="inner-prod-con">
+							<div class="img-con">
+								<img src="images/supp-9.png">
+							</div>
+						<div class="prod-details">
+							<p class="prod-name">Gen - X Multi Vitamin | Minerals | AntiOxidants (60 Tablets)</p>
+							<p class="price">₱1,570.00 - ₱1,660.00</p>
+							<p class="prod-disc"><span style="color: gray; text-decoration: line-through; text;">₱1,760</span></p>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star-o"></i>
+							<i class="fa fa-star-o"></i>
+						<span class="sold">71.5k sold</span>
+						</div>
+						</div>
+					</div>
+					<div class="prod-con">
+						<div class="inner-prod-con">
+							<div class="img-con">
+								<img src="images/supp-10.png">
+							</div>
+						<div class="prod-details">
+							<p class="prod-name">Muscle Essentials - MultiVitamin Plus Capsule Daily Suppliment (60 Capsules)</p>
+							<p class="price">₱2,310.00 - ₱2,330.00</p>
+							<p class="prod-disc"><span style="color: gray; text-decoration: line-through; text;">₱2,400</span></p>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+						<span class="sold">81k sold</span>
+						</div>
+						</div>
+					</div>
+				
+                    <div class="prod-con">
+						<div class="inner-prod-con">
+							<div class="img-con">
+								<img src="images/supp-11.png">
+							</div>
+						<div class="prod-details">
+							<p class="prod-name">NeuroTech Brain Memory Booster (Premium Suppliment for Brain)</p>
+							<p class="price">₱3,990.00 - ₱4,000.00</p>
+							<p class="prod-disc"><span style="color: gray; text-decoration: line-through; text;">₱5,000</span></p>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star-o"></i>
+						<span class="sold">511.9k sold</span>
+						</div>
+						</div>
+					</div>
+
+					<div class="prod-con">
+						<div class="inner-prod-con">
+							<div class="img-con">
+								<img src="images/supp-12.png">
+							</div>
+						<div class="prod-details">
+							<p class="prod-name">Neuro Q Brain Health (Memory & Focus) Daily Boost - 60 Capsules</p>
+							<p class="price">₱3,500.00 - ₱3,600.00</p>
+							<p class="prod-disc"><span style="color: gray; text-decoration: line-through; text;">₱3,800</span></p>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star-o"></i>
+						<span class="sold">151.9k sold</span>
+						</div>
+						</div>
+					</div>
+					<div class="prod-con">
+						<div class="inner-prod-con">
+							<div class="img-con">
+								<img src="images/supp-13.png">
+							</div>
+						<div class="prod-details">
+							<p class="prod-name">NOW DHA - 1000 Brain Support Extra Strength 1,000 mg</p>
+							<p class="price">₱3,420.00 - ₱3,450.00</p>
+							<p class="prod-disc"><span style="color: gray; text-decoration: line-through; text;">₱3,550</span></p>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+						<span class="sold">50.4k sold</span>
+						</div>
+						</div>
+					</div>
+					<div class="prod-con">
+						<div class="inner-prod-con">
+							<div class="img-con">
+								<img src="images/supp-14.png">
+							</div>
+						<div class="prod-details">
+							<p class="prod-name">Natures Craft Brain + IQ Complex	Supports Better Brain Health - 30 Capsules</p>
+							<p class="price">₱4,400.00 - ₱4,500.00</p>
+							<p class="prod-disc"><span style="color: gray; text-decoration: line-through; text;">₱4,600</span></p>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+						<span class="sold">81.5k sold</span>
+						</div>
+						</div>
+					</div>
+					<div class="prod-con">
+						<div class="inner-prod-con">
+							<div class="img-con">
+								<img src="images/supp-15	.png">
+							</div>
+						<div class="prod-details">
+							<p class="prod-name">NOW Brain Elevate (Cognitive Function) - 60 Veg Capsules</p>
+							<p class="price">₱1,780.00 - ₱1,990.00</p>
+							<p class="prod-disc"><span style="color: gray; text-decoration: line-through; text;">₱2,130</span></p>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star-o"></i>
+						<span class="sold">251.9k sold</span>
+						</div>
+						</div>
+					</div>
+					<div class="prod-con">
+						<div class="inner-prod-con">
+							<div class="img-con">
+								<img src="images/supp-16.png">
+							</div>
+						<div class="prod-details">
+							<p class="prod-name">KTD Biolabs Height Growth Maximizer Natural Height Booster Teen Vitamins</p>
+							<p class="price">₱4,890.00 - ₱4,990.00</p>
+							<p class="prod-disc"><span style="color: gray; text-decoration: line-through; text;">₱5,200</span></p>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star-o"></i>
+							<i class="fa fa-star-o"></i>
+						<span class="sold">56.9k sold</span>
+						</div>
+						</div>
+					</div>
+
+					<div class="prod-con">
+						<div class="inner-prod-con">
+							<div class="img-con">
+								<img src="images/supp-17.png">
+							</div>
+						<div class="prod-details">
+							<p class="prod-name">NuBest Doctor Taller - Support Healthy Growth - Premium and Breakthrough Ingredients</p>
+							<p class="price">₱6,750.00 - ₱6,900.00</p>
+							<p class="prod-disc"><span style="color: gray; text-decoration: line-through; text;">₱7,500</span></p>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star-o"></i>
+						<span class="sold">15k sold</span>
+						</div>
+						</div>
+					</div>
+					<div class="prod-con">
+						<div class="inner-prod-con">
+							<div class="img-con">
+								<img src="images/supp-18.png">
+							</div>
+						<div class="prod-details">
+							<p class="prod-name">MuscleTech Clear Muscle - Highest Grade HMB for Lean Muscle & Recover</p>
+							<p class="price">₱2,500.00 - ₱2,600.00</p>
+							<p class="prod-disc"><span style="color: gray; text-decoration: line-through; text;">₱2,100</span></p>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+						<span class="sold">51.9k sold</span>
+						</div>
+						</div>
+					</div>
+					<div class="prod-con">
+						<div class="inner-prod-con">
+							<div class="img-con">
+								<img src="images/supp-19.png">
+							</div>
+						<div class="prod-details">
+							<p class="prod-name">Women's Muscle Building Stack By Blackstone Labs 60 Capsules (For Adult)</p>
+							<p class="price">₱4,400.00 - ₱4,600.00</p>
+							<p class="prod-disc"><span style="color: gray; text-decoration: line-through; text;">₱4,800</span></p>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+						<span class="sold">1.9k sold</span>
+						</div>
+						</div>
+					</div>
+					<div class="prod-con">
+						<div class="inner-prod-con">
+							<div class="img-con">
+								<img src="images/supp-20.png">
+							</div>
+						<div class="prod-details">
+							<p class="prod-name">Warrior, Rage, Energy Burst - Pre Workout (Most Effective, Most Powerful)</p>
+							<p class="price">₱9,900.00 - ₱10,000.00</p>
+							<p class="prod-disc"><span style="color: gray; text-decoration: line-through; text;">₱11,000</span></p>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star-o"></i>
+						<span class="sold">8.4k sold</span>
+						</div>
+						</div>
+					</div>
+				</div>
+				</div>
+			</div>
+			
+			<ul class="pagination home-product__pagination">
+                <li class="pagination-item">
+                  <a href="" class="pagination-item__link">
+                    <i class="pagination-item__icon1 fa fa-angle-left"></i>
+                  </a>
+                </li>
+                <li class="pagination-item pagination-item--active">
+                  <a href="" class="pagination-item__link">1</a>
+                </li>
+                <li class="pagination-item">
+                  <a href="" class="pagination-item__link">2</a>
+                </li>
+                <li class="pagination-item">
+                  <a href="" class="pagination-item__link">3</a>
+                </li>
+                <li class="pagination-item">
+                  <a href="" class="pagination-item__link">4</a>
+                </li>
+                <li class="pagination-item">
+                  <a href="" class="pagination-item__link">5</a>
+                </li>
+                <li class="pagination-item">
+                  <a href="" class="pagination-item__link">...</a>
+                </li>
+                <li class="pagination-item">
+                  <a href="" class="pagination-item__link">14</a>
+                </li>
+                <li class="pagination-item">
+                  <a href="" class="pagination-item__link">
+                    <i class="pagination-item__icon fa fa-angle-right"></i>
+                  </a>
+                </li>
+              </ul>
+			</div> <!--col-->	
+	    </div> <!--sm grid content-->
+	    </div>	<!--grid wide-->
+</div> <!--app contaainer-->	
+	
+	<!--footer-->
+	<footer class="footer">
+        <div class="grid wide footer__content">
+          <div class="row">
+            <div class="col l-2-4 m-4 c-6">
+              <h3 class="footer__heading">CUSTOMER SERVICE</h3>
+              <ul class="footer-list">
+                <li class="footer-item">
+                  <a href="#" class="footer-item__link">Help Centre</a>
+                </li>
+                <li class="footer-item">
+                  <a href="#" class="footer-item__link">Cartify Cares PH</a>
+                </li>
+                <li class="footer-item">
+                  <a href="#" class="footer-item__link">Order Tracking</a>
+                </li>
+				<li class="footer-item">
+                  <a href="#" class="footer-item__link">Free Shipping</a>
+                </li>
+				<li class="footer-item">
+                  <a href="#" class="footer-item__link">Return & Refund</a>
+                </li>
+				<li class="footer-item">
+                  <a href="#" class="footer-item__link">Cartify Guarantee</a>
+                </li>
+				<li class="footer-item">
+                  <a href="#" class="footer-item__link">Overseas Product</a>
+                </li>
+				<li class="footer-item">
+                  <a href="#" class="footer-item__link">Contact Us</a>
+                </li>
+              </ul>
+            </div>
+            <div class="col l-2-4 m-4 c-6">
+              <h3 class="footer__heading">ABOUT CARTIFY</h3>
+              <ul class="footer-list">
+                <li class="footer-item">
+                  <a href="#" class="footer-item__link">About Us</a>
+                </li>
+                <li class="footer-item">
+                  <a href="#" class="footer-item__link">Cartify Blog</a>
+                </li>
+				<li class="footer-item">
+                  <a href="#" class="footer-item__link">Cartify Careers</a>
+                </li>
+                <li class="footer-item">
+                  <a href="#" class="footer-item__link">Cartify Policies</a>
+                </li>
+				<li class="footer-item">
+                  <a href="#" class="footer-item__link">Privacy Policies</a>
+                </li>
+				<li class="footer-item">
+                  <a href="#" class="footer-item__link">Cartify Mall</a>
+                </li>
+				<li class="footer-item">
+                  <a href="#" class="footer-item__link">Seller Centre</a>
+                </li>
+				<li class="footer-item">
+                  <a href="#" class="footer-item__link">Flash Deals</a>
+                </li>
+				<li class="footer-item">
+                  <a href="#" class="footer-item__link">Media Contact</a>
+                </li>
+              </ul>
+            </div>
+            <div class="col l-2-4 m-8 c-6">
+              <h3 class="footer__heading">PAYMENT</h3>
+              <div class="footer__download">
+                <div class="footer__payment-apps">
+                  <a href="#" class="footer__download-app-link">
+                    <img
+                      src="images/paymaya.png"
+                      alt=" PayMaya"
+                      class="footer__payment-app-img"/></a>
+				  <a href="#" class="footer__download-app-link">
+                    <img
+						src="images/gcash.png"
+						alt="GCash"
+						class="footer__payment-app-img"/></a>
+                </div>
+              </div>
+			  <div class="footer__download">
+                <div class="footer__payment-apps">
+				  <a href="#" class="footer__download-app-link">
+                    <img
+						src="images/banko.png"
+						alt="BanKo"
+						class="footer__payment-app-img"/></a>
+                  <a href="#" class="footer__download-app-link">
+                    <img
+                      src="images/dragonpay.jpg"
+                      alt="Dragonpay"
+                      class="footer__payment-app-img"/></a>
+                </div>
+              </div>
+			  <div class="footer__download">
+                <div class="footer__payment-apps">
+				  <a href="#" class="footer__download-app-link">
+                    <img
+						src="images/jcb.jpg"
+						alt="JCB"
+						class="footer__payment-app-img"/></a>
+                  <a href="#" class="footer__download-app-link">
+                    <img
+                      src="images/visa.png"
+                      alt="Visa"
+                      class="footer__payment-app-img"/></a>
+                </div>
+              </div>
+            </div>
+            <div class="col l-2-4 m-4 c-6">
+              <h3 class="footer__heading">FOLLOW US</h3>
+              <ul class="footer-list">
+                <li class="footer-item">
+                  <a href="#" class="footer-item__link">
+                    <i class="footer-item__icon fa fa-facebook"></i>
+                    Facebook</a
+                  >
+                </li>
+                <li class="footer-item">
+                  <a href="#" class="footer-item__link">
+                    <i class="footer-item__icon fa fa-instagram"></i>
+                    Instagram</a>
+                </li>
+                <li class="footer-item">
+                  <a href="#" class="footer-item__link">
+                    <i class="footer-item__icon fa fa-twitter"></i>
+                    Twitter</a
+                  >
+                </li>
+				<li class="footer-item">
+                  <a href="#" class="footer-item__link">
+                    <i class="footer-item__icon fa fa-linkedin"></i>
+                    Linkedin</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="col l-2-4 m-8 c-12">
+              <h3 class="footer__heading">CARTIFY APP DOWNLOAD</h3>
+              <div class="footer__download">
+                <img
+                  src="images/qr_code.png"
+                  alt="Download QR"
+                  class="footer__dowload-qr"
+                />
+                <div class="footer__download-apps">
+                  <a href="#" class="footer__download-app-link">
+                    <img
+                      src="images/google_play.png"
+                      alt="Google Play"
+                      class="footer__download-app-img"
+                    />
+                  </a>
+                  <a href="#" class="footer__download-app-link">
+                    <img
+                      src="images/appstore.png"
+                      alt="App store"
+                      class="footer__download-app-img"
+                    />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer__bottom">
+          <div class="grid wide">
+            <p class="footer__text">
+              © 2023 Cartify. All Rights Reserved.
+            </p>
+          </div>
+        </div>
+      </footer>
+	
+</body>
+</html>

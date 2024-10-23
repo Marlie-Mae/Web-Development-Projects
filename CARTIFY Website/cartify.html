@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <title>Cartify</title>
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width,initial-scale=1">
+     <link href="https://fonts.googleapis.com/css2?family=Noto Sans&Roboto&Arvo:wght@700&family=Montserrat:wght@500;700&family=Raleway:wght@500&family=Poppins:wght@500&family=Poppins:wght@600&display=swap" rel="stylesheet">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+	 
+    <link rel="stylesheet" href="css/homepage.css">
+    <link rel="stylesheet" href="css/grid.css">
+</head>
+<body>
+	<div class="topnav" id="myTopnav">
+		<input type="checkbox" id="check">
+		<label for="check" class="checkbtn">
+			<i class="fa fa-bars"></i>
+		</label>
+		<a href="cartify.html"><img src="images/you name it, we got it!.png" alt="Home Page"></a>
+        <div class="input">
+            <input type="text" placeholder="Search...">
+        </div>
+        <ul>
+            <li><a href="#">Cart</a></li>
+			<i class="fa fa-shopping-cart" id="cart"></i>
+            <li><a href="#">Message</a></li>
+            <li><a href="#">Notifications</a></li>
+            <li><a href="#">Settings</a></li>
+            <li><a href="signup.html">Sign Up</a></li>
+			<li><a href="login.html">Login</a></li>
+        </ul>
+	</div>
+		<div class="slider">
+			<div class="slides">
+				<input type="radio" name="radio-btn" id="radio1">
+				<input type="radio" name="radio-btn" id="radio2">
+				<input type="radio" name="radio-btn" id="radio3">
+				<input type="radio" name="radio-btn" id="radio4">
+				<div class="slide first">
+					<img src="images/1.png" alt="">
+				</div>
+				<div class="slide">
+					<img src="images/2.png" alt="">
+				</div>
+				<div class="slide">
+					<img src="images/3.png" alt="">
+				</div>
+				<div class="slide">
+					<img src="images/4.png" alt="">
+				</div>
+				<div class="navigation-auto">
+					<div class="auto-btn1"></div>
+					<div class="auto-btn2"></div>
+					<div class="auto-btn3"></div>
+					<div class="auto-btn4"></div>
+				</div>
+			</div>
+			<div class="navigation-manual">
+				<label for="radio1" class="manual-btn"></label>
+				<label for="radio2" class="manual-btn"></label>
+				<label for="radio3" class="manual-btn"></label>
+				<label for="radio4" class="manual-btn"></label>
+			</div>
+		</div>
+		<script type="text/javascript">
+			var counter = 1;
+			setInterval(function(){
+				document.getElementById('radio' + counter).checked = true;
+				counter++;
+				if(counter > 4){
+					counter = 1;
+				}
+			}, 4000);
+		</script>
+	<div class="categories">
+		<h2>CATEGORIES</h2>
+		<div class="cat-con">
+			<div class="cat">
+				<a href="petcare.html"><img class="cat-img" src="images/pic8.png"></a>
+				<p>Pet Care</p>
+			</div>
+			<div class="cat">
+				<a href="supplements.html"><img class="cat-img" src="images/supplements.png"></a>
+				<p>Supplements & Healthcare</p>
+			</div>
+			<div class="cat">
+				<a href="groceries.html"><img class="cat-img" src="images/pic6.png"></a>
+				<p>Groceries</p>
+			</div>
+			<div class="cat">
+				<a href="vouchers.html"><img class="cat-img" src="images/pic10.png"></a>
+				<p>Vouchers & Discount</p>
+			</div>
+			<div class="cat">
+				<a href="appliances.html"><img class="cat-img" src="images/home decorations.png"></a>
+				<p>Home Appliances</p>
+            </div>
+            <div class="cat">
+                <a href="menswear.html"><img class="cat-img" src="images/menswear.png"></a>
+                <p>Menswear</p>
+            </div>
+            <div class="cat">
+                <a href="womenswear.html"><img class="cat-img" src="images/womenswear.png"></a>
+                <p>Womenswear</p>
+            </div>
+            <div class="cat">
+                <a href="kidswear.html"><img class="cat-img" src="images/kidswear.png"></a>
+                <p>Kidswear</p>
+            </div>
+            <div class="cat">
+                <a href="footwear.html"><img class="cat-img" src="images/footswear.png"></a>
+                <p>Footwear</p>
+            </div>
+            <div class="cat">
+                <a href="gadgets.html"><img class="cat-img" src="images/pic7.png"></a>
+                <p>Gadgets</p>
+			</div>
+        </div>
+	</div>
+	
+	<div class="top-prod">
+		<h2>TOP PRODUCTS</h2>
+   		<div class="main-con">
+		<div class="prod-con">
+				<div class="rank">1
+				</div>
+			<div class="inner-prod-con">
+				<div class="img-con">
+				<a href="prod1.html"><img src="images/prod1.jpg"></a>
+				</div>
+				<div class="prod-details">
+					<p class="prod-name">MOTOBOX Hard Alloy Top Box (45 Liters)</p>
+					<p class="price">₱5,299.00</p>
+                    <p class="prod-disc"><span style="color: gray; text-decoration: line-through; text;">₱7,495</span> -40%</p>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<span class="sold">4.2k sold</span>
+				</div>
+			</div>
+		</div>
+		<div class="prod-con">
+			<div class="rank">2
+			</div>
+			<div class="inner-prod-con">
+				<div class="img-con">
+				<a href="prod2.html"><img src="images/aquaflask.jpg"></a>
+				</div>
+				<div class="prod-details">
+					<p class="prod-name">AQUAFLASK (22oz) Wide Mouth w/ Spout Lid - V2 cobalt blue</p>
+					<p class="price">₱700.00</p>
+                    <p class="prod-disc"><span style="color: gray; text-decoration: line-through; text;">₱2,290.00</span></p>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<span class="sold">190.8k sold</span>
+				</div>
+			</div>
+		</div>
+		<div class="prod-con">
+			<div class="rank">3
+			</div>
+			<div class="inner-prod-con">
+				<div class="img-con">
+				<a href="prod3.html"><img src="images/prod3.png"></a>
+				</div>
+				<div class="prod-details">
+					<p class="prod-name">WATSONS Very High Protection Sunscreen Body Lotion SPF 50+ (100ml)</p>
+					<p class="price">₱245.65</p>
+                    <p class="prod-disc"><span style="color: gray; text-decoration: line-through; text;">₱289.00</span> -15%</p>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<span class="sold">1k sold</span>
+				</div>
+			</div>
+		</div>
+		<div class="prod-con">
+			<div class="rank">4
+			</div>
+			<div class="inner-prod-con">
+				<div class="img-con">
+				<a href="prod4.html"><img src="images/prod4.png"></a>
+				</div>
+				<div class="prod-details">
+					<p class="prod-name">Bestway Fill 'N Fun Odyssey Kiddie Swimming Pool (72" x 15")</p>
+					<p class="price">₱869.00</p>
+                    <p class="prod-disc"><span style="color: gray; text-decoration: line-through; text;">₱1,129.00</span> -23%</p>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<span class="sold">3.9k sold</span>
+				</div>
+			</div>
+		</div>
+		<div class="prod-con">
+			<div class="rank">5
+			</div>
+			<div class="inner-prod-con">
+				<div class="img-con">
+				<a href="prod5.html"><img src="images/prod5.png"></a>
+				</div>
+				<div class="prod-details">
+					<p class="prod-name">Xiaomi POCO X3 Shockproof Tempered Glass</p>
+					<p class="price">₱69.00</p>
+                    <p class="prod-disc"><span style="color: gray; text-decoration: line-through; text;">₱156.00</span> -56%</p>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star-half-o"></i>
+					<span class="sold">2.3k sold</span>
+				</div>
+			</div>
+		</div>
+		<div class="prod-con">
+			<div class="rank">6
+			</div>
+			<div class="inner-prod-con">
+				<div class="img-con">
+				<a href="prod6.html"><img src="images/prod6.png"></a>
+				</div>
+				<div class="prod-details">
+					<p class="prod-name">DenTheLion 22-piece Newborn Baby to 6 Months Clothing Gift Set</p>
+					<p class="price">₱1,890.00</p>
+                    <p class="prod-disc"><span style="color: gray; text-decoration: line-through; text;">₱2,000.00</span> 6%</p>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<span class="sold">1k sold</span>
+				</div>
+			</div>
+		</div>
+		</div>
+	</div>
+	
+	<div class="top-prod">
+		<h2>DAILY DISCOVER</h2>
+   		<div class="main-con">
+		<div class="prod-con">
+			<div class="inner-prod-con">
+				<div class="img-con">
+				<a href="dd1.html"><img src="images/shirt1.png"></a>
+				</div>
+				<div class="prod-details">
+					<p class="prod-name">NTR Clutcher x Guerilla Squad Limited Edition Call of Duty T-Shirt(Collaboration)</p>
+					<p class="price">₱1,300.00</p>
+                    <p class="prod-disc"><span style="color: gray; text-decoration: line-through; text;">₱2,090</span> -10%</p>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<span class="sold">15.9k sold</span>
+				</div>
+			</div>
+		</div>
+		<div class="prod-con">
+			<div class="inner-prod-con">
+				<div class="img-con">
+				<a href="dd2.html"><img src="images/shirt2.jpg"></a>
+				</div>
+				<div class="prod-details">
+					<p class="prod-name">NUGG GX NTR Clutcher T-Shirt(Limited Edition)</p>
+					<p class="price">₱1,230.00</p>
+                    <p class="prod-disc"><span style="color: gray; text-decoration: line-through; text;">₱2,090.00</span></p>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<span class="sold">40.3k sold</span>
+				</div>
+			</div>
+		</div>
+		<div class="prod-con">
+			<div class="inner-prod-con">
+				<div class="img-con">
+				<a href="dd3.html"><img src="images/dd3.jpg"></a>
+				</div>
+				<div class="prod-details">
+					<p class="prod-name">Riot Pins Digital Gift Card - RP3600 // Valorant Points 3600</p>
+					<p class="price">₱1,395.00</p>
+                    <p class="prod-disc"><span style="color: gray; text-decoration: line-through; text;">₱289.00</span> -15%</p>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<span class="sold">1k sold</span>
+				</div>
+			</div>
+		</div>
+		<div class="prod-con">
+			<div class="inner-prod-con">
+				<div class="img-con">
+				<a href="dd4.html"><img src="images/dd4.jpg"></a>
+				</div>
+				<div class="prod-details">
+					<p class="prod-name">The Hundred Percent Impulse 1</p>
+					<p class="price">₱2,000.00</p>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<span class="sold">2.9k sold</span>
+				</div>
+			</div>
+		</div>
+		<div class="prod-con">
+			<div class="inner-prod-con">
+				<div class="img-con">
+				<a href="dd5.html"><img src="images/dd5.jpg"></a>
+				</div>
+				<div class="prod-details">
+					<p class="prod-name">Anti Radiation Glasses Salamin Sa Mata Eyeglasses Korean Anti Radiation Glasses</p>
+					<p class="price">₱120.00</p>
+                    <p class="prod-disc"><span style="color: gray; text-decoration: line-through; text;">₱200.00</span> -58%</p>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star-half-o"></i>
+					<span class="sold">1.2k sold</span>
+				</div>
+			</div>
+		</div>
+		<div class="prod-con">
+			<div class="inner-prod-con">
+				<div class="img-con">
+				<a href="dd6.html"><img src="images/dd6.jpg"></a>
+				</div>
+				<div class="prod-details">
+					<p class="prod-name">High Quality Taylor Swift Tote Bag (Midnights Edition)</p>
+					<p class="price">₱500.00</p>
+                    <p class="prod-disc"><span style="color: gray; text-decoration: line-through; text;">₱700.00</span> -20%</p>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<span class="sold">1.5k sold</span>
+				</div>
+			</div>
+		</div>
+		</div>
+		
+		<div claiv class="main-con">
+			<div class="prod-con">
+			<div class="inner-prod-con">
+				<div class="img-con">
+					<a href="dd7.html"><a href="dd7.html"><img src="images/dd7.jpeg"></a>
+				</div>
+				<div class="prod-details">
+					<p class="prod-name">Rechargeable Fan Charging Fan Portable Fan Small Fan Desk Fan USB Mini Fan Electricfan</p>
+					<p class="price">₱2,330.00</p>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<span class="sold">4.1k sold</span>
+				</div>
+			</div>
+		</div>
+		<div class="prod-con">
+			<div class="inner-prod-con">
+				<div class="img-con">
+					<a href="dd8.html"><img src="images/dd8.jpeg"></a>
+				</div>
+				<div class="prod-details">
+					<p class="prod-name">FODSPORTS BT-S2 Motorcycle Bluetooth intercom Off-Road Motorbike Intercom Helmet Bluetooth Headset 1000M Bluetooth Motorcycle Communication System, Hands-Free, FM, MP3</p>
+					<p class="price">₱780.00</p>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star-half-o"></i>
+					<span class="sold">2.4k sold</span>
+				</div>
+			</div>
+		</div>
+		<div class="prod-con">
+			<div class="inner-prod-con">
+				<div class="img-con">
+					<a href="dd9.html"><img src="images/gs 2022 championship ring4.jpeg"></a>
+				</div>
+				<div class="prod-details">
+					<p class="prod-name">2022 Golden State Warriors Championship Ring</p>
+					<p class="price">₱1,800.00</p>
+                    <p class="prod-disc"><span style="color: gray; text-decoration: line-through; text;">₱2,780.00</span></p>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star-half-o"></i>
+					<span class="sold">1.6k sold</span>
+				</div>
+			</div>
+		</div>
+		<div class="prod-con">
+			<div class="inner-prod-con">
+				<div class="img-con">
+					<a href="dd10.html"><img src="images/dd10.jpeg"></a>
+				</div>
+				<div class="prod-details">
+					<p class="prod-name">Vincent van Gogh - The Starry Night</p>
+					<p class="price">₱3,000.00</p>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<span class="sold">300 sold</span>
+				</div>
+			</div>
+		</div>
+		<div class="prod-con">
+			<div class="inner-prod-con">
+				<div class="img-con">
+					<a href="dd11.html"><img src="images/dd11.jpg"></a>
+				</div>
+				<div class="prod-details">
+					<p class="prod-name">Seven Master Cat Backpack Expandable Carrier Bubble Bag</p>
+					<p class="price">₱2,330.00</p>
+                    <p class="prod-disc"><span style="color: gray; text-decoration: line-through; text;">₱3,000.00</span></p>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star-half-o"></i>
+					<span class="sold">1.8k sold</span>
+				</div>
+			</div>
+		</div>
+		<div class="prod-con">
+			<div class="inner-prod-con">
+				<div class="img-con">
+					<a href="dd12.html"><img src="images/dd12.jpg"></a>
+				</div>
+				<div class="prod-details">
+					<p class="prod-name">Korean Authentic Face Mask (Set)</p>
+					<p class="price">₱230.00</p>
+                    <p class="prod-disc"><span style="color: gray; text-decoration: line-through; text;">₱300.00</span> -40%</p>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star-half-o"></i>
+					<span class="sold">5k sold</span>
+				</div>
+			</div>
+		</div>
+		</div>
+	</div>
+	
+	
+	<!--footer-->
+	<footer class="footer">
+        <div class="grid wide footer__content">
+          <div class="row">
+            <div class="col l-2-4 m-4 c-6">
+              <h3 class="footer__heading">CUSTOMER SERVICE</h3>
+              <ul class="footer-list">
+                <li class="footer-item">
+                  <a href="#" class="footer-item__link">Help Centre</a>
+                </li>
+                <li class="footer-item">
+                  <a href="#" class="footer-item__link">Cartify Cares PH</a>
+                </li>
+                <li class="footer-item">
+                  <a href="#" class="footer-item__link">Order Tracking</a>
+                </li>
+				<li class="footer-item">
+                  <a href="#" class="footer-item__link">Free Shipping</a>
+                </li>
+				<li class="footer-item">
+                  <a href="#" class="footer-item__link">Return & Refund</a>
+                </li>
+				<li class="footer-item">
+                  <a href="#" class="footer-item__link">Cartify Guarantee</a>
+                </li>
+				<li class="footer-item">
+                  <a href="#" class="footer-item__link">Overseas Product</a>
+                </li>
+				<li class="footer-item">
+                  <a href="#" class="footer-item__link">Contact Us</a>
+                </li>
+              </ul>
+            </div>
+            <div class="col l-2-4 m-4 c-6">
+              <h3 class="footer__heading">ABOUT CARTIFY</h3>
+              <ul class="footer-list">
+                <li class="footer-item">
+                  <a href="#" class="footer-item__link">About Us</a>
+                </li>
+                <li class="footer-item">
+                  <a href="#" class="footer-item__link">Cartify Blog</a>
+                </li>
+				<li class="footer-item">
+                  <a href="#" class="footer-item__link">Cartify Careers</a>
+                </li>
+                <li class="footer-item">
+                  <a href="#" class="footer-item__link">Cartify Policies</a>
+                </li>
+				<li class="footer-item">
+                  <a href="#" class="footer-item__link">Privacy Policies</a>
+                </li>
+				<li class="footer-item">
+                  <a href="#" class="footer-item__link">Cartify Mall</a>
+                </li>
+				<li class="footer-item">
+                  <a href="#" class="footer-item__link">Seller Centre</a>
+                </li>
+				<li class="footer-item">
+                  <a href="#" class="footer-item__link">Flash Deals</a>
+                </li>
+				<li class="footer-item">
+                  <a href="#" class="footer-item__link">Media Contact</a>
+                </li>
+              </ul>
+            </div>
+            <div class="col l-2-4 m-8 c-6">
+              <h3 class="footer__heading">PAYMENT</h3>
+              <div class="footer__download">
+                <div class="footer__payment-apps">
+                  <a href="#" class="footer__download-app-link">
+                    <img
+                      src="images/paymaya.png"
+                      alt=" PayMaya"
+                      class="footer__payment-app-img"/></a>
+				  <a href="#" class="footer__download-app-link">
+                    <img
+						src="images/gcash.png"
+						alt="GCash"
+						class="footer__payment-app-img"/></a>
+                </div>
+              </div>
+			  <div class="footer__download">
+                <div class="footer__payment-apps">
+				  <a href="#" class="footer__download-app-link">
+                    <img
+						src="images/banko.png"
+						alt="BanKo"
+						class="footer__payment-app-img"/></a>
+                  <a href="#" class="footer__download-app-link">
+                    <img
+                      src="images/dragonpay.jpg"
+                      alt="Dragonpay"
+                      class="footer__payment-app-img"/></a>
+                </div>
+              </div>
+			  <div class="footer__download">
+                <div class="footer__payment-apps">
+				  <a href="#" class="footer__download-app-link">
+                    <img
+						src="images/jcb.jpg"
+						alt="JCB"
+						class="footer__payment-app-img"/></a>
+                  <a href="#" class="footer__download-app-link">
+                    <img
+                      src="images/visa.png"
+                      alt="Visa"
+                      class="footer__payment-app-img"/></a>
+                </div>
+              </div>
+            </div>
+            <div class="col l-2-4 m-4 c-6">
+              <h3 class="footer__heading">FOLLOW US</h3>
+              <ul class="footer-list">
+                <li class="footer-item">
+                  <a href="#" class="footer-item__link">
+                    <i class="footer-item__icon fa fa-facebook"></i>
+                    Facebook</a
+                  >
+                </li>
+                <li class="footer-item">
+                  <a href="#" class="footer-item__link">
+                    <i class="footer-item__icon fa fa-instagram"></i>
+                    Instagram</a>
+                </li>
+                <li class="footer-item">
+                  <a href="#" class="footer-item__link">
+                    <i class="footer-item__icon fa fa-twitter"></i>
+                    Twitter</a
+                  >
+                </li>
+				<li class="footer-item">
+                  <a href="#" class="footer-item__link">
+                    <i class="footer-item__icon fa fa-linkedin"></i>
+                    Linkedin</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="col l-2-4 m-8 c-12">
+              <h3 class="footer__heading">CARTIFY APP DOWNLOAD</h3>
+              <div class="footer__download">
+                <img
+                  src="images/qr_code.png"
+                  alt="Download QR"
+                  class="footer__dowload-qr"
+                />
+                <div class="footer__download-apps">
+                  <a href="#" class="footer__download-app-link">
+                    <img
+                      src="images/google_play.png"
+                      alt="Google Play"
+                      class="footer__download-app-img"
+                    />
+                  </a>
+                  <a href="#" class="footer__download-app-link">
+                    <img
+                      src="images/appstore.png"
+                      alt="App store"
+                      class="footer__download-app-img"
+                    />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer__bottom">
+          <div class="grid wide">
+            <p class="footer__text">
+              © 2023 Cartify. All Rights Reserved.
+            </p>
+          </div>
+        </div>
+      </footer>
+	
+</body>
+</html>

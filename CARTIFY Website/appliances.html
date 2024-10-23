@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <title>Home Appliances</title>
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width,initial-scale=1">
+     <link href="https://fonts.googleapis.com/css2?family=Noto Sans&Roboto&Arvo:wght@700&family=Montserrat:wght@500;700&family=Raleway:wght@500&family=Poppins:wght@500&family=Poppins:wght@600&display=swap" rel="stylesheet">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+	 
+	<link rel="stylesheet" href="css/homepage.css">
+	<link rel="stylesheet" href="css/categories.css">
+	<link rel="stylesheet" href="css/grid1.css">
+	<link rel="stylesheet" href="css/base.css">
+</head>
+<body>
+	<div class="topnav" id="myTopnav">
+		<input type="checkbox" id="check">
+		<label for="check" class="checkbtn">
+			<i class="fa fa-bars"></i>
+		</label>
+		<a href="cartify.html"><img src="images/you name it, we got it!.png" alt="Home Page"></a>
+        <div class="input">
+            <input type="text" placeholder="Search...">
+        </div>
+        <ul>
+            <li><a href="#">Cart</a></li>
+			<i class="fa fa-shopping-cart" id="cart"></i>
+            <li><a href="#">Message</a></li>
+            <li><a href="#">Notifications</a></li>
+            <li><a href="#">Settings</a></li>
+            <li><a href="signup.html">Sign Up</a></li>
+			<li><a href="login.html">Login</a></li>
+        </ul>
+	</div>
+		<div class="slider">
+			<div class="slides">
+				<input type="radio" name="radio-btn" id="radio1">
+				<input type="radio" name="radio-btn" id="radio2">
+				<input type="radio" name="radio-btn" id="radio3">
+				<input type="radio" name="radio-btn" id="radio4">
+				<div class="slide first">
+					<img src="images/1.png" alt="">
+				</div>
+				<div class="slide">
+					<img src="images/2.png" alt="">
+				</div>
+				<div class="slide">
+					<img src="images/3.png" alt="">
+				</div>
+				<div class="slide">
+					<img src="images/4.png" alt="">
+				</div>
+				<div class="navigation-auto">
+					<div class="auto-btn1"></div>
+					<div class="auto-btn2"></div>
+					<div class="auto-btn3"></div>
+					<div class="auto-btn4"></div>
+				</div>
+			</div>
+			<div class="navigation-manual">
+				<label for="radio1" class="manual-btn"></label>
+				<label for="radio2" class="manual-btn"></label>
+				<label for="radio3" class="manual-btn"></label>
+				<label for="radio4" class="manual-btn"></label>
+			</div>
+		</div>
+		<script type="text/javascript">
+			var counter = 1;
+			setInterval(function(){
+				document.getElementById('radio' + counter).checked = true;
+				counter++;
+				if(counter > 4){
+					counter = 1;
+				}
+			}, 4000);
+		</script>
+	
+	
+<div class="app__container">
+        <div class="grid1">
+        <div class="row sm-gutter app__content">
+            <!-- Category -->
+            <div class="filter">
+              <nav class="category">
+                <h3 class="category__heading" style="font-size: 17.5px;"><i style="font-size:22px; margin-right: 6px" class="fa fa-list" aria-hidden="true"></i><b>All Categories</b></h3>
+                <ul class="category-list">
+                  <li>
+                    <a href="petcare.html" class="category-item__link">Pet Care</a>
+                  </li>
+				  <li>
+                    <a href="supplements.html" class="category-item__link">Supplements & Healthcare</a>
+                  </li>
+                  <li class="category-item">
+                    <a href="groceries.html" class="category-item__link">Groceries</a>
+                  </li>
+				  <li class="category-item">
+                    <a href="vouchers.html" class="category-item__link">Vouchers & Discount</a>
+                  </li>
+				  <li class="category-item category-item--active">
+                    <a href="appliances.html" class="category-item__link"><svg viewBox="0 0 4 7" class="shopee-svg-icon shopee-category-list__main-category__caret icon-down-arrow-right-filled"><polygon points="4 3.5 0 0 0 7"></polygon></svg>Home Appliances</a>
+                  </li>
+				  <li class="category-item">
+                    <a href="menswear.html" class="category-item__link">Menswear</a>
+                  </li>
+				  <li class="category-item">
+                    <a href="womenswear.html" class="category-item__link">Womenswear</a>
+                  </li>
+				  <li class="category-item">
+                    <a href="kidswear.html" class="category-item__link">Kidswear</a>
+                  </li>
+				  <li class="category-item">
+                    <a href="footwear.html" class="category-item__link">Footwear</a>
+                  </li>
+				  <li class="category-item">
+                    <a href="gadgets.html" class="category-item__link">Gadgets</a>
+                  </li>
+                </ul>
+              </nav>
+		
+              <nav class="category1">
+				<h5 class="category__heading" style="font-size: 18.5px;"><i style="font-size:22px; margin-right: 3px" class="fa">&#xf0b0;</i><b>Search Filter</b></h5>
+				<ul class="category-list">
+                <h4 class="category__heading1">By Category</h4>
+                  <li class="item">
+                    <input type="checkbox">Home Improvement / Others (2M+)
+                  </li>
+				  <li class="item">
+                    <input type="checkbox">Home Appliances & Parts & Accessories (1M+)
+                  </li>
+				  <li class="item">
+                    <input type="checkbox">Home Entertainment (1M+)
+                  </li>
+				  <li class="item">
+                    <input type="checkbox">Small Kitchen Appliances (891K+)
+                  </li>
+				  <li class="item">
+                    <input type="checkbox">Large Appliances (446K+)
+                  </li>
+				  <li class="item">
+                    <input type="checkbox">Mobile & Gadgets (231K+)
+                  </li>
+          <li class="item">
+                    <input type="checkbox">Laptops & Computer (230K+)
+                  </li>
+				  <li class="item">
+                    <input type="checkbox">Cooling & Heating (204K+)
+                  </li>
+				  <li class="item">
+                    <input type="checkbox">Storage & Organization (198K+)
+                  </li>
+				  <li class="item">
+                    <input type="checkbox">Garment Care (168K+)
+                  </li>
+				  <li class="item">
+                    <input type="checkbox">Vacuum Cleaners & Floor Care (158K+)
+                  </li>
+				  <hr style="border-top: 1px  #e6e6e6; width: 85%;">
+          <h4 class="category__heading1">Rating</h4>
+         <!-- <ul class="category-list"> -->
+                  <li class="item">
+              				<i class="fa fa-star"></i>
+											<i class="fa fa-star"></i>
+											<i class="fa fa-star"></i>
+											<i class="fa fa-star"></i>
+											<i class="fa fa-star"></i>
+                  </li>
+                  <li class="item">
+              				<i class="fa fa-star"></i>
+											<i class="fa fa-star"></i>
+											<i class="fa fa-star"></i>
+											<i class="fa fa-star"></i>
+											<i class="fa fa-star-o"></i>
+                  </li>
+                  <li class="item">
+              				<i class="fa fa-star"></i>
+											<i class="fa fa-star"></i>
+											<i class="fa fa-star"></i>
+											<i class="fa fa-star-o"></i>
+											<i class="fa fa-star-o"></i>
+                  </li>
+                  <li class="item">
+              				<i class="fa fa-star"></i>
+											<i class="fa fa-star"></i>
+											<i class="fa fa-star-o"></i>
+											<i class="fa fa-star-o"></i>
+											<i class="fa fa-star-o"></i>
+                  </li>
+                  <li class="item">
+              				<i class="fa fa-star"></i>
+											<i class="fa fa-star-o"></i>
+											<i class="fa fa-star-o"></i>
+											<i class="fa fa-star-o"></i>
+											<i class="fa fa-star-o"></i>
+                  </li>
+				  <hr style="border-top: 1px  #e6e6e6; width: 85%;">
+          <h4 class="category__heading1">Shipped From</h4>
+          <li class="item">
+                    <input type="checkbox"> Domestics
+                  </li>
+				  <li class="item">
+                    <input type="checkbox">Overseas
+                  </li>
+				  <li class="item">
+                    <input type="checkbox">Metro Manila
+                  </li>
+				  <li class="item">
+                    <input type="checkbox">North Luzon
+                  </li>
+				  <li class="item">
+                    <input type="checkbox">South Luzon
+                  </li>               
+            <!--    </ul> -->
+				<button class="apply">
+                  APPLY
+              </button>
+              </nav>
+            </div>
+			
+            <div class="col l-10 m-12 c-12">
+              <!-- Filter -->
+              <div class="home-filter hide-on-mobile-tablet">
+                <span class="home-filter__label">Sort by</span>
+                <button class="home-filter__btn btn">Popular</button>
+                <button class="home-filter__btn btn btn--primary">
+                  Latest
+                </button>
+                <button class="home-filter__btn btn">Top Sales</button>
+                <div class="select-input">
+                  <span class="select-input__label">Price</span>
+                  <i class="select-input__icon fa fa-angle-down"></i>
+                  <!-- List option -->
+                  <ul class="select-input__list">
+                    <li class="select-input__item">
+                      <a href="#" class="select-input__link"
+                        >Price: Lot to High</a
+                      >
+                    </li>
+                    <li class="select-input__item">
+                      <a href="#" class="select-input__link"
+                        >Price: High to Low</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+                <div class="home-filter__page">
+                  <span class="home-filter__page-num">
+                    <span class="home-filter__page-current">1</span>/14
+                  </span>
+
+                  <div class="home-filter__page-control">
+                    <a
+                      href=""
+                      class="home-filter__page-btn home-filter__page-btn--disabled"
+                    >
+                      <i class="home-filter__page-icon fa fa-angle-left"></i>
+                    </a>
+                    <a href="" class="home-filter__page-btn">
+                      <i class="home-filter__page-icon fa fa-angle-right"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+			
+
+              <!-- Product -->
+              <div class="home-product">
+                <div class="sm-gutter">
+                  <!-- Petcare Product item -->
+                <div class="row1" id="row">
+                    <div class="prod-con">
+						<div class="inner-prod-con">
+							<div class="img-con">
+								<img src="images/appliances-1.png">
+							</div>
+						<div class="prod-details">
+							<p class="prod-name">Canon ImageClass MF453dw Wireless Laser Multifunction Monochrome Printer	</p>
+							<p class="price">₱23,990.00 - ₱24,000.00</p>
+							<p class="prod-disc"><span style="color: gray; text-decoration: line-through; text;">₱25,090</span></p>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+						<span class="sold">1.1k sold</span>
+						</div>
+						</div>
+					</div>
+					<div class="prod-con">
+						<div class="inner-prod-con">
+							<div class="img-con">
+								<img src="images/appliances-2.png">
+							</div>
+						<div class="prod-details">
+							<p class="prod-name">Samsung 24.7 cu.ft. Side by Side Refrigerator with All Around Cooling</p>
+							<p class="price">₱66,550.00 - ₱66,800.00</p>
+							<p class="prod-disc"><span style="color: gray; text-decoration: line-through; text;">₱67,500</span></p>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+						<span class="sold">1k sold</span>
+						</div>
+						</div>
+					</div>
+					<div class="prod-con">
+						<div class="inner-prod-con">
+							<div class="img-con">
+								<img src="images/appliances-3.png">
+							</div>
+						<div class="prod-details">
+							<p class="prod-name">American Heritage 10 - in 1 French Door Air Fryer Oven - Black</p>
+							<p class="price">₱10,500.00 - ₱10,999.00</p>
+							<p class="prod-disc"><span style="color: gray; text-decoration: line-through; text;">₱11,350</span></p>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star-o"></i>
+						<span class="sold">2k sold</span>
+						</div>
+						</div>
+					</div>
+					<div class="prod-con">
+						<div class="inner-prod-con">
+							<div class="img-con">
+								<img src="images/appliances-4.png">
+							</div>
+						<div class="prod-details">
+							<p class="prod-name">3 In 1 Multifunctional Oven Toaster Coffee Maker Bread Machine</p>
+							<p class="price">₱9,400.00 - ₱9,550.00</p>
+							<p class="prod-disc"><span style="color: gray; text-decoration: line-through; text;">₱9,800</span></p>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+						<span class="sold">3k sold</span>
+						</div>
+						</div>
+					</div>
+					<div class="prod-con">
+						<div class="inner-prod-con">
+							<div class="img-con">
+								<img src="images/appliances-5.png">
+							</div>
+						<div class="prod-details">
+							<p class="prod-name">Single Head Temperature Adjustable Breakfast Waffle Maker Silver</p>
+							<p class="price">₱7,500.00 - ₱7,800.00</p>
+							<p class="prod-disc"><span style="color: gray; text-decoration: line-through; text;">₱8,000</span></p>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+						<span class="sold">7k sold</span>
+						</div>
+						</div>
+					</div>
+				
+                    <div class="prod-con">
+						<div class="inner-prod-con">
+							<div class="img-con">
+								<img src="images/appliances-6.png">
+							</div>
+						<div class="prod-details">
+							<p class="prod-name">Home Use Bread Toaster Breakfast & Boiling and Steaming Foods</p>
+							<p class="price">₱11,110.00 - ₱11.150.00</p>
+							<p class="prod-disc"><span style="color: gray; text-decoration: line-through; text;">₱11,200</span></p>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star-o"></i>
+							<i class="fa fa-star-o"></i>
+						<span class="sold">5k sold</span>
+						</div>
+						</div>
+					</div>
+					<div class="prod-con">
+						<div class="inner-prod-con">
+							<div class="img-con">
+								<img src="images/appliances-7.png">
+							</div>
+						<div class="prod-details">
+							<p class="prod-name">American Heritage 3 in 1 Espresso Machine with 3 Espresso Adaptor System</p>
+							<p class="price">₱8,999.00 - ₱9,200.00</p>
+							<p class="prod-disc"><span style="color: gray; text-decoration: line-through; text;">₱9,500</span></p>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+						<span class="sold">4.2k sold</span>
+						</div>
+						</div>
+					</div>
+					<div class="prod-con">
+						<div class="inner-prod-con">
+							<div class="img-con">
+								<img src="images/appliances-8.png">
+							</div>
+						<div class="prod-details">
+							<p class="prod-name">Condura Multi Rice Cooker with Steamer Home & Lifestyle</p>
+							<p class="price">₱1,170.00 - ₱1,190.00</p>
+							<p class="prod-disc"><span style="color: gray; text-decoration: line-through; text;">₱1,290</span></p>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star-o"></i>
+						<span class="sold">9.8k sold</span>
+						</div>
+						</div>
+					</div>
+					<div class="prod-con">
+						<div class="inner-prod-con">
+							<div class="img-con">
+								<img src="images/appliances-9.png">
+							</div>
+						<div class="prod-details">
+							<p class="prod-name">Lecon Brand Rice Cooker - Digital (Premium Rice Cooker)</p>
+							<p class="price">₱44,500.00 - ₱45,880.00</p>
+							<p class="prod-disc"><span style="color: gray; text-decoration: line-through; text;">₱47,000</span></p>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star-o"></i>
+							<i class="fa fa-star-o"></i>
+						<span class="sold">1.3k sold</span>
+						</div>
+						</div>
+					</div>
+					<div class="prod-con">
+						<div class="inner-prod-con">
+							<div class="img-con">
+								<img src="images/appliances-10.png">
+							</div>
+						<div class="prod-details">
+							<p class="prod-name">Fujidenzo Remote Controlled Window Type Aircon WAR - 750IGT</p>
+							<p class="price">₱15,100.00 - ₱15,200.00</p>
+							<p class="prod-disc"><span style="color: gray; text-decoration: line-through; text;">₱15,500</span></p>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+						<span class="sold">8k sold</span>
+						</div>
+						</div>
+					</div>
+				
+                    <div class="prod-con">
+						<div class="inner-prod-con">
+							<div class="img-con">
+								<img src="images/appliances-11.png">
+							</div>
+						<div class="prod-details">
+							<p class="prod-name">White Thermostatic Shower Faucet Set Rainfall Big Shower</p>
+							<p class="price">₱9,890.00 - ₱9,990.00</p>
+							<p class="prod-disc"><span style="color: gray; text-decoration: line-through; text;">₱10,000</span></p>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star-o"></i>
+							<i class="fa fa-star-o"></i>
+						<span class="sold">1.9k sold</span>
+						</div>
+						</div>
+					</div>
+
+					<div class="prod-con">
+						<div class="inner-prod-con">
+							<div class="img-con">
+								<img src="images/appliances-12.png">
+							</div>
+						<div class="prod-details">
+							<p class="prod-name">Ginza Smart TV Flat Screen 50 Inch Android TV - New Arrival</p>
+							<p class="price">₱14,599.00 - ₱14,700.00</p>
+							<p class="prod-disc"><span style="color: gray; text-decoration: line-through; text;">₱14,990</span></p>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star-o"></i>
+						<span class="sold">6.6k sold</span>
+						</div>
+						</div>
+					</div>
+					<div class="prod-con">
+						<div class="inner-prod-con">
+							<div class="img-con">
+								<img src="images/appliances-13.png">
+							</div>
+						<div class="prod-details">
+							<p class="prod-name">Philips IN - MMS6080B/94 2.1 Channel Multimedia Speaker</p>
+							<p class="price">₱3,800.00 - ₱3,900.00</p>
+							<p class="prod-disc"><span style="color: gray; text-decoration: line-through; text;">₱4,000</span></p>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+						<span class="sold">56.9k sold</span>
+						</div>
+						</div>
+					</div>
+					<div class="prod-con">
+						<div class="inner-prod-con">
+							<div class="img-con">
+								<img src="images/appliances-14.png">
+							</div>
+						<div class="prod-details">
+							<p class="prod-name">Yama Kitchen Dining Collection Yama Round Dining Table 6 - 8 Seater</p>
+							<p class="price">₱89,680.00</p>
+							<p class="prod-disc"><span style="color: gray; text-decoration: line-through; text;">₱90,000</span></p>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+						<span class="sold">85.9k sold</span>
+						</div>
+						</div>
+					</div>
+					<div class="prod-con">
+						<div class="inner-prod-con">
+							<div class="img-con">
+								<img src="images/appliances-15	.png">
+							</div>
+						<div class="prod-details">
+							<p class="prod-name">Luxury Smart Full Body Airbag Massage Chair LCD Screen Music</p>
+							<p class="price">₱255,749.82</p>
+							<p class="prod-disc"><span style="color: gray; text-decoration: line-through; text;">₱256,000.00</span></p>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star-o"></i>
+						<span class="sold">25.9k sold</span>
+						</div>
+						</div>
+					</div>
+					<div class="prod-con">
+						<div class="inner-prod-con">
+							<div class="img-con">
+								<img src="images/appliances-16.png">
+							</div>
+						<div class="prod-details">
+							<p class="prod-name">Aarke Sparkling Water Carbonator III - Stainless Steel - New Arrival</p>
+							<p class="price">₱17,890.00 - ₱17,990.00</p>
+							<p class="prod-disc"><span style="color: gray; text-decoration: line-through; text;">₱18,200</span></p>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star-o"></i>
+							<i class="fa fa-star-o"></i>
+						<span class="sold">1k sold</span>
+						</div>
+						</div>
+					</div>
+					<div class="prod-con">
+						<div class="inner-prod-con">
+							<div class="img-con">
+								<img src="images/appliances-17.png">
+							</div>
+						<div class="prod-details">
+							<p class="prod-name">Hoover Upright Vacuum Intellibelt HushTone 13W (Becauze) - Free Delivery</p>
+							<p class="price">₱28,999.00 - ₱30,000.00</p>
+							<p class="prod-disc"><span style="color: gray; text-decoration: line-through; text;">₱31,500</span></p>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+						<span class="sold">2k sold</span>
+						</div>
+						</div>
+					</div>
+					<div class="prod-con">
+						<div class="inner-prod-con">
+							<div class="img-con">
+								<img src="images/appliances-18.png">
+							</div>
+						<div class="prod-details">
+							<p class="prod-name">2000026562 Coleman H2Oasis Hot Water on Demand Water</p>
+							<p class="price">₱22,870.00 - ₱22,990.00</p>
+							<p class="prod-disc"><span style="color: gray; text-decoration: line-through; text;">₱23,000</span></p>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star-o"></i>
+						<span class="sold">4k sold</span>
+						</div>
+						</div>
+					</div>
+					<div class="prod-con">
+						<div class="inner-prod-con">
+							<div class="img-con">
+								<img src="images/appliances-19.png">
+							</div>
+						<div class="prod-details">
+							<p class="prod-name">Honeywell HPA300 True Hepa Air Purifier, 465 Sq ft Room Capacity</p>
+							<p class="price">₱16,500.00 - ₱16,880.00</p>
+							<p class="prod-disc"><span style="color: gray; text-decoration: line-through; text;">₱16,999</span></p>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star-o"></i>
+							<i class="fa fa-star-o"></i>
+						<span class="sold">1.3k sold</span>
+						</div>
+						</div>
+					</div>
+					<div class="prod-con">
+						<div class="inner-prod-con">
+							<div class="img-con">
+								<img src="images/appliances-20.png">
+							</div>
+						<div class="prod-details">
+							<p class="prod-name">Le Creuset 12" Toughened Nonstick Pro Stir-Fry Pan - New Arrival</p>
+							<p class="price">₱25,100.00 - ₱25,700.00</p>
+							<p class="prod-disc"><span style="color: gray; text-decoration: line-through; text;">₱25,890</span></p>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+						<span class="sold">5k sold</span>
+						</div>
+						</div>
+					</div>
+				</div>
+				</div>
+			</div>
+			
+			<ul class="pagination home-product__pagination">
+                <li class="pagination-item">
+                  <a href="" class="pagination-item__link">
+                    <i class="pagination-item__icon1 fa fa-angle-left"></i>
+                  </a>
+                </li>
+                <li class="pagination-item pagination-item--active">
+                  <a href="" class="pagination-item__link">1</a>
+                </li>
+                <li class="pagination-item">
+                  <a href="" class="pagination-item__link">2</a>
+                </li>
+                <li class="pagination-item">
+                  <a href="" class="pagination-item__link">3</a>
+                </li>
+                <li class="pagination-item">
+                  <a href="" class="pagination-item__link">4</a>
+                </li>
+                <li class="pagination-item">
+                  <a href="" class="pagination-item__link">5</a>
+                </li>
+                <li class="pagination-item">
+                  <a href="" class="pagination-item__link">...</a>
+                </li>
+                <li class="pagination-item">
+                  <a href="" class="pagination-item__link">14</a>
+                </li>
+                <li class="pagination-item">
+                  <a href="" class="pagination-item__link">
+                    <i class="pagination-item__icon fa fa-angle-right"></i>
+                  </a>
+                </li>
+              </ul>
+			</div> <!--col-->	
+	    </div> <!--sm grid content-->
+	    </div>	<!--grid wide-->
+</div> <!--app contaainer-->	
+	
+	<!--footer-->
+	<footer class="footer">
+        <div class="grid wide footer__content">
+          <div class="row">
+            <div class="col l-2-4 m-4 c-6">
+              <h3 class="footer__heading">CUSTOMER SERVICE</h3>
+              <ul class="footer-list">
+                <li class="footer-item">
+                  <a href="#" class="footer-item__link">Help Centre</a>
+                </li>
+                <li class="footer-item">
+                  <a href="#" class="footer-item__link">Cartify Cares PH</a>
+                </li>
+                <li class="footer-item">
+                  <a href="#" class="footer-item__link">Order Tracking</a>
+                </li>
+				<li class="footer-item">
+                  <a href="#" class="footer-item__link">Free Shipping</a>
+                </li>
+				<li class="footer-item">
+                  <a href="#" class="footer-item__link">Return & Refund</a>
+                </li>
+				<li class="footer-item">
+                  <a href="#" class="footer-item__link">Cartify Guarantee</a>
+                </li>
+				<li class="footer-item">
+                  <a href="#" class="footer-item__link">Overseas Product</a>
+                </li>
+				<li class="footer-item">
+                  <a href="#" class="footer-item__link">Contact Us</a>
+                </li>
+              </ul>
+            </div>
+            <div class="col l-2-4 m-4 c-6">
+              <h3 class="footer__heading">ABOUT CARTIFY</h3>
+              <ul class="footer-list">
+                <li class="footer-item">
+                  <a href="#" class="footer-item__link">About Us</a>
+                </li>
+                <li class="footer-item">
+                  <a href="#" class="footer-item__link">Cartify Blog</a>
+                </li>
+				<li class="footer-item">
+                  <a href="#" class="footer-item__link">Shopee Careers</a>
+                </li>
+                <li class="footer-item">
+                  <a href="#" class="footer-item__link">Cartify Policies</a>
+                </li>
+				<li class="footer-item">
+                  <a href="#" class="footer-item__link">Privacy Policies</a>
+                </li>
+				<li class="footer-item">
+                  <a href="#" class="footer-item__link">Cartify Mall</a>
+                </li>
+				<li class="footer-item">
+                  <a href="#" class="footer-item__link">Seller Centre</a>
+                </li>
+				<li class="footer-item">
+                  <a href="#" class="footer-item__link">Flash Deals</a>
+                </li>
+				<li class="footer-item">
+                  <a href="#" class="footer-item__link">Media Contact</a>
+                </li>
+              </ul>
+            </div>
+            <div class="col l-2-4 m-8 c-6">
+              <h3 class="footer__heading">PAYMENT</h3>
+              <div class="footer__download">
+                <div class="footer__payment-apps">
+                  <a href="#" class="footer__download-app-link">
+                    <img
+                      src="images/paymaya.png"
+                      alt=" PayMaya"
+                      class="footer__payment-app-img"/></a>
+				  <a href="#" class="footer__download-app-link">
+                    <img
+						src="images/gcash.png"
+						alt="GCash"
+						class="footer__payment-app-img"/></a>
+                </div>
+              </div>
+			  <div class="footer__download">
+                <div class="footer__payment-apps">
+				  <a href="#" class="footer__download-app-link">
+                    <img
+						src="images/banko.png"
+						alt="BanKo"
+						class="footer__payment-app-img"/></a>
+                  <a href="#" class="footer__download-app-link">
+                    <img
+                      src="images/dragonpay.jpg"
+                      alt="Dragonpay"
+                      class="footer__payment-app-img"/></a>
+                </div>
+              </div>
+			  <div class="footer__download">
+                <div class="footer__payment-apps">
+				  <a href="#" class="footer__download-app-link">
+                    <img
+						src="images/jcb.jpg"
+						alt="JCB"
+						class="footer__payment-app-img"/></a>
+                  <a href="#" class="footer__download-app-link">
+                    <img
+                      src="images/visa.png"
+                      alt="Visa"
+                      class="footer__payment-app-img"/></a>
+                </div>
+              </div>
+            </div>
+            <div class="col l-2-4 m-4 c-6">
+              <h3 class="footer__heading">FOLLOW US</h3>
+              <ul class="footer-list">
+                <li class="footer-item">
+                  <a href="#" class="footer-item__link">
+                    <i class="footer-item__icon fa fa-facebook"></i>
+                    Facebook</a
+                  >
+                </li>
+                <li class="footer-item">
+                  <a href="#" class="footer-item__link">
+                    <i class="footer-item__icon fa fa-instagram"></i>
+                    Instagram</a>
+                </li>
+                <li class="footer-item">
+                  <a href="#" class="footer-item__link">
+                    <i class="footer-item__icon fa fa-twitter"></i>
+                    Twitter</a
+                  >
+                </li>
+				<li class="footer-item">
+                  <a href="#" class="footer-item__link">
+                    <i class="footer-item__icon fa fa-linkedin"></i>
+                    Linkedin</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="col l-2-4 m-8 c-12">
+              <h3 class="footer__heading">CARTIFY APP DOWNLOAD</h3>
+              <div class="footer__download">
+                <img
+                  src="images/qr_code.png"
+                  alt="Download QR"
+                  class="footer__dowload-qr"
+                />
+                <div class="footer__download-apps">
+                  <a href="#" class="footer__download-app-link">
+                    <img
+                      src="images/google_play.png"
+                      alt="Google Play"
+                      class="footer__download-app-img"
+                    />
+                  </a>
+                  <a href="#" class="footer__download-app-link">
+                    <img
+                      src="images/appstore.png"
+                      alt="App store"
+                      class="footer__download-app-img"
+                    />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer__bottom">
+          <div class="grid wide">
+            <p class="footer__text">
+              © 2023 Cartify. All Rights Reserved.
+            </p>
+          </div>
+        </div>
+      </footer>
+	
+</body>
+</html>
