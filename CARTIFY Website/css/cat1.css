@@ -1,0 +1,35 @@
+.filter i {
+    float: left;
+    width: 20px;
+    font-size: 15px;
+    padding: 3px 0;
+    margin-right: 0px;
+}
+.category .category__heading {
+	border: none;
+	background-color: inherit;
+	font-family: inherit;
+	font-size: 18px;
+    font-weight: bold;
+}
+.cat-list{
+    padding-top: 10px;
+	display: block;
+	position: absolute;
+    overflow-y: auto;
+	z-index: 1;
+    margin-left: 15px;
+}
+.cat-list a {
+    float: none;
+	color: black;
+	padding: 6px 23px;
+	text-decoration: none;
+	display: block;
+	text-align: left;
+    margin: auto;
+    font-size: 13px;
+}
+.category:hover .cat-list {
+	display: block;
+}

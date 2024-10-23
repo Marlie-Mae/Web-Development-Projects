@@ -1,0 +1,163 @@
+body {
+	font-family: "Roboto", "Noto Sans", "Arvo", "Montserrat";
+	margin: 0;
+	background-color: #F4EEE0;
+}
+h2 {
+	font-family: "Roboto";
+	font-size: 40px;
+}
+.prod-con {
+    font-family: 'Montserrat';
+	padding: 10px;
+	flex: 1;
+}
+.inner-prod-con {
+	background-color: rgb(255, 255, 255);
+	overflow: none;
+	padding: 15px;
+}
+.img-con img{
+	float:left;
+	margin: 10px;
+	height: 500px;
+	width: 500px;
+	padding-right: -15px;
+	box-shadow: 0 3px 7px #00000067;
+}
+.images {
+	display: flex;
+	justify-content: space-between;
+	width: 15%;
+	margin-top: 520px;
+}
+.small-images {
+	width: auto;
+	margin-left: 9px;
+}
+.small-images img {
+	width: auto;
+	height: 154px;
+	border: #B4846C solid;
+	border-width: 2px;
+	box-shadow: 0 3px 7px #00000067;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	margin-right: 11px;
+}
+.small-images:hover img{
+	transform: scale(1.2);
+}
+.prod-details {
+	margin-top: -700px;
+	margin-left: 30rem;
+	padding-left: 4rem;
+}
+.prod-name {
+	font-size: 25px;
+}
+.price {
+	color: red;
+	font-size: 25px;
+	margin-bottom: -60px;
+}
+.prod-disc {
+    font-size: 15px;
+}
+.sold {
+	font-size: 15px;
+	color: rgb(151, 151, 151);
+}
+.prod-details i {
+	color: rgb(238, 205, 20);
+}
+.inner-prod-details {
+	padding-left:3rem;
+}
+.inner-prod-desc {
+	color: gray;
+	font-size: 15px;
+	margin-top: 13vh;
+}
+.shade {
+	margin-left: 10px;
+	padding: 3px;
+	float: left;
+	background: #b4846ca6;
+	font-size: 15px;
+	box-shadow: 0 3px 7px #00000067;
+	cursor: pointer;
+}
+nav a {
+	padding: 3px;
+	font-size: 18px;
+	text-decoration: none;
+	margin-right: 40px;
+	border-radius: 3px;
+	border: #B4846C solid;
+	border-width: 2px;
+	display: inline-flex;
+	margin-top: 2vh;
+	color: #000000;
+	transition: .2s;
+}
+nav a:hover,
+nav a.active {
+	background: #B4846C;
+}
+.norm-text {
+	margin-left: 10px;
+	font-size: 15px;
+    margin-bottom: -60px;
+}
+.quant {
+	color: gray;
+	font-size: 15px;
+    margin-top: 80px;
+}
+.wrapper {
+	margin-left: 10px;
+	height:30px;
+	width: 90px;
+	display: flex;
+	background: #ffffff;
+	border-radius: 12px;
+	border: #B4846C solid;
+	border-width: 2px;
+	align-items: center;
+	justify-content: center;
+	box-shadow: 0 3px 7px #00000067;
+}
+.wrapper span {
+	width: 100%;
+	text-align: center;
+	cursor: pointer;
+}
+.wrapper span.num {
+	font-size: 15px;
+	border-right: 1px solid #57575752;
+	border-left: 1px solid #57575752;
+	pointer-events: none;
+}
+.btn-box {
+	display: flex;
+	margin: 20px 0;
+}
+.btn-box button {
+	font-size: 15px;
+	padding: 8px 25px;
+	border-radius: 6px;
+	cursor: pointer;
+	outline: none;
+	border: none;
+}
+.cart-btn {
+	border-radius: 12px;
+	color: #B4846C;
+	border-width: 2px;
+	margin-right: 10px;
+	margin-left: 60px;
+}
+.buy-btn {
+	background-color: #B4846C;
+}
