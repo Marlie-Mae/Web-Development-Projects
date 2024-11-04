@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <title>Book Haven</title>
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width,initial-scale=1">
+     <link href="https://fonts.googleapis.com/css2?family=Noto Sans&Roboto&Arvo:wght@700&family=Montserrat:wght@500;700&family=Raleway:wght@500&family=Poppins:wght@500&family=Poppins:wght@600&display=swap" rel="stylesheet">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+	 <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+	 
+    <link rel="stylesheet" href="css/homepage.css">
+    <link rel="stylesheet" href="css/grid.css">
+	<link rel="stylesheet" href="css/jsscss.css">
+	<link rel="stylesheet" href="css/search.css">
+    <link rel="stylesheet" href="css/log.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link type="image/png" rel="icon" href="images/logo2.png"> 
+</head>
+
+<body>
+
+	<div class="topnav" id="myTopnav">
+		<input type="checkbox" id="check">
+		<label for="check" class="checkbtn">
+			<i class="fa fa-bars"></i>
+		</label>
+		<a href="homepage.html"><img src="images/logo.png" alt="Home Page"></a>
+
+		<!--search-->
+		<div class="dropdown">
+			<button onclick="myFunction()" class="dropbtn">Search</button>
+			<div id="myDropdown" class="dropdown-content">
+			  <input type="text" placeholder="Type here..." id="myInput" onkeyup="filterFunction()">
+			  <a href="aboutuspage.html">About us</a>
+			  <a href="homepage.html">Homepage</a>
+			  <a href="blogpage.html">Blog</a>
+			  <a href="works2.html">Sayaka Murata</a>
+			  <a href="best1.html">It Ends With Us</a>
+			  <a href="contemporary.html">Contemporary books</a>
+			  <a href="sale.html">Sale</a>
+			  <a href="selfhelp.html">Selp-help books</a>
+			  <a href="comics.html">Comics</a>
+			  <a href="works1.html">Annie Baker</a>
+			  <a href="signupage.html">Sign up</a>
+			  <a href="bestsellers.html">Best sellers</a>
+			  <a href="new.html">New books</a>
+			  <a href="contact.html">Contact us</a>
+			  <a href="best2.html">The Silent Patient</a>
+			  <a href="filipinoreads.html">Filipino books</a>
+			  <a href="blogpage.html">Events</a>
+			  <a href="youngadult.html">Young Adult books</a>
+			  <a href="edipicks.html">Editor's picks</a>
+			  <a href="authors.html"> Authors</a>
+			  <a href="storelocator.html"> Store locator</a>
+			</div>
+		  </div>
+		  
+		  <script>
+		  /* When the user clicks on the button,
+		  toggle between hiding and showing the dropdown content */
+		  function myFunction() {
+			document.getElementById("myDropdown").classList.toggle("show");
+		  }
+		  
+		  function filterFunction() {
+			var input, filter, ul, li, a, i;
+			input = document.getElementById("myInput");
+			filter = input.value.toUpperCase();
+			div = document.getElementById("myDropdown");
+			a = div.getElementsByTagName("a");
+			for (i = 0; i < a.length; i++) {
+			  txtValue = a[i].textContent || a[i].innerText;
+			  if (txtValue.toUpperCase().indexOf(filter) > -1) {
+				a[i].style.display = "";
+			  } else {
+				a[i].style.display = "none";
+			  }
+			}
+		  }
+		  </script>
+		
+		 <!----> 
+
+		 
+        <ul>
+            <li><a href="#">Cart</a></li>
+			<i class="fa fa-shopping-cart" id="cart"></i>
+            <li><a href="aboutuspage.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="#">Settings</a></li>
+            <li><a href="signupage.html">Sign Up</a></li>
+			<li><a href="loginpage.html">Login</a></li>
+        </ul>
+	</div>
+	
+	<div class="short">
+		<ul class="menu">
+			<a href="homepage.html"><li class="menu-items"> HOME</li> </a>
+      <a href="bestsellers.html"><li class="menu-items"> BEST SELLERS</li> </a>
+			<a href="authors.html"><li class="menu-items"> AUTHORS</li> </a>
+			<a href="blogpage.html"><li class="menu-items"> BLOG</li> </a>
+      <a href="filipinoreads.html"><li class="menu-items"> FILIPINO READS</li> </a>
+      <a href="new.html"><li class="menu-items"> NEW!</li> </a>
+			<a href="sale.html"><li class="menu-items"> SALE</li> </a>
+			<a href="edipicks.html"><li class="menu-items"> EDITOR'S PICKS</li> </a>
+		</ul>
+	</div>
+	
+	
+	<div class="container">
+        <div class="location">
+            <div class="title">Store Locations</div>
+            <p><b>Abreeza Mall</b></p>
+            <p>G/F Abreeza Mall, J.P. Laurel Ave., Bajada Davao City Davao City Davao Del Sur</p>
+            <p>(082) 321-0931 (Viber) 0917-810-8093</p>
+            <p>Open Now 10:00 - 21:00</p>
+            <hr>
+
+            <p><b>Alabang Town Center</b></p>
+            <p>Alabang Town Center, Commerce Avenue Muntinlupa City Muntinlupa City Metro Manila</p>
+            <p>(02) 8-552-9410 (Viber) 0917-821-9577</p>
+            <p>Open Now 10:00 - 21:00</p>
+            <hr>
+
+            <p><b>Ayala Center Cebu</b></p>
+            <p>Level 2, The Terraces, Ayala Center Cebu, Cebu Business Park Cebu City Cebu City Cebu</p>
+            <p>(032) 417-1400 (Viber) 0917-812-9667</p>
+            <p>Open Now 10:00 - 21:00</p>
+            <hr>
+
+            <p><b>Ayala Malls Central Bloc</b></p>
+            <p>Ayala Malls Central Bloc, Cebu IT Park Cebu City Cebu City Cebu</p>
+            <p>(032) 272-5065 (Viber) 0917-814-7572</p>
+            <p>Open Now 10:00 - 21:00</p>
+            <hr>
+
+            <p><b>Ayala Malls Manila Bay</b></p>
+            <p>2/F Ayala Malls, Manila Bay, Aseana Ave. corner D. Macapagal Aseana City, Brgy. Tambo, Paranaque City Paranaque City Metro Manila</p>
+            <p>(02) 7-752-3899 (Viber) 0917-872-2681</p>
+            <p>Open Now 10:00 - 21:00</p>
+            <hr>
+
+            <p><b>Bonifacio Global City</b></p>
+            <p>B6 Bonifacio High Street, Bonifacio Global City Taguig Taguig City Metro Manila</p>
+            <p>(02) 8-858-7051 to 52 (Viber) 0917-816-9465</p>
+            <p>Open Now 10:00 - 21:00</p>
+            <hr>
+
+            <p><b>Eastwood Mall</b></p>
+            <p>4/F Eastwood Mall, Eastwood City, E. Rodriguez, Jr. Avenue (C5) Brgy. Bagumbayan, Quezon City Quezon City Metro Manila</p>
+            <p>(02) 8-709-1961 (Viber) 0917-814-9243</p>
+            <p>Open Now 10:00 - 21:00</p>
+            <hr>
+
+            <p><b>Glorietta 3</b></p>
+            <p>G/F Glorietta 3, Ayala Center Makati Makati City Metro Manila</p>
+            <p>(02) 7-752-7107 (Viber) 0917-815-0213</p>
+            <p>Open Now 10:00 - 21:00</p>
+            <hr>
+
+            <p><b>Greenbelt 5</b></p>
+            <p>Lower G/F Greenbelt 5, Ayala Center Makati Makati City Metro Manila</p>
+            <p>(02) 7-501-3196 (Viber) 0917-811-5733</p>
+            <p>Open Now 10:00 - 21:00</p>
+            <hr>
+
+            <p><b>Katipunan</b></p>
+            <p>G/F Regis Center, Katipunan Avenue cor. F.B. dela Rosa Quezon City Quezon City Metro Manila</p>
+            <p>(02) 8-990-2346 (Viber) 0917-821-9159</p>
+            <p>Open Now 10:00 - 21:00</p>
+            <hr>
+
+            <p><b>The Podium</b></p>
+            <p>5/F The Podium, 18 ADB Avenue, Ortigas Center Mandaluyong Mandaluyong City Metro Manila</p>
+            <p>(Viber) 0968-874-5480</p>
+            <p>Open Now 10:00 - 21:00</p>
+            <hr>
+
+            <p><b>Rockwell</b></p>
+            <p>Level R3, The Power Plant Mall, Rockwell Drive cor. Estrella Street Makati Makati City Metro Manila</p>
+            <p>(02) 8-898-0968 (Viber) 0917-813-7614</p>
+            <p>Open Now 10:00 - 21:00</p>
+            <hr>
+
+            <p><b>SM City Bataan</b></p>
+            <p>2/F, SM City Bataan, Transport Terminal, City of Balanga, Bataan Balanga City Bataan</p>
+            <p>(Viber) 0917-872-2659</p>
+            <p>Open Now 10:00 - 21:00</p>
+            <hr>
+
+            <p><b>SM City Baguio</b></p>
+            <p>2nd Level Sunset Terraces, SM City Baguio Baguio City Benguet</p>
+            <p>(Viber) 0917-820-5621</p>
+            <p>Open Now 10:00 - 21:00</p>
+            <hr>
+
+            <p><b>SM City Fairview</b></p>
+            <p>G/F Expansion Area, SM City Fairview, Quezon City Quezon City Metro Manila</p>
+            <p>(02) 7-719-4841 (Viber) 0917-813-7407</p>
+            <p>Open Now 10:00 - 21:00</p>
+            <hr>
+
+            <p><b>SM City Iloilo</b></p>
+            <p>2F SM City Iloilo, B. Aquino Avenue, Mandurriao, Iloilo City, 5000 Iloilo City Iloilo</p>
+            <p>(033) 3328-1249 (Viber) 0939-922-3866</p>
+            <p>Open Now 10:00 - 21:00</p>
+            <hr>
+
+            <p><b>SM Mall of Asia</b></p>
+            <p>G/F West Entrance, SM Mall of Asia, Ocean Drive, Pasay City Pasay City Metro Manila</p>
+            <p>(02) 8-821-1289 (Viber) 0917-822-1477</p>
+            <p>Open Now 10:00 - 21:00</p>
+            <hr>
+
+            <p><b>SM Megamall</b></p>
+            <p>4/F SM Megamall Fashion Hall, SM Megamall, EDSA cor. J. Vargas Avenue Mandaluyong Mandaluyong City Metro Manila</p>
+            <p>(02) 8-631-8265 (Viber) 0917-822-3062</p>
+            <p>Open Now 10:00 - 21:00</p>
+            <hr>
+
+            <p><b>Trinoma</b></p>
+            <p>Lobby Level Trinoma, EDSA cor. North Avenue Quezon City Quezon City Metro Manila</p>
+            <p>(02) 7-901-0016 (Viber) 0917-822-3127</p>
+            <p>Open Now 10:00 - 21:00</p>
+
+
+        </div>
+        <div class="map">
+            <img src="images/map.png" class="imgau">
+
+        </div>
+    </div>	
+		
+	
+	
+	<div class="email">
+		<p><b>Sign up to receive email updates</b>
+		</p>
+		<input type="email" name="newsletterEmail" placeholder="Enter your email address" aria-label="Email address" value="">
+		<button class="send">Send
+		</button>
+	</div>
+	
+	<!--footer-->
+	<footer class="footer">
+        <div class="grid wide footer__content">
+          <div class="row">
+            <div class="col l-2-4 m-4 c-6">
+              <h3 class="footer__heading">CUSTOMER SERVICE</h3>
+              <ul class="footer-list">
+                <li class="footer-item">
+                  <a href="#" class="footer-item__link">Help Centre</a>
+                </li>
+                <li class="footer-item">
+                  <a href="#" class="footer-item__link">Book Haven Cares PH</a>
+                </li>
+                <li class="footer-item">
+                  <a href="#" class="footer-item__link">Order Tracking</a>
+                </li>
+				<li class="footer-item">
+                  <a href="#" class="footer-item__link">Free Shipping</a>
+                </li>
+				<li class="footer-item">
+                  <a href="#" class="footer-item__link">Return & Refund</a>
+                </li>
+				<li class="footer-item">
+                  <a href="#" class="footer-item__link">Book Haven Guarantee</a>
+                </li>
+				<li class="footer-item">
+                  <a href="#" class="footer-item__link">Overseas Product</a>
+                </li>
+				<li class="footer-item">
+                  <a href="contact.html" class="footer-item__link">Contact Us</a>
+                </li>
+              </ul>
+            </div>
+            <div class="col l-2-4 m-4 c-6">
+              <h3 class="footer__heading">ABOUT BOOK HAVEN</h3>
+              <ul class="footer-list">
+                <li class="footer-item">
+                  <a href="aboutuspage.html" class="footer-item__link">About Us</a>
+                </li>
+                <li class="footer-item">
+                  <a href="#" class="footer-item__link">Book Haven Blog</a>
+                </li>
+				<li class="footer-item">
+                  <a href="#" class="footer-item__link">Book Haven Careers</a>
+                </li>
+                <li class="footer-item">
+                  <a href="#" class="footer-item__link">Book Haven Policies</a>
+                </li>
+				<li class="footer-item">
+                  <a href="#" class="footer-item__link">Privacy Policies</a>
+                </li>
+				<li class="footer-item">
+                  <a href="#" class="footer-item__link">Seller Centre</a>
+                </li>
+				<li class="footer-item">
+                  <a href="#" class="footer-item__link">Flash Deals</a>
+                </li>
+				<li class="footer-item">
+                  <a href="#" class="footer-item__link">Media Contact</a>
+                </li>
+              </ul>
+            </div>
+            <div class="col l-2-4 m-8 c-6">
+              <h3 class="footer__heading">PAYMENT</h3>
+              <div class="footer__download">
+                <div class="footer__payment-apps">
+                  <a href="#" class="footer__download-app-link">
+                    <img
+                      src="images/paymaya.png"
+                      alt=" PayMaya"
+                      class="footer__payment-app-img"/></a>
+				  <a href="#" class="footer__download-app-link">
+                    <img
+						src="images/gcash.png"
+						alt="GCash"
+						class="footer__payment-app-img"/></a>
+                </div>
+              </div>
+			  <div class="footer__download">
+                <div class="footer__payment-apps">
+				  <a href="#" class="footer__download-app-link">
+                    <img
+						src="images/banko.png"
+						alt="BanKo"
+						class="footer__payment-app-img"/></a>
+                  <a href="#" class="footer__download-app-link">
+                    <img
+                      src="images/dragonpay.jpg"
+                      alt="Dragonpay"
+                      class="footer__payment-app-img"/></a>
+                </div>
+              </div>
+			  <div class="footer__download">
+                <div class="footer__payment-apps">
+				  <a href="#" class="footer__download-app-link">
+                    <img
+						src="images/jcb.jpg"
+						alt="JCB"
+						class="footer__payment-app-img"/></a>
+                  <a href="#" class="footer__download-app-link">
+                    <img
+                      src="images/visa.png"
+                      alt="Visa"
+                      class="footer__payment-app-img"/></a>
+                </div>
+              </div>
+            </div>
+            <div class="col l-2-4 m-4 c-6">
+              <h3 class="footer__heading">FOLLOW US</h3>
+              <ul class="footer-list-social">
+                <li class="footer-item">
+                  <a href="#" class="footer-item__link">
+                    <i class="footer-item__icon fa fa-facebook"></i>
+                    Facebook</a>
+                </li>
+                <li class="footer-item">
+                  <a href="#" class="footer-item__link">
+                    <i class="footer-item__icon fa fa-instagram"></i>
+                    Instagram</a>
+                </li>
+                <li class="footer-item">
+                  <a href="#" class="footer-item__link">
+                    <i class="footer-item__icon fa fa-twitter"></i>
+                    Twitter</a
+                  >
+                </li>
+				<li class="footer-item">
+                  <a href="#" class="footer-item__link">
+                    <i class="footer-item__icon fa fa-linkedin"></i>
+                    Linkedin</a
+                  >
+                </li>
+              </ul>
+            </div>
+			
+            <div class="col l-2-4 m-8 c-12">
+              <h3 class="footer__heading">BOOK HAVEN APP DOWNLOAD</h3>
+              <div class="footer__download">
+                <img
+                  src="images/qr_code.png"
+                  alt="Download QR"
+                  class="footer__dowload-qr"
+                />
+                <div class="footer__download-apps">
+                  <a href="#" class="footer__download-app-link">
+                    <img
+                      src="images/google_play.png"
+                      alt="Google Play"
+                      class="footer__download-app-img"
+                    />
+                  </a>
+                  <a href="#" class="footer__download-app-link">
+                    <img
+                      src="images/appstore.png"
+                      alt="App store"
+                      class="footer__download-app-img"
+                    />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer__bottom">
+          <div class="grid wide">
+            <p class="footer__text">
+              © 2023 Book Haven. All Rights Reserved.
+            </p>
+          </div>
+        </div>
+      </footer>
+
+	<!--  <script>
+		function scrollToElement() {
+		  var input = document.getElementById('searchInput').value;
+		  var element = document.getElementById(input);
+	
+		  if (element) {
+			element.scrollIntoView({ behavior: 'smooth' });
+		  } else {
+			alert('Input: ' + input + ' not found.');
+		  }
+		}
+	  </script>
+	-->
+	
+</body>
+</html>

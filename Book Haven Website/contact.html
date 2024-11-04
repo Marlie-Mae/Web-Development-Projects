@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <title>Book Haven</title>
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width,initial-scale=1">
+     <link href="https://fonts.googleapis.com/css2?family=Noto Sans&Roboto&Arvo:wght@700&family=Montserrat:wght@500;700&family=Raleway:wght@500&family=Poppins:wght@500&family=Poppins:wght@600&display=swap" rel="stylesheet">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+	 
+    <link rel="stylesheet" href="css/homepage.css">
+    <link rel="stylesheet" href="css/grid.css">
+	<link rel="stylesheet" href="script.js">
+    <link rel="stylesheet" href="css/search.css">
+    <link rel="stylesheet" href="css/contact.css">
+	<link type="image/png" rel="icon" href="images/logo2.png">
+
+	  
+</head>
+
+<body>
+
+	<div class="topnav" id="myTopnav">
+		<input type="checkbox" id="check">
+		<label for="check" class="checkbtn">
+			<i class="fa fa-bars"></i>
+		</label>
+		<a href="homepage.html"><img src="images/logo.png" alt="Home Page"></a>
+
+  		<!--search-->
+		<div class="dropdown">
+			<button onclick="myFunction()" class="dropbtn">Search</button>
+			<div id="myDropdown" class="dropdown-content">
+			  <input type="text" placeholder="Type here..." id="myInput" onkeyup="filterFunction()">
+			  <a href="aboutuspage.html">About us</a>
+			  <a href="homepage.html">Homepage</a>
+			  <a href="blogpage.html">Blog</a>
+			  <a href="works2.html">Sayaka Murata</a>
+			  <a href="best1.html">It Ends With Us</a>
+			  <a href="contemporary.html">Contemporary books</a>
+			  <a href="sale.html">Sale</a>
+			  <a href="selfhelp.html">Selp-help books</a>
+			  <a href="comics.html">Comics</a>
+			  <a href="works1.html">Annie Baker</a>
+			  <a href="signupage.html">Sign up</a>
+			  <a href="bestsellers.html">Best sellers</a>
+			  <a href="new.html">New books</a>
+			  <a href="contact.html">Contact us</a>
+			  <a href="best2.html">The Silent Patient</a>
+			  <a href="filipinoreads.html">Filipino books</a>
+			  <a href="blogpage.html">Events</a>
+			  <a href="youngadult.html">Young Adult books</a>
+			  <a href="edipicks.html">Editor's picks</a>
+			  <a href="authors.html"> Authors</a>
+			  <a href="storelocator.html"> Store locator</a>
+
+			</div>
+		  </div>
+		  
+		  <script>
+		  /* When the user clicks on the button,
+		  toggle between hiding and showing the dropdown content */
+		  function myFunction() {
+			document.getElementById("myDropdown").classList.toggle("show");
+		  }
+		  
+		  function filterFunction() {
+			var input, filter, ul, li, a, i;
+			input = document.getElementById("myInput");
+			filter = input.value.toUpperCase();
+			div = document.getElementById("myDropdown");
+			a = div.getElementsByTagName("a");
+			for (i = 0; i < a.length; i++) {
+			  txtValue = a[i].textContent || a[i].innerText;
+			  if (txtValue.toUpperCase().indexOf(filter) > -1) {
+				a[i].style.display = "";
+			  } else {
+				a[i].style.display = "none";
+			  }
+			}
+		  }
+		  </script>
+		
+		 <!----> 
+
+        <ul>
+            <li><a href="#">Cart</a></li>
+			<i class="fa fa-shopping-cart" id="cart"></i>
+            <li><a href="aboutuspage.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="#">Settings</a></li>
+            <li><a href="signupage.html">Sign Up</a></li>
+			<li><a href="loginpage.html">Login</a></li>
+        </ul>
+	</div>
+	
+	<div class="short">
+		<ul class="menu">
+			<a href="homepage.html"><li class="menu-items"> HOME</li> </a>
+      <a href="bestsellers.html"><li class="menu-items"> BEST SELLERS</li> </a>
+			<a href="authors.html"><li class="menu-items"> AUTHORS</li> </a>
+			<a href="blogpage.html"><li class="menu-items"> BLOG</li> </a>
+      <a href="filipinoreads.html"><li class="menu-items"> FILIPINO READS</li> </a>
+      <a href="new.html"><li class="menu-items"> NEW!</li> </a>
+			<a href="sale.html"><li class="menu-items"> SALE</li> </a>
+			<a href="edipicks.html"><li class="menu-items"> EDITOR'S PICKS</li> </a>
+		</ul>
+	</div>
+	
+    <div class="contcon">
+      <div class="formcon">
+        <form action="#">
+            <div class="title">Contact Us</div>
+            <label for="fname">First Name</label>
+            <input type="text" id="fname" name="firstname" placeholder="Your name..">
+        
+            <label for="lname">Last Name</label>
+            <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+        
+            <label for="country">Country</label>
+            <select id="country" name="country">
+                <option value="usa">Philippines</option>
+              <option value="australia">Australia</option>
+              <option value="canada">Canada</option>
+              <option value="usa">USA</option>
+              <option value="usa">Philippines</option>
+              <option value="usa">UK</option>
+              <option value="usa">Japan</option>
+              <option value="usa">Korea</option>
+              <option value="usa">Canada</option>
+            </select>
+        
+            <label for="subject">Subject</label>
+            <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+        
+            <input type="submit" value="Submit">
+          </form>
+          </div>
+          
+          <div class="newcon">
+            <div class="newd">
+            <i class="fa fa-phone"></i>
+            <h3 class="newp">Call Us</h3>
+            <p class="num">+63 (2) 8 858 7000</p>
+            </div>
+
+            <div class="newd">
+              <i class="fa fa-map-marker"></i>
+              <h3 class="newp">Location</h3>
+              <p class="num">Main Branch Address
+                G/F, Fort Palm Spring Building, 
+                <br>5th Avenue B6 Bonifacio High Street, 
+                <br>Bonifacio Global City, 
+                <br>Taguig City 1634 Metro Manila</p>
+              </div>
+
+              <div class="newd">
+                <i class="fa fa-envelope"></i>
+                <h3 class="newp">Email</h3>
+                <p class="num">bookhaven@gmail.com</p>
+                </div>
+
+                <div class="newd">
+                  <i class="fa fa-globe"></i>
+                  <h3 class="newp">Website</h3>
+                  <p class="num">bookhaven.com</p>
+                  </div>
+
+                  <div class="newimg">
+                    <img src="images/newimg.jpg">
+                  </div>
+
+
+          </div>
+      </div>
+		
+	
+	
+	
+	
+
+	
+	<!--footer-->
+	<footer class="footer">
+        <div class="grid wide footer__content">
+          <div class="row">
+            <div class="col l-2-4 m-4 c-6">
+              <h3 class="footer__heading">CUSTOMER SERVICE</h3>
+              <ul class="footer-list">
+                <li class="footer-item">
+                  <a href="#" class="footer-item__link">Help Centre</a>
+                </li>
+                <li class="footer-item">
+                  <a href="#" class="footer-item__link">Book Haven Cares PH</a>
+                </li>
+                <li class="footer-item">
+                  <a href="#" class="footer-item__link">Order Tracking</a>
+                </li>
+				<li class="footer-item">
+                  <a href="#" class="footer-item__link">Free Shipping</a>
+                </li>
+				<li class="footer-item">
+                  <a href="#" class="footer-item__link">Return & Refund</a>
+                </li>
+				<li class="footer-item">
+                  <a href="#" class="footer-item__link">Book Haven Guarantee</a>
+                </li>
+				<li class="footer-item">
+                  <a href="#" class="footer-item__link">Overseas Product</a>
+                </li>
+				<li class="footer-item">
+                  <a href="contact.html" class="footer-item__link">Contact Us</a>
+                </li>
+              </ul>
+            </div>
+            <div class="col l-2-4 m-4 c-6">
+              <h3 class="footer__heading">ABOUT BOOK HAVEN</h3>
+              <ul class="footer-list">
+                <li class="footer-item">
+                  <a href="aboutuspage.html" class="footer-item__link">About Us</a>
+                </li>
+                <li class="footer-item">
+                  <a href="#" class="footer-item__link">Book Haven Blog</a>
+                </li>
+				<li class="footer-item">
+                  <a href="#" class="footer-item__link">Book Haven Careers</a>
+                </li>
+                <li class="footer-item">
+                  <a href="#" class="footer-item__link">Book Haven Policies</a>
+                </li>
+				<li class="footer-item">
+                  <a href="#" class="footer-item__link">Privacy Policies</a>
+                </li>
+				<li class="footer-item">
+                  <a href="#" class="footer-item__link">Seller Centre</a>
+                </li>
+				<li class="footer-item">
+                  <a href="#" class="footer-item__link">Flash Deals</a>
+                </li>
+				<li class="footer-item">
+                  <a href="#" class="footer-item__link">Media Contact</a>
+                </li>
+              </ul>
+            </div>
+            <div class="col l-2-4 m-8 c-6">
+              <h3 class="footer__heading">PAYMENT</h3>
+              <div class="footer__download">
+                <div class="footer__payment-apps">
+                  <a href="#" class="footer__download-app-link">
+                    <img
+                      src="images/paymaya.png"
+                      alt=" PayMaya"
+                      class="footer__payment-app-img"/></a>
+				  <a href="#" class="footer__download-app-link">
+                    <img
+						src="images/gcash.png"
+						alt="GCash"
+						class="footer__payment-app-img"/></a>
+                </div>
+              </div>
+			  <div class="footer__download">
+                <div class="footer__payment-apps">
+				  <a href="#" class="footer__download-app-link">
+                    <img
+						src="images/banko.png"
+						alt="BanKo"
+						class="footer__payment-app-img"/></a>
+                  <a href="#" class="footer__download-app-link">
+                    <img
+                      src="images/dragonpay.jpg"
+                      alt="Dragonpay"
+                      class="footer__payment-app-img"/></a>
+                </div>
+              </div>
+			  <div class="footer__download">
+                <div class="footer__payment-apps">
+				  <a href="#" class="footer__download-app-link">
+                    <img
+						src="images/jcb.jpg"
+						alt="JCB"
+						class="footer__payment-app-img"/></a>
+                  <a href="#" class="footer__download-app-link">
+                    <img
+                      src="images/visa.png"
+                      alt="Visa"
+                      class="footer__payment-app-img"/></a>
+                </div>
+              </div>
+            </div>
+            <div class="col l-2-4 m-4 c-6">
+              <h3 class="footer__heading">FOLLOW US</h3>
+              <ul class="footer-list-social">
+                <li class="footer-item">
+                  <a href="#" class="footer-item__link">
+                    <i class="footer-item__icon fa fa-facebook"></i>
+                    Facebook</a>
+                </li>
+                <li class="footer-item">
+                  <a href="#" class="footer-item__link">
+                    <i class="footer-item__icon fa fa-instagram"></i>
+                    Instagram</a>
+                </li>
+                <li class="footer-item">
+                  <a href="#" class="footer-item__link">
+                    <i class="footer-item__icon fa fa-twitter"></i>
+                    Twitter</a
+                  >
+                </li>
+				<li class="footer-item">
+                  <a href="#" class="footer-item__link">
+                    <i class="footer-item__icon fa fa-linkedin"></i>
+                    Linkedin</a
+                  >
+                </li>
+              </ul>
+            </div>
+			
+            <div class="col l-2-4 m-8 c-12">
+              <h3 class="footer__heading">BOOK HAVEN APP DOWNLOAD</h3>
+              <div class="footer__download">
+                <img
+                  src="images/qr_code.png"
+                  alt="Download QR"
+                  class="footer__dowload-qr"
+                />
+                <div class="footer__download-apps">
+                  <a href="#" class="footer__download-app-link">
+                    <img
+                      src="images/google_play.png"
+                      alt="Google Play"
+                      class="footer__download-app-img"
+                    />
+                  </a>
+                  <a href="#" class="footer__download-app-link">
+                    <img
+                      src="images/appstore.png"
+                      alt="App store"
+                      class="footer__download-app-img"
+                    />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer__bottom">
+          <div class="grid wide">
+            <p class="footer__text">
+              © 2023 Book Haven. All Rights Reserved.
+            </p>
+          </div>
+        </div>
+      </footer>
+
+	  <script>
+		function scrollToElement() {
+		  var input = document.getElementById('searchInput').value;
+		  var element = document.getElementById(input);
+	
+		  if (element) {
+			element.scrollIntoView({ behavior: 'smooth' });
+		  } else {
+			alert('Input: ' + input + ' not found.');
+		  }
+		}
+	  </script>
+	
+</body>
+</html>
