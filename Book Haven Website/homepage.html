@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <title>Book Haven</title>
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width,initial-scale=1">
+     <link href="https://fonts.googleapis.com/css2?family=Noto Sans&Roboto&Arvo:wght@700&family=Montserrat:wght@500;700&family=Raleway:wght@500&family=Poppins:wght@500&family=Poppins:wght@600&display=swap" rel="stylesheet">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+	 <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+	 
+    <link rel="stylesheet" href="css/homepage.css">
+    <link rel="stylesheet" href="css/grid.css">
+	<link rel="stylesheet" href="css/jsscss.css">
+	<link rel="stylesheet" href="css/search.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link type="image/png" rel="icon" href="images/logo2.png">
+
+	  
+</head>
+
+<body>
+
+	<div class="topnav" id="myTopnav">
+		<input type="checkbox" id="check">
+		<label for="check" class="checkbtn">
+			<i class="fa fa-bars"></i>
+		</label>
+		<a href="homepage.html"><img src="images/logo.png" alt="Home Page"></a>
+
+		<!--search-->
+		<div class="dropdown">
+			<button onclick="myFunction()" class="dropbtn">Search</button>
+			<div id="myDropdown" class="dropdown-content">
+			  <input type="text" placeholder="Type here..." id="myInput" onkeyup="filterFunction()">
+			  <a href="aboutuspage.html">About us</a>
+			  <a href="homepage.html">Homepage</a>
+			  <a href="blogpage.html">Blog</a>
+			  <a href="works2.html">Sayaka Murata</a>
+			  <a href="best1.html">It Ends With Us</a>
+			  <a href="contemporary.html">Contemporary books</a>
+			  <a href="sale.html">Sale</a>
+			  <a href="selfhelp.html">Selp-help books</a>
+			  <a href="comics.html">Comics</a>
+			  <a href="works1.html">Annie Baker</a>
+			  <a href="signupage.html">Sign up</a>
+			  <a href="bestsellers.html">Best sellers</a>
+			  <a href="new.html">New books</a>
+			  <a href="contact.html">Contact us</a>
+			  <a href="best2.html">The Silent Patient</a>
+			  <a href="filipinoreads.html">Filipino books</a>
+			  <a href="blogpage.html">Events</a>
+			  <a href="youngadult.html">Young Adult books</a>
+			  <a href="edipicks.html">Editor's picks</a>
+			  <a href="authors.html"> Authors</a>
+			  <a href="storelocator.html"> Store locator</a>
+			</div>
+		  </div>
+		  
+		  <script>
+		  /* When the user clicks on the button,
+		  toggle between hiding and showing the dropdown content */
+		  function myFunction() {
+			document.getElementById("myDropdown").classList.toggle("show");
+		  }
+		  
+		  function filterFunction() {
+			var input, filter, ul, li, a, i;
+			input = document.getElementById("myInput");
+			filter = input.value.toUpperCase();
+			div = document.getElementById("myDropdown");
+			a = div.getElementsByTagName("a");
+			for (i = 0; i < a.length; i++) {
+			  txtValue = a[i].textContent || a[i].innerText;
+			  if (txtValue.toUpperCase().indexOf(filter) > -1) {
+				a[i].style.display = "";
+			  } else {
+				a[i].style.display = "none";
+			  }
+			}
+		  }
+		  </script>
+		
+		 <!----> 
+
+		 
+        <ul>
+            <li><a href="#">Cart</a></li>
+			<i class="fa fa-shopping-cart" id="cart"></i>
+            <li><a href="aboutuspage.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="#">Settings</a></li>
+            <li><a href="signupage.html">Sign Up</a></li>
+			<li><a href="loginpage.html">Login</a></li>
+        </ul>
+	</div>
+	
+	<div class="short">
+		<ul class="menu">
+			<a href="homepage.html"><li class="menu-items-active"> HOME</li> </a>
+			<a href="bestsellers.html"><li class="menu-items"> BEST SELLERS</li> </a>
+			<a href="authors.html"><li class="menu-items"> AUTHORS</li> </a>
+			<a href="blogpage.html"><li class="menu-items"> BLOG</li> </a>
+			<a href="filipinoreads.html"><li class="menu-items"> FILIPINO READS</li> </a>
+			<a href="new.html"><li class="menu-items"> NEW!</li> </a>
+			<a href="sale.html"><li class="menu-items"> SALE</li> </a>
+			<a href="edipicks.html"><li class="menu-items"> EDITOR'S PICKS</li> </a>
+		</ul>
+	</div>
+	
+	<div class="slider">
+			<div class="slides">
+				<input type="radio" name="radio-btn" id="radio1">
+				<input type="radio" name="radio-btn" id="radio2">
+				<input type="radio" name="radio-btn" id="radio3">
+				<input type="radio" name="radio-btn" id="radio4">
+				<div class="slide first">
+					<img src="images/banner1.png" alt="">
+				</div>
+				<div class="slide">
+					<img src="images/banner2.png" alt="">
+				</div>
+				<div class="slide">
+					<img src="images/banner3.png" alt="">
+				</div>
+				<div class="slide">
+					<img src="images/banner4.png" alt="">
+				</div>
+				<div class="navigation-auto">
+					<div class="auto-btn1"></div>
+					<div class="auto-btn2"></div>
+					<div class="auto-btn3"></div>
+					<div class="auto-btn4"></div>
+				</div>
+			</div>
+			<div class="navigation-manual">
+				<label for="radio1" class="manual-btn"></label>
+				<label for="radio2" class="manual-btn"></label>
+				<label for="radio3" class="manual-btn"></label>
+				<label for="radio4" class="manual-btn"></label>
+			</div>
+		</div>
+		<script type="text/javascript">
+			var counter = 1;
+			setInterval(function(){
+				document.getElementById('radio' + counter).checked = true;
+				counter++;
+				if(counter > 4){
+					counter = 1;
+				}
+			}, 4000);
+		</script>
+		
+		<div class="categories" id="categ">
+		<h2>Most Popular Categories</h2>
+		<div class="cat-con">
+			<div class="cat">
+				<a href="youngadult.html"><img class="cat-img" src="images/cat1.png"></a>
+				<p>YOUNG ADULT</p>
+			</div>
+			<div class="cat">
+				<a href="selfhelp.html"><img class="cat-img" src="images/cat2.png"></a>
+				<p>SELF-HELP</p>
+			</div>
+			<div class="cat">
+				<a href="contemporary.html"><img class="cat-img" src="images/cat3.png"></a>
+				<p>CONTEMPORARY</p>
+			</div>
+			<div class="cat" id="comics">
+				<a href="comics.html"><img class="cat-img" src="images/cat4.png"></a>
+				<p>COMICS</p>
+			</div>
+        </div>
+	</div>
+	
+	<div class="top-prod" id="best sellers">
+		<h2>Best Sellers</h2>
+   		<div class="main-con">
+		<div class="prod-con">
+				<div class="rank">1
+				</div>
+			<div class="inner-prod-con">
+				<div class="img-con">
+				<a href="best1.html"><img src="images/best1.jpg"></a>
+				</div>
+				<div class="prod-details">
+					<p class="prod-name">It Ends With Us by Colleen Hoover</p>
+					<p class="price">₱1,299.00</p>
+					<span class="sold">974.2k sold</span>
+				</div>
+			</div>
+		</div>
+		<div class="prod-con">
+			<div class="rank">2
+			</div>
+			<div class="inner-prod-con">
+				<div class="img-con">
+				<a href="best2.html"><img src="images/best2.jpg"></a>
+				</div>
+				<div class="prod-details">
+					<p class="prod-name">The Silent Patient by Alex Michaelides</p>
+					<p class="price">₱700.00</p>
+					<span class="sold">990.8k sold</span>
+				</div>
+			</div>
+		</div>
+		<div class="prod-con">
+			<div class="rank">3
+			</div>
+			<div class="inner-prod-con">
+				<div class="img-con">
+				<a href="best3.html"><img src="images/best3.jpg"></a>
+				</div>
+				<div class="prod-details">
+					<p class="prod-name">Atomic Habits by James Clear</p>
+					<p class="price">₱1,045.65</p>
+					<span class="sold">100k sold</span>
+				</div>
+			</div>
+		</div>
+		<div class="prod-con">
+			<div class="rank">4
+			</div>
+			<div class="inner-prod-con">
+				<div class="img-con">
+				<a href="best.html"><img src="images/best4.jpg"></a>
+				</div>
+				<div class="prod-details">
+					<p class="prod-name">To Kill a Mockingbird by Harper Lee</p>
+					<p class="price">₱869.00</p>
+					<span class="sold">780.9k sold</span>
+				</div>
+			</div>
+		</div>
+		<div class="prod-con">
+			<div class="rank">5
+			</div>
+			<div class="inner-prod-con">
+				<div class="img-con">
+				<a href="best5.html"><img src="images/best5.jpg"></a>
+				</div>
+				<div class="prod-details">
+					<p class="prod-name">The Last Unicorn by Peter S. Beagle</p>
+					<p class="price">₱1,200.00</p>
+					<span class="sold">580.3k sold</span>
+				</div>
+			</div>
+		</div>
+		<div class="prod-con">
+			<div class="rank">6
+			</div>
+			<div class="inner-prod-con">
+				<div class="img-con">
+				<a href="best6.html"><img src="images/best6.jpg"></a>
+				</div>
+				<div class="prod-details">
+					<p class="prod-name">Children of Blood and Bone by Tomi Adeyemi </p>
+					<p class="price">₱1,890.00</p>
+					<span class="sold">570k sold</span>
+				</div>
+			</div>
+		</div>
+		</div>
+	</div>
+	
+	<div class="top-prod">
+		<h2>What's Trending</h2>
+   	<div class="main-con">
+		<div class="prod-con">
+			<div class="inner-prod-con">
+				<div class="img-con">
+				<a href="trend1.html"><img src="images/trend1.jpg"></a>
+				</div>
+				<div class="prod-details">
+					<p class="prod-name">The Love Hypothesis by Ali Hazelwood</p>
+					<p class="price">₱1,300.00</p>
+					<span class="sold">15.9k sold</span>
+				</div>
+			</div>
+		</div>
+		<div class="prod-con">
+			<div class="inner-prod-con">
+				<div class="img-con">
+				<a href="trend2.html"><img src="images/trend2.jpg"></a>
+				</div>
+				<div class="prod-details">
+					<p class="prod-name">Shatter Me by Tahereh Mafi Amazon</p>
+					<p class="price">₱1,230.00</p>
+					<span class="sold">40.3k sold</span>
+				</div>
+			</div>
+		</div>
+		<div class="prod-con">
+			<div class="inner-prod-con">
+				<div class="img-con">
+				<a href="trend3.html"><img src="images/trend3.jpg"></a>
+				</div>
+				<div class="prod-details">
+					<p class="prod-name">The 48 Laws of Power by Robert Greene</p>
+					<p class="price">₱1,395.00</p>
+					<span class="sold">19k sold</span>
+				</div>
+			</div>
+		</div>
+		<div class="prod-con">
+			<div class="inner-prod-con">
+				<div class="img-con">
+				<a href="trend4.html"><img src="images/trend4.jpg"></a>
+				</div>
+				<div class="prod-details">
+					<p class="prod-name">Iron Flame by Rebecca Yarros</p>
+					<p class="price">₱2,000.00</p>
+					<span class="sold">20.9k sold</span>
+				</div>
+			</div>
+		</div>
+		<div class="prod-con">
+			<div class="inner-prod-con">
+				<div class="img-con">
+				<a href="trend5.html"><img src="images/trend5.jpg"></a>
+				</div>
+				<div class="prod-details">
+					<p class="prod-name" id="featured">Klara and the Sun by Kazuo Ishiguro</p>
+					<p class="price">₱1,420.00</p>
+					<span class="sold">1.2k sold</span>
+				</div>
+			</div>
+		</div>
+		<div class="prod-con">
+			<div class="inner-prod-con">
+				<div class="img-con">
+				<a href="trend6.html"><img src="images/trend6.jpg"></a>
+				</div>
+				<div class="prod-details">
+					<p class="prod-name">The Cruel Prince by Holly Black</p>
+					<p class="price">₱1,500.00</p>
+					<span class="sold">1.5k sold</span>
+				</div>
+			</div>
+		</div>
+	</div>		
+	</div>
+
+
+	<div class="top-prod">
+		<h2>Recommendations</h2>
+   	<div class="main-con">
+		<div class="prod-con">
+			<div class="inner-prod-con">
+				<div class="img-con">
+				<a href="trend1.html"><img src="images/r1.jpg"></a>
+				</div>
+				<div class="prod-details">
+					<p class="prod-name">Little Women
+						by Louisa May Alcott
+						</p>
+					<p class="price">₱1,000.00</p>
+					<span class="sold">14.9k sold</span>
+				</div>
+			</div>
+		</div>
+		<div class="prod-con">
+			<div class="inner-prod-con">
+				<div class="img-con">
+				<a href="trend2.html"><img src="images/r2.jpg"></a>
+				</div>
+				<div class="prod-details">
+					<p class="prod-name">Song of Solomon
+						by Toni Morrison</p>
+					<p class="price">₱1,500.00</p>
+					<span class="sold">30.9k sold</span>
+				</div>
+			</div>
+		</div>
+		<div class="prod-con">
+			<div class="inner-prod-con">
+				<div class="img-con">
+				<a href="trend3.html"><img src="images/r3.jpg"></a>
+				</div>
+				<div class="prod-details">
+					<p class="prod-name">Crying in H Mart
+						by Michelle Zauner</p>
+					<p class="price">₱1,595.00</p>
+					<span class="sold">13.7k sold</span>
+				</div>
+			</div>
+		</div>
+		<div class="prod-con">
+			<div class="inner-prod-con">
+				<div class="img-con">
+				<a href="trend4.html"><img src="images/r4.jpg"></a>
+				</div>
+				<div class="prod-details">
+					<p class="prod-name">Normal People
+						by Sally Rooney</p>
+					<p class="price">₱1,000.00</p>
+					<span class="sold">60.9k sold</span>
+				</div>
+			</div>
+		</div>
+		<div class="prod-con">
+			<div class="inner-prod-con">
+				<div class="img-con">
+				<a href="trend5.html"><img src="images/r5.jpg"></a>
+				</div>
+				<div class="prod-details">
+					<p class="prod-name" id="featured">Norwegian Wood
+						by Haruki Murakami</p>
+					<p class="price">₱1,200.00</p>
+					<span class="sold">10.9k sold</span>
+				</div>
+			</div>
+		</div>
+		<div class="prod-con">
+			<div class="inner-prod-con">
+				<div class="img-con">
+				<a href="trend6.html"><img src="images/r6.jpg"></a>
+				</div>
+				<div class="prod-details">
+					<p class="prod-name">Violeta
+						by Isabel Allende</p>
+					<p class="price">₱1,800.00</p>
+					<span class="sold">24.8k sold</span>
+				</div>
+			</div>
+		</div>
+	</div>		
+	</div>
+
+	
+	<div class="featured">
+		<div class="authorpic">
+		<img src="images/author.jpg">
+		</div>
+		<div class="about">
+		<h1> Featured Authors </h1>
+		<h2> Lang Leav</h2>
+			<p id="filipino books">
+				Novelist and poet Lang Leav was born in a refugee camp when her family were fleeing the Khmer Rouge Regime. She spent her formative years in Sydney, Australia, in the predominantly migrant town of Cabramatta. Among her many achievements, Lang is the winner of a Qantas Spirit of Youth Award, Churchill Fellowship and Goodreads Reader’s Choice Award.
+				<br>
+				<br>
+				Lang has been featured on CNN, SBS Australia, Intelligence Squared UK, Radio New Zealand and in various publications, including Vogue, Newsweek, the Straits Times, the Guardian, and the New York Times. She currently lives in New Zealand with her partner and fellow author, Michael Faudet.
+			</p>
+			<br>
+			<a href="#">Find out more</a>
+		</div>
+	</div>
+	
+		<div class="top-prod">
+		<h2>Discover Filipino Reads</h2>
+   	<div class="main-con">
+		<div class="prod-con">
+			<div class="inner-prod-con">
+				<div class="img-con">
+				<a href="f1.html"><img src="images/f1.jpg"></a>
+				</div>
+				<div class="prod-details">
+					<p class="prod-name">Kapitan Sino by Bob Ong</p>
+					<p class="price">₱1,300.00</p>
+					<span class="sold">15.9k sold</span>
+				</div>
+			</div>
+		</div>
+		<div class="prod-con">
+			<div class="inner-prod-con">
+				<div class="img-con">
+				<a href="f2.html"><img src="images/f2.jpg"></a>
+				</div>
+				<div class="prod-details">
+					<p class="prod-name">The Woman Who Had Two Navels by Nick Joaquin</p>
+					<p class="price">₱830.00</p>
+					<span class="sold">10.3k sold</span>
+				</div>
+			</div>
+		</div>
+		<div class="prod-con">
+			<div class="inner-prod-con">
+				<div class="img-con">
+				<a href="f3.html"><img src="images/f3.jpg"></a>
+				</div>
+				<div class="prod-details">
+					<p class="prod-name">When Lola Visits by Michelle Sterling</p>
+					<p class="price">₱1,395.00</p>
+					<span class="sold">1k sold</span>
+				</div>
+			</div>
+		</div>
+		<div class="prod-con">
+			<div class="inner-prod-con">
+				<div class="img-con">
+				<a href="f4.html"><img src="images/f4.jpg"></a>
+				</div>
+				<div class="prod-details">
+					<p class="prod-name">Cora Cooks Pancit by Dorina K. Lazo Gilmore</p>
+					<p class="price">₱700.00</p>
+					<span class="sold">2.9k sold</span>
+				</div>
+			</div>
+		</div>
+		<div class="prod-con">
+			<div class="inner-prod-con">
+				<div class="img-con">
+				<a href="f5.html"><img src="images/f5.jpg"></a>
+				</div>
+				<div class="prod-details">
+					<p class="prod-name">Lola's House by Evelina Galang</p>
+					<p class="price">₱420.00</p>
+					<span class="sold">11.2k sold</span>
+				</div>
+			</div>
+		</div>
+		<div class="prod-con">
+			<div class="inner-prod-con">
+				<div class="img-con">
+				<a href="f6.html"><img src="images/f6.jpg"></a>
+				</div>
+				<div class="prod-details">
+					<p class="prod-name">Florante at Laura by Francisco Balagtas</p>
+					<p class="price">₱500.00</p>
+					<span class="sold">6.5k sold</span>
+				</div>
+			</div>
+		</div>
+	</div>		
+	</div>
+	
+		<div class="top-prod">
+		<h2>New Arrivals</h2>
+   	<div class="main-con">
+		<div class="prod-con">
+			<div class="inner-prod-con">
+				<div class="img-con">
+				<a href="new1.html"><img src="images/new1.jpg"></a>
+				</div>
+				<div class="prod-details">
+					<p class="prod-name">Things We Left Behind by Lucy Score</p>
+					<p class="price">₱1,300.00</p>
+					<span class="sold">15.9k sold</span>
+				</div>
+			</div>
+		</div>
+		<div class="prod-con">
+			<div class="inner-prod-con">
+				<div class="img-con">
+				<a href="new2.html"><img src="images/new2.jpg"></a>
+				</div>
+				<div class="prod-details">
+					<p class="prod-name">Holly by Stephen King</p>
+					<p class="price">₱1,230.00</p>
+					<span class="sold">4.3k sold</span>
+				</div>
+			</div>
+		</div>
+		<div class="prod-con">
+			<div class="inner-prod-con">
+				<div class="img-con">
+				<a href="new3.html"><img src="images/new3.jpg"></a>
+				</div>
+				<div class="prod-details">
+					<p class="prod-name"> The Brothers Hawthorne by Jennifer Lynn Barnes</p>
+					<p class="price">₱1,395.00</p>
+					<span class="sold">1k sold</span>
+				</div>
+			</div>
+		</div>
+		<div class="prod-con">
+			<div class="inner-prod-con">
+				<div class="img-con">
+				<a href="new4.html"><img src="images/new4.jpg"></a>
+				</div>
+				<div class="prod-details">
+					<p class="prod-name">A Multitude of Dreams by Mara Rutherford</p>
+					<p class="price">₱2,000.00</p>
+					<span class="sold">2.9k sold</span>
+				</div>
+			</div>
+		</div>
+		<div class="prod-con">
+			<div class="inner-prod-con">
+				<div class="img-con">
+				<a href="new5.html"><img src="images/new5.jpg"></a>
+				</div>
+				<div class="prod-details">
+					<p class="prod-name">The Breakaway by Jennifer Weiner<p>
+					<p class="price">₱820.00</p>
+					<span class="sold">1.2k sold</span>
+				</div>
+			</div>
+		</div>
+		<div class="prod-con">
+			<div class="inner-prod-con">
+				<div class="img-con">
+				<a href="new6.html"><img src="images/new6.jpg"></a>
+				</div>
+				<div class="prod-details">
+					<p class="prod-name">Her Radiant Curse by Elizabeth Lim</p>
+					<p class="price">₱500.00</p>
+					<span class="sold">1.5k sold</span>
+				</div>
+			</div>
+		</div>
+	</div>		
+	</div>
+	
+	<div class="deals">
+		<div class="deals1">
+		<a href="deals1.html"><img src="images/deal1.png"></a>
+		</div>
+		<div class="deals2">
+		<a href="deals2.html"><img src="images/deal2.png"></a>
+		</div>
+	</div>
+	
+	<div class="top-prod">
+		<h2>Editor's Picks</h2>
+   	<div class="main-con">
+		<div class="prod-con">
+			<div class="inner-prod-con">
+				<div class="img-con">
+				<a href="edi1.html"><img src="images/edi1.jpg"></a>
+				</div>
+				<div class="prod-details">
+					<p class="prod-name">The Sense of an Ending: A Novel by Julian Barnes</p>
+					<p class="price">₱1,300.00</p>
+					<span class="sold">15.9k sold</span>
+				</div>
+			</div>
+		</div>
+		<div class="prod-con">
+			<div class="inner-prod-con">
+				<div class="img-con">
+				<a href="edi2.html"><img src="images/edi2.jpg"></a>
+				</div>
+				<div class="prod-details">
+					<p class="prod-name">Convenience Store Woman by Sayaka Murata</p>
+					<p class="price">₱1,230.00</p>
+					<span class="sold">40.3k sold</span>
+				</div>
+			</div>
+		</div>
+		<div class="prod-con">
+			<div class="inner-prod-con">
+				<div class="img-con">
+				<a href="edi3.html"><img src="images/edi3.jpg"></a>
+				</div>
+				<div class="prod-details">
+					<p class="prod-name">The Fall by Albert Camus</p>
+					<p class="price">₱1,395.00</p>
+					<span class="sold">1k sold</span>
+				</div>
+			</div>
+		</div>
+		<div class="prod-con">
+			<div class="inner-prod-con">
+				<div class="img-con">
+				<a href="edi4.html"><img src="images/edi4.jpg"></a>
+				</div>
+				<div class="prod-details">
+					<p class="prod-name">Dept. of Speculation by Jenny Offill</p>
+					<p class="price">₱2,000.00</p>
+					<span class="sold">2.9k sold</span>
+				</div>
+			</div>
+		</div>
+		<div class="prod-con">
+			<div class="inner-prod-con">
+				<div class="img-con">
+				<a href="edi5.html"><img src="images/edi5.jpg"></a>
+				</div>
+				<div class="prod-details">
+					<p class="prod-name">The Flick by Annie Baker</p>
+					<p class="price">₱620.00</p>
+					<span class="sold">1.2k sold</span>
+				</div>
+			</div>
+		</div>
+		<div class="prod-con">
+			<div class="inner-prod-con">
+				<div class="img-con">
+				<a href="edi6.html"><img src="images/edi6.jpg"></a>
+				</div>
+				<div class="prod-details">
+					<p class="prod-name">The Glass Hotel by Emily St John Mandel<p>
+					<p class="price">₱500.00</p>
+					<span class="sold">1.5k sold</span>
+				</div>
+			</div>
+		</div>
+	</div>		
+	</div>
+	
+	<div class="events">
+		<div class="event1">
+		<a href="event1.html"><img src="images/event1.png">
+		<p>Review Round-Up: Reading Allies Recommend Books Written by...</p>
+		</a>
+		<p> Posted on August 29, 2023 <br>
+			Trust our Reading Allies to know what books to add to your TBR.</P>
+			<br>
+			<div class="more">
+			<a href="#">Read more</a>
+			</div>
+		</div>
+		
+		<div class="event2">
+		<a href="event2.html"><img src="images/event2.png">
+		<p>First Look Club: Reina reviews The Quiet Tenant</p>
+		</a>
+		<p>Posted on August 25, 2023<br>
+			Every girl I know has their own variation of this story and in Clemence Michallon’s The Quiet Tenant, it is a nightmare come true.</P>
+			<br>
+			<div class="more">
+			<a href="#">Read more</a>
+			</div>
+		</div>
+		
+		<div class="event3">
+		<a href="event3.html"><img src="images/event3.png">
+		<p>Book to Read Bases on Your Favorite Show</p>
+		</a>
+		<p>Posted on August 24, 2023<br>
+		Here are books you can pick up off the shelf, based on your favorite television series.
+		</p>
+		<br>
+		<div class="more" id="footer">
+			<a href="#">Read more</a>
+			</div>
+		</div>
+	</div>
+	
+	<div class="email">
+		<p><b>Sign up to receive email updates</b>
+		</p>
+		<input type="email" name="newsletterEmail" placeholder="Enter your email address" aria-label="Email address" value="">
+		<button class="send">Send
+		</button>
+	</div>
+	
+	<!--footer-->
+	<footer class="footer">
+        <div class="grid wide footer__content">
+          <div class="row">
+            <div class="col l-2-4 m-4 c-6">
+              <h3 class="footer__heading">CUSTOMER SERVICE</h3>
+              <ul class="footer-list">
+                <li class="footer-item">
+                  <a href="#" class="footer-item__link">Help Centre</a>
+                </li>
+                <li class="footer-item">
+                  <a href="#" class="footer-item__link">Book Haven Cares PH</a>
+                </li>
+                <li class="footer-item">
+                  <a href="#" class="footer-item__link">Order Tracking</a>
+                </li>
+				<li class="footer-item">
+                  <a href="#" class="footer-item__link">Free Shipping</a>
+                </li>
+				<li class="footer-item">
+                  <a href="#" class="footer-item__link">Return & Refund</a>
+                </li>
+				<li class="footer-item">
+                  <a href="#" class="footer-item__link">Book Haven Guarantee</a>
+                </li>
+				<li class="footer-item">
+                  <a href="#" class="footer-item__link">Overseas Product</a>
+                </li>
+				<li class="footer-item">
+                  <a href="contact.html" class="footer-item__link">Contact Us</a>
+                </li>
+              </ul>
+            </div>
+            <div class="col l-2-4 m-4 c-6">
+              <h3 class="footer__heading">ABOUT BOOK HAVEN</h3>
+              <ul class="footer-list">
+                <li class="footer-item">
+                  <a href="aboutuspage.html" class="footer-item__link">About Us</a>
+                </li>
+                <li class="footer-item">
+                  <a href="#" class="footer-item__link">Book Haven Blog</a>
+                </li>
+				<li class="footer-item">
+                  <a href="#" class="footer-item__link">Book Haven Careers</a>
+                </li>
+                <li class="footer-item">
+                  <a href="#" class="footer-item__link">Book Haven Policies</a>
+                </li>
+				<li class="footer-item">
+                  <a href="#" class="footer-item__link">Privacy Policies</a>
+                </li>
+				<li class="footer-item">
+                  <a href="#" class="footer-item__link">Seller Centre</a>
+                </li>
+				<li class="footer-item">
+                  <a href="#" class="footer-item__link">Flash Deals</a>
+                </li>
+				<li class="footer-item">
+                  <a href="#" class="footer-item__link">Media Contact</a>
+                </li>
+              </ul>
+            </div>
+            <div class="col l-2-4 m-8 c-6">
+              <h3 class="footer__heading">PAYMENT</h3>
+              <div class="footer__download">
+                <div class="footer__payment-apps">
+                  <a href="#" class="footer__download-app-link">
+                    <img
+                      src="images/paymaya.png"
+                      alt=" PayMaya"
+                      class="footer__payment-app-img"/></a>
+				  <a href="#" class="footer__download-app-link">
+                    <img
+						src="images/gcash.png"
+						alt="GCash"
+						class="footer__payment-app-img"/></a>
+                </div>
+              </div>
+			  <div class="footer__download">
+                <div class="footer__payment-apps">
+				  <a href="#" class="footer__download-app-link">
+                    <img
+						src="images/banko.png"
+						alt="BanKo"
+						class="footer__payment-app-img"/></a>
+                  <a href="#" class="footer__download-app-link">
+                    <img
+                      src="images/dragonpay.jpg"
+                      alt="Dragonpay"
+                      class="footer__payment-app-img"/></a>
+                </div>
+              </div>
+			  <div class="footer__download">
+                <div class="footer__payment-apps">
+				  <a href="#" class="footer__download-app-link">
+                    <img
+						src="images/jcb.jpg"
+						alt="JCB"
+						class="footer__payment-app-img"/></a>
+                  <a href="#" class="footer__download-app-link">
+                    <img
+                      src="images/visa.png"
+                      alt="Visa"
+                      class="footer__payment-app-img"/></a>
+                </div>
+              </div>
+            </div>
+            <div class="col l-2-4 m-4 c-6">
+              <h3 class="footer__heading">FOLLOW US</h3>
+              <ul class="footer-list-social">
+                <li class="footer-item">
+                  <a href="#" class="footer-item__link">
+                    <i class="footer-item__icon fa fa-facebook"></i>
+                    Facebook</a>
+                </li>
+                <li class="footer-item">
+                  <a href="#" class="footer-item__link">
+                    <i class="footer-item__icon fa fa-instagram"></i>
+                    Instagram</a>
+                </li>
+                <li class="footer-item">
+                  <a href="#" class="footer-item__link">
+                    <i class="footer-item__icon fa fa-twitter"></i>
+                    Twitter</a
+                  >
+                </li>
+				<li class="footer-item">
+                  <a href="#" class="footer-item__link">
+                    <i class="footer-item__icon fa fa-linkedin"></i>
+                    Linkedin</a
+                  >
+                </li>
+              </ul>
+            </div>
+			
+            <div class="col l-2-4 m-8 c-12">
+              <h3 class="footer__heading">BOOK HAVEN APP DOWNLOAD</h3>
+              <div class="footer__download">
+                <img
+                  src="images/qr_code.png"
+                  alt="Download QR"
+                  class="footer__dowload-qr"
+                />
+                <div class="footer__download-apps">
+                  <a href="#" class="footer__download-app-link">
+                    <img
+                      src="images/google_play.png"
+                      alt="Google Play"
+                      class="footer__download-app-img"
+                    />
+                  </a>
+                  <a href="#" class="footer__download-app-link">
+                    <img
+                      src="images/appstore.png"
+                      alt="App store"
+                      class="footer__download-app-img"
+                    />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer__bottom">
+          <div class="grid wide">
+            <p class="footer__text">
+              © 2023 Book Haven. All Rights Reserved.
+            </p>
+          </div>
+        </div>
+      </footer>
+
+	<!--  <script>
+		function scrollToElement() {
+		  var input = document.getElementById('searchInput').value;
+		  var element = document.getElementById(input);
+	
+		  if (element) {
+			element.scrollIntoView({ behavior: 'smooth' });
+		  } else {
+			alert('Input: ' + input + ' not found.');
+		  }
+		}
+	  </script>
+	-->
+	
+</body>
+</html>

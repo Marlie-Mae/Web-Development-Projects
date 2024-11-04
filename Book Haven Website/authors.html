@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <title>Book Haven</title>
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width,initial-scale=1">
+     <link href="https://fonts.googleapis.com/css2?family=Noto Sans&Roboto&Arvo:wght@700&family=Montserrat:wght@500;700&family=Raleway:wght@500&family=Poppins:wght@500&family=Poppins:wght@600&display=swap" rel="stylesheet">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+	 
+    <link rel="stylesheet" href="css/homepage.css">
+    <link rel="stylesheet" href="css/grid.css">
+    <link rel="stylesheet" href="css/categories.css">
+	<link rel="stylesheet" href="css/grid1.css">
+	<link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/proddetails.css">
+    <link rel="stylesheet" href="css/search.css">
+	<link type="image/png" rel="icon" href="images/logo2.png">
+</head>
+
+<body>
+
+	<div class="topnav" id="myTopnav">
+		<input type="checkbox" id="check">
+		<label for="check" class="checkbtn">
+			<i class="fa fa-bars"></i>
+		</label>
+		<a href="homepage.html"><img src="images/logo.png" alt="Home Page"></a>
+
+        <!--search-->
+		<div class="dropdown">
+			<button onclick="myFunction()" class="dropbtn">Search</button>
+			<div id="myDropdown" class="dropdown-content">
+			  <input type="text" placeholder="Type here..." id="myInput" onkeyup="filterFunction()">
+			  <a href="aboutuspage.html">About us</a>
+			  <a href="homepage.html">Homepage</a>
+			  <a href="blogpage.html">Blog</a>
+			  <a href="works2.html">Sayaka Murata</a>
+			  <a href="best1.html">It Ends With Us</a>
+			  <a href="contemporary.html">Contemporary books</a>
+			  <a href="sale.html">Sale</a>
+			  <a href="selfhelp.html">Selp-help books</a>
+			  <a href="comics.html">Comics</a>
+			  <a href="works1.html">Annie Baker</a>
+			  <a href="signupage.html">Sign up</a>
+			  <a href="bestsellers.html">Best sellers</a>
+			  <a href="new.html">New books</a>
+			  <a href="contact.html">Contact us</a>
+			  <a href="best2.html">The Silent Patient</a>
+			  <a href="filipinoreads.html">Filipino books</a>
+			  <a href="blogpage.html">Events</a>
+			  <a href="youngadult.html">Young Adult books</a>
+			  <a href="edipicks.html">Editor's picks</a>
+			  <a href="authors.html"> Authors</a>
+			  <a href="storelocator.html"> Store locator</a>
+			</div>
+		  </div>
+		  
+		  <script>
+		  /* When the user clicks on the button,
+		  toggle between hiding and showing the dropdown content */
+		  function myFunction() {
+			document.getElementById("myDropdown").classList.toggle("show");
+		  }
+		  
+		  function filterFunction() {
+			var input, filter, ul, li, a, i;
+			input = document.getElementById("myInput");
+			filter = input.value.toUpperCase();
+			div = document.getElementById("myDropdown");
+			a = div.getElementsByTagName("a");
+			for (i = 0; i < a.length; i++) {
+			  txtValue = a[i].textContent || a[i].innerText;
+			  if (txtValue.toUpperCase().indexOf(filter) > -1) {
+				a[i].style.display = "";
+			  } else {
+				a[i].style.display = "none";
+			  }
+			}
+		  }
+		  </script>
+		
+		 <!----> 
+
+
+
+        <ul>
+            <li><a href="#">Cart</a></li>
+			<i class="fa fa-shopping-cart" id="cart"></i>
+            <li><a href="aboutuspage.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="#">Settings</a></li>
+            <li><a href="signupage.html">Sign Up</a></li>
+			      <li><a href="loginpage.html">Login</a></li>
+        </ul>
+	</div>
+	
+	<div class="short">
+		<ul class="menu">
+			<a href="homepage.html"><li class="menu-items"> HOME</li> </a>
+			<a href="bestsellers.html"><li class="menu-items"> BEST SELLERS</li> </a>
+			<a href="authors.html"><li class="menu-items-active"> AUTHORS</li> </a>
+			<a href="blogpage.html"><li class="menu-items"> BLOG</li> </a>
+			<a href="filipinoreads.html"><li class="menu-items"> FILIPINO READS</li> </a>
+			<a href="new.html"><li class="menu-items"> NEW!</li> </a>
+			<a href="sale.html"><li class="menu-items"> SALE</li> </a>
+			<a href="edipicks.html"><li class="menu-items"> EDITOR'S PICKS</li> </a>
+		</ul>
+	</div>
+	
+	<div class="div1">
+
+          <div class="authoimg">
+          <img src="images/author12.jpg" class="imgau">
+      </div>
+      <div class="authoname">
+          <p class="namaeau"><b>Annie Baker
+            </b></p>
+          <p class ="count">American playwright and teacher
+          </p>
+          <p> Won the 2014 Pulitzer Prize for her play The Flick. Among 
+            her works are the Shirley, Vermont plays, which take place 
+            in the fictional town of Shirley: Circle Mirror Transformation, 
+            Nocturama, Body Awareness, and The Aliens. She was named a MacArthur Fellow in 2017.
+          </p>
+          <div class="link">
+          <a href="works1.html"><b>their works</b></a>
+          </div>
+      </div>
+
+
+        <div class="authoimg">
+            <img src="images/author11.jpg" class="imgau">
+        </div>
+        <div class="authoname">
+            <p class="namaeau"><b>Sayaka Murata
+              </b></p>
+            <p class ="count">Japanese writer
+            </p>
+            <p> She has won the Gunzo Prize for New Writers, the Mishima Yukio Prize, the Noma Literary New Face Prize, and the Akutagawa Prize.
+            </p>
+            <div class="link">
+              <a href="works2.html"><b>their works</b></a>
+              </div>
+        </div>
+
+
+        <div class="authoimg">
+            <img src="images/author10.jpg" class="imgau">
+        </div>
+        <div class="authoname">
+            <p class="namaeau"><b>Stephen King
+              </b></p>
+            <p class ="count">American author
+            </p>
+            <p> Author of horror, supernatural fiction, suspense, crime, science-fiction, and fantasy novels. Called the "King of Horror", his books have sold more than 350 million copies as of 2006, and many have been adapted into films, television series, miniseries, and comic books.
+            </p>
+            <div class="link">
+              <a href="#"><b>their works</b></a>
+              </div>
+        </div>
+
+
+         <div class="authoimg">
+            <img src="images/author9.jpg" class="imgau">
+        </div>
+        <div class="authoname">
+            <p class="namaeau"><b>Nick Joaquin
+              </b></p>
+            <p class ="count">Filipino writer and journalist
+            </p>
+            <p> A Filipino writer and journalist best known for his short stories and novels in the English language. He also wrote using the pen name Quijano de Manila. Joaquin was conferred the rank and title of National Artist of the Philippines for Literature.
+            </p>
+            <div class="link">
+              <a href="#"><b>their works</b></a>
+              </div>
+        </div>
+
+
+        <div class="authoimg">
+            <img src="images/author8.jpg" class="imgau">
+        </div>
+        <div class="authoname">
+            <p class="namaeau"><b>Dorina K. Lazo
+              </b></p>
+            <p class ="count">Author
+            </p>
+            <p> A published writer, blogger, and teacher. She has published three books for children, 
+              including the award-winning Cora Cooks Pancit. She has also published a volume of poetry and several chapters in collaborative books.
+            </p>
+            <div class="link">
+              <a href="#"><b>their works</b></a>
+              </div>
+        </div>
+
+      
+        <div class="authoimg">
+            <img src="images/author7.jpg" class="imgau">
+        </div>
+        <div class="authoname">
+            <p class="namaeau"><b>Kazuo Ishiguro</b></p>
+            <p class ="count">Japanese-British novelist and screenwriter
+            </p>
+            <p> A Japanese-born British novelist, screenwriter, musician, and short-story writer. He is one of the most critically 
+              acclaimed and praised contemporary fiction authors writing in English, having been awarded the 2017 Nobel Prize in Literature. 
+            </p>
+            <div class="link">
+              <a href="#"><b>their works</b></a>
+              </div>
+        </div>
+
+
+           <div class="authoimg">
+            <img src="images/author6.jpg" class="imgau">
+        </div>
+        <div class="authoname">
+            <p class="namaeau"><b>Ali Hazelwood</b></p>
+            <p class ="count">Italian novelist and neuroscientist
+            </p>
+            <p>Many of her works center on women in STEM fields and academia. Her debut novel, The Love Hypothesis, was a New York Times best seller. 
+            </p>
+            <div class="link">
+              <a href="#"><b>their works</b></a>
+              </div>
+        </div>
+
+    
+         <div class="authoimg">
+            <img src="images/author.jpg" class="imgau">
+        </div>
+        <div class="authoname">
+            <p class="namaeau"><b>Lang Leav</b></p>
+            <p class ="count">Novelist and poet
+            </p>
+            <p>An international best-selling author and social media sensation. She is the winner of a Qantas Spirit of Youth Award and coveted Churchill Fellowship. Her books continue 
+              to top bestseller charts in bookstores worldwide and Lullabies, was the 2014 winner of the Goodreads Choice award for poetry.
+            </p>
+            <div class="link">
+              <a href="#"><b>their works</b></a>
+              </div>
+        </div>
+
+
+        <div class="authoimg">
+          <img src="images/author14.jpg" class="imgau">
+      </div>
+      <div class="authoname">
+          <p class="namaeau"><b>Robert Greene</b></p>
+          <p class ="count">American author
+          </p>
+          <p> Author of books on strategy, power, and seduction. He has written six international bestsellers, including The 48 Laws of Power, The Art of Seduction, The 33 Strategies of War, The 50th Law, Mastery, and The Laws of Human Nature.
+          </p>
+          <div class="link">
+            <a href="#"><b>their works</b></a>
+            </div>
+      </div>
+
+
+       <div class="authoimg">
+            <img src="images/author4.jpg" class="imgau">
+        </div>
+        <div class="authoname">
+            <p class="namaeau"><b>Alex Michaelides</b></p>
+            <p class ="count">British-Cypriot author and screenwriter
+            </p>
+            <p>His debut novel, the psychological thriller The Silent Patient, is a New York Times and Sunday Times bestseller, with over 6.5 million copies sold.
+            </p>
+            <div class="link">
+              <a href="#"><b>their works</b></a>
+              </div>
+        </div>
+
+        <div class="authoimg">
+            <img src="images/author3.jpg" class="imgau">
+        </div>
+        <div class="authoname">
+            <p class="namaeau"><b>Jane Austen</b></p>
+            <p class ="count">Novelist</p>
+            <p>An English novelist known primarily for her six novels, which implicitly interpret, critique, and comment upon the British landed gentry at the end of the 18th century. Austen's plots often explore the dependence of women on marriage for the pursuit of favourable social standing and economic security.
+            </p>
+            <div class="link">
+              <a href="#"><b>their works</b></a>
+              </div>
+        </div>
+
+
+        <div class="authoimg">
+            <img src="images/author2.jpg" class="imgau">
+        </div>
+        <div class="authoname">
+            <p class="namaeau"><b>Harper Lee</b></p>
+            <p class ="count">American novelist            </p>
+            <p>Wrote the 1960 novel To Kill a Mockingbird that won the 1961 
+              Pulitzer Prize and became a classic of modern American literature. 
+              She assisted her close friend Truman Capote in his research for the book In Cold Blood.</p>
+              <div class="link">
+                <a href="#"><b>their works</b></a>
+                </div>
+        </div>
+
+
+        <div class="authoimg">
+          <img src="images/author5.jpg" class="imgau">
+      </div>
+      <div class="authoname">
+          <p class="namaeau"><b>James Clear</b></p>
+          <p class ="count">Writer and speaker
+          </p>
+          <p>He is the author of the #1 New York Times bestseller Atomic Habits and the popular 3-2-1 newsletter.
+          </p>
+          <div class="link">
+            <a href="#"><b>their works</b></a>
+            </div>
+      </div>
+
+
+        <div class="authoimg">
+            <img src="images/author1.jpg" class="imgau">
+        </div>
+        <div class="authoname">
+            <p class="namaeau"><b>Colleen Hoover</b></p>
+            <p class ="count">American author</p>
+            <p>Primarily writes novels in the romance and young adult fiction genres. 
+                She is best known for her 2016 romance novel It Ends with Us. 
+                Many of her works were self-published before being picked up by a publishing house. 
+                As of October 2022, Hoover has sold approximately 20 million books. 
+                She was named one of the 100 most influential people in the world by Time magazine in 2023.</p>
+                <div class="link">
+                  <a href="#"><b>their works</b></a>
+                  </div>
+        </div>
+
+
+      <div class="authoimg">
+          <img src="images/author13.jpg" class="imgau">
+      </div>
+      <div class="authoname">
+          <p class="namaeau"><b>Francisco Balagtas</b></p>
+          <p class ="count"> Poet</p>
+          <p>A Filipino poet and litterateur of the Tagalog language during 
+            the Spanish rule of the Philippines. He is widely considered one of the greatest
+             Filipino literary laureates for his impact on Filipino literature.</p>
+             <div class="link">
+              <a href="#"><b>their works</b></a>
+              </div>
+      </div>
+
+
+      <div class="authoimg">
+        <img src="images/author15.jpg" class="imgau">
+    </div>
+    <div class="authoname">
+        <p class="namaeau"><b>Peter S. Beagle</b></p>
+        <p class ="count"> American novelist and screenwriter        </p>
+        <p>His best-known work is The Last Unicorn which Locus subscribers voted the 
+          number five "All-Time Best Fantasy Novel" in 1987.</p>
+          <div class="link">
+            <a href="#"><b>their works</b></a>
+            </div>
+    </div>
+
+
+    <div class="authoimg">
+      <img src="images/author16.jpg" class="imgau">
+  </div>
+  <div class="authoname">
+      <p class="namaeau"><b>Tomi Adeyemi</b></p>
+      <p class ="count"> American writer      </p>
+      <p>She is best known for her novel Children of Blood 
+        and Bone, the first in the Legacy of Orïsha trilogy published by Henry Holt Books.</p>
+        <div class="link">
+          <a href="#"><b>their works</b></a>
+          </div>
+  </div>
+
+
+  <div class="authoimg">
+    <img src="images/author17.jpg" class="imgau">
+</div>
+<div class="authoname">
+    <p class="namaeau"><b>Rebecca Yarros</b></p>
+    <p class ="count"> Author      </p>
+    <p>She is best known for the Empyrean fantasy book series, 
+      which will be adapted into a television series with Amazon; Yarros will serve as a non-writing 
+      executive producer. Yarros graduated from Troy University, where she studied European history and 
+      English. </p>
+      <div class="link">
+        <a href="#"><b>their works</b></a>
+        </div>
+</div>
+
+
+<div class="authoimg">
+  <img src="images/author18.jpg" class="imgau">
+</div>
+<div class="authoname">
+  <p class="namaeau"><b>Holly Black</b></p>
+  <p class ="count"> American writer and editor  </p>
+  <p>Best known for her children's and young adult fiction. 
+    Her most recent work is the New York Times bestselling young adult Folk of the Air series.  </p>
+    <div class="link">
+      <a href="#"><b>their works</b></a>
+      </div>
+</div>
+
+
+<div class="authoimg">
+  <img src="images/author19.jpg" class="imgau">
+</div>
+<div class="authoname">
+  <p class="namaeau"><b>Michelle Min Sterling</b></p>
+  <p class ="count"> Author  </p>
+  <p>Born in British Columbia, Canada, and now lives in Cambridge, Massachusetts, 
+    where she teaches literature and writing at Berklee College of Music. Camp Zero is her first novel. </p>
+    <div class="link">
+      <a href="#"><b>their works</b></a>
+      </div>
+</div>
+
+
+<div class="authoimg">
+  <img src="images/author20.jpg" class="imgau">
+</div>
+<div class="authoname">
+  <p class="namaeau"><b>M. Evelina Galang</b></p>
+  <p class ="count"> American novelist  </p>
+  <p>Novelist, short story writer, editor, essayist, educator, and activist of 
+    Filipina descent. Her novel One Tribe won the AWP Novel of the Year Prize in 2004.  </p>
+    <div class="link">
+      <a href="#"><b>their works</b></a>
+      </div>
+</div>
+
+
+    </div>
+	
+	<!--footer-->
+	<footer class="footer">
+        <div class="grid wide footer__content">
+          <div class="row">
+            <div class="col l-2-4 m-4 c-6">
+              <h3 class="footer__heading">CUSTOMER SERVICE</h3>
+              <ul class="footer-list">
+                <li class="footer-item">
+                  <a href="#" class="footer-item__link">Help Centre</a>
+                </li>
+                <li class="footer-item">
+                  <a href="#" class="footer-item__link">Book Haven Cares PH</a>
+                </li>
+                <li class="footer-item">
+                  <a href="#" class="footer-item__link">Order Tracking</a>
+                </li>
+				<li class="footer-item">
+                  <a href="#" class="footer-item__link">Free Shipping</a>
+                </li>
+				<li class="footer-item">
+                  <a href="#" class="footer-item__link">Return & Refund</a>
+                </li>
+				<li class="footer-item">
+                  <a href="#" class="footer-item__link">Book Haven Guarantee</a>
+                </li>
+				<li class="footer-item">
+                  <a href="#" class="footer-item__link">Overseas Product</a>
+                </li>
+				<li class="footer-item">
+                  <a href="contact.html" class="footer-item__link">Contact Us</a>
+                </li>
+              </ul>
+            </div>
+            <div class="col l-2-4 m-4 c-6">
+              <h3 class="footer__heading">ABOUT BOOK HAVEN</h3>
+              <ul class="footer-list">
+                <li class="footer-item">
+                  <a href="aboutuspage.html" class="footer-item__link">About Us</a>
+                </li>
+                <li class="footer-item">
+                  <a href="#" class="footer-item__link">Book Haven Blog</a>
+                </li>
+				<li class="footer-item">
+                  <a href="#" class="footer-item__link">Book Haven Careers</a>
+                </li>
+                <li class="footer-item">
+                  <a href="#" class="footer-item__link">Book Haven Policies</a>
+                </li>
+				<li class="footer-item">
+                  <a href="#" class="footer-item__link">Privacy Policies</a>
+                </li>
+				<li class="footer-item">
+                  <a href="#" class="footer-item__link">Seller Centre</a>
+                </li>
+				<li class="footer-item">
+                  <a href="#" class="footer-item__link">Flash Deals</a>
+                </li>
+				<li class="footer-item">
+                  <a href="#" class="footer-item__link">Media Contact</a>
+                </li>
+              </ul>
+            </div>
+            <div class="col l-2-4 m-8 c-6">
+              <h3 class="footer__heading">PAYMENT</h3>
+              <div class="footer__download">
+                <div class="footer__payment-apps">
+                  <a href="#" class="footer__download-app-link">
+                    <img
+                      src="images/paymaya.png"
+                      alt=" PayMaya"
+                      class="footer__payment-app-img"/></a>
+				  <a href="#" class="footer__download-app-link">
+                    <img
+						src="images/gcash.png"
+						alt="GCash"
+						class="footer__payment-app-img"/></a>
+                </div>
+              </div>
+			  <div class="footer__download">
+                <div class="footer__payment-apps">
+				  <a href="#" class="footer__download-app-link">
+                    <img
+						src="images/banko.png"
+						alt="BanKo"
+						class="footer__payment-app-img"/></a>
+                  <a href="#" class="footer__download-app-link">
+                    <img
+                      src="images/dragonpay.jpg"
+                      alt="Dragonpay"
+                      class="footer__payment-app-img"/></a>
+                </div>
+              </div>
+			  <div class="footer__download">
+                <div class="footer__payment-apps">
+				  <a href="#" class="footer__download-app-link">
+                    <img
+						src="images/jcb.jpg"
+						alt="JCB"
+						class="footer__payment-app-img"/></a>
+                  <a href="#" class="footer__download-app-link">
+                    <img
+                      src="images/visa.png"
+                      alt="Visa"
+                      class="footer__payment-app-img"/></a>
+                </div>
+              </div>
+            </div>
+            <div class="col l-2-4 m-4 c-6">
+              <h3 class="footer__heading">FOLLOW US</h3>
+              <ul class="footer-list-social">
+                <li class="footer-item">
+                  <a href="#" class="footer-item__link">
+                    <i class="footer-item__icon fa fa-facebook"></i>
+                    Facebook</a>
+                </li>
+                <li class="footer-item">
+                  <a href="#" class="footer-item__link">
+                    <i class="footer-item__icon fa fa-instagram"></i>
+                    Instagram</a>
+                </li>
+                <li class="footer-item">
+                  <a href="#" class="footer-item__link">
+                    <i class="footer-item__icon fa fa-twitter"></i>
+                    Twitter</a
+                  >
+                </li>
+				<li class="footer-item">
+                  <a href="#" class="footer-item__link">
+                    <i class="footer-item__icon fa fa-linkedin"></i>
+                    Linkedin</a
+                  >
+                </li>
+              </ul>
+            </div>
+			
+            <div class="col l-2-4 m-8 c-12">
+              <h3 class="footer__heading">BOOK HAVEN APP DOWNLOAD</h3>
+              <div class="footer__download">
+                <img
+                  src="images/qr_code.png"
+                  alt="Download QR"
+                  class="footer__dowload-qr"
+                />
+                <div class="footer__download-apps">
+                  <a href="#" class="footer__download-app-link">
+                    <img
+                      src="images/google_play.png"
+                      alt="Google Play"
+                      class="footer__download-app-img"
+                    />
+                  </a>
+                  <a href="#" class="footer__download-app-link">
+                    <img
+                      src="images/appstore.png"
+                      alt="App store"
+                      class="footer__download-app-img"
+                    />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer__bottom">
+          <div class="grid wide">
+            <p class="footer__text">
+              © 2023 Book Haven. All Rights Reserved.
+            </p>
+          </div>
+        </div>
+      </footer>
+
+	  <script src="app.js"></script>
+	
+</body>
+</html>
