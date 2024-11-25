@@ -1,36 +1,89 @@
-<?php  
+<?php
 session_start();
 
-# If the admin is logged in
-if (isset($_SESSION['user_id']) &&
-    isset($_SESSION['user_email'])) {
+if (isset($_SESSION['user_id']) && isset($_SESSION['user_email'])) {
+    include "../db_conn.php";
 
-	# Database Connection File
-	include "db_conn.php";
+    // Initialize variables for form data
+    $title = $desc = $author_id = $category_id = "";
+    $authors = $categories = [];
 
-    # Category helper function
-	include "php/func-category.php";
-    $categories = get_all_categories($conn);
+    // Fetch authors and categories from the database for the dropdowns
+    try {
+        // Fetch authors
+        $stmt_authors = $conn->prepare("SELECT id, name FROM authors");
+        $stmt_authors->execute();
+        $authors = $stmt_authors->fetchAll(PDO::FETCH_ASSOC);
 
-    # author helper function
-	include "php/func-author.php";
-    $authors = get_all_author($conn);
+        // Fetch categories
+        $stmt_categories = $conn->prepare("SELECT id, name FROM categories");
+        $stmt_categories->execute();
+        $categories = $stmt_categories->fetchAll(PDO::FETCH_ASSOC);
+    } catch (PDOException $e) {
+        header("Location: add-book.php?error=Failed to fetch authors or categories. " . $e->getMessage());
+        exit;
+    }
 
-    if (isset($_GET['title'])) {
-    	$title = $_GET['title'];
-    }else $title = '';
+    // Handle form submission
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        $title = $_POST['book_title'];
+        $desc = $_POST['book_description'];
+        $author_id = $_POST['book_author'];
+        $category_id = $_POST['book_category'];
 
-    if (isset($_GET['desc'])) {
-    	$desc = $_GET['desc'];
-    }else $desc = '';
+        // File uploads (Cover and Book File)
+        $book_cover = $_FILES['book_cover']['name'];
+        $book_cover_temp = $_FILES['book_cover']['tmp_name'];
+        $book_file = $_FILES['file']['name'];
+        $book_file_temp = $_FILES['file']['tmp_name'];
 
-    if (isset($_GET['category_id'])) {
-    	$category_id = $_GET['category_id'];
-    }else $category_id = 0;
+        // Define upload directories
+        $cover_upload_dir = "uploads/cover/";
+        $file_upload_dir = "uploads/file/";
 
-    if (isset($_GET['author_id'])) {
-    	$author_id = $_GET['author_id'];
-    }else $author_id = 0;
+        // Ensure directories exist
+        if (!is_dir($cover_upload_dir)) {
+            mkdir($cover_upload_dir, 0777, true);
+        }
+        if (!is_dir($file_upload_dir)) {
+            mkdir($file_upload_dir, 0777, true);
+        }
+
+        // Set paths for uploaded files
+        $cover_path = $cover_upload_dir . basename($book_cover);
+        $file_path = $file_upload_dir . basename($book_file);
+
+        if (move_uploaded_file($book_cover_temp, $cover_path) && move_uploaded_file($book_file_temp, $file_path)) {
+            try {
+                // Insert the book data into the database
+                $query = "INSERT INTO books (title, description, author_id, category_id, cover, file) 
+                          VALUES (:title, :description, :author_id, :category_id, :cover, :file)";
+                
+                $stmt = $conn->prepare($query);
+                $stmt->execute([
+                    ':title' => $title,
+                    ':description' => $desc,
+                    ':author_id' => $author_id,
+                    ':category_id' => $category_id,
+                    ':cover' => $cover_path,
+                    ':file' => $file_path
+                ]);
+
+                header("Location: add-book.php?success=Book added successfully");
+                exit;
+            } catch (PDOException $e) {
+                header("Location: add-book.php?error=Failed to add book. " . $e->getMessage());
+                exit;
+            }
+        } else {
+            header("Location: add-book.php?error=File upload failed. Try again.");
+            exit;
+        }
+    }
+} else {
+    header("Location: login.php");
+    exit;
+}
 ?>
 
 <!DOCTYPE html>
@@ -51,7 +104,7 @@ if (isset($_SESSION['user_id']) &&
 	<div class="container">
 		<nav class="navbar navbar-expand-lg navbar-light bg-light">
 		  <div class="container-fluid">
-		    <a class="navbar-brand" href="admin.php">Admin</a>
+		    <a class="navbar-brand" href="../admin.php">Admin</a>
 		    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 		      <span class="navbar-toggler-icon"></span>
 		    </button>
@@ -61,23 +114,23 @@ if (isset($_SESSION['user_id']) &&
 		        <li class="nav-item">
 		          <a class="nav-link" 
 		             aria-current="page" 
-		             href="index.php">Store</a>
+		             href="../index.php">Store</a>
 		        </li>
 		        <li class="nav-item">
 		          <a class="nav-link active" 
-		             href="add-book.php">Add Book</a>
+		             href="../add-book.php">Add Book</a>
 		        </li>
 		        <li class="nav-item">
 		          <a class="nav-link" 
-		             href="add-category.php">Add Category</a>
+		             href="../add-category.php">Add Category</a>
 		        </li>
 		        <li class="nav-item">
 		          <a class="nav-link" 
-		             href="add-author.php">Add Author</a>
+		             href="../add-author.php">Add Author</a>
 		        </li>
 		        <li class="nav-item">
 		          <a class="nav-link" 
-		             href="logout.php">Logout</a>
+		             href=".//logout.php">Logout</a>
 		        </li>
 		      </ul>
 		    </div>
@@ -205,8 +258,3 @@ if (isset($_SESSION['user_id']) &&
 	</div>
 </body>
 </html>
-
-<?php }else{
-  header("Location: login.php");
-  exit;
-} ?>
