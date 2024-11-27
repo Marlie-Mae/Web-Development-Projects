@@ -22,7 +22,8 @@ $categories = get_all_categories($conn);
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Book Store</title>
+	<link rel="icon" type="image/png" href="img/dplogo.png">
+	<title>Digital Pages</title>
 
     <!-- bootstrap 5 CDN-->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
@@ -32,15 +33,16 @@ $categories = get_all_categories($conn);
 
     <link rel="stylesheet" href="css/style.css">
 	
-	<!--<link rel="stylesheet" href="css/custom.css">
-		-->
+	<!--<link rel="stylesheet" href="css/custom.css"> -->
+
+	<link rel="stylesheet" href="css/mycustomindex.css">
 
 </head>
 <body>
 	<div class="container">
-		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<nav class="navbar navbar-expand-lg navbar-light">
 		  <div class="container-fluid">
-		    <a class="navbar-brand" href="index.php">Online Book Store</a>
+		  <a class="navbar-brand" href="index.php"><img src="img/dplogo.png" alt="Logo"> Digital Pages </a>
 		    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 		      <span class="navbar-toggler-icon"></span>
 		    </button>
@@ -74,6 +76,7 @@ $categories = get_all_categories($conn);
 		    </div>
 		  </div>
 		</nav>
+		
 		<form action="search.php"
              method="get" 
              style="width: 100%; max-width: 30rem">
@@ -109,7 +112,7 @@ $categories = get_all_categories($conn);
 			<div class="pdf-list d-flex flex-wrap">
 				<?php foreach ($books as $book) { ?>
 				<div class="card m-1">
-					<img src="uploads/cover/<?=$book['cover']?>"
+					<img src="<?=$book['cover']?>"
 					     class="card-img-top">
 					<div class="card-body">
 						<h5 class="card-title">
@@ -138,10 +141,10 @@ $categories = get_all_categories($conn);
 								<?php } ?>
 							<br></b></i>
 						</p>
-                       <a href="uploads/files/<?=$book['file']?>"
+                       <a href="<?=$book['file']?>"
                           class="btn btn-success">Open</a>
 
-                        <a href="uploads/files/<?=$book['file']?>"
+                        <a href="/<?=$book['file']?>"
                           class="btn btn-primary"
                           download="<?=$book['title']?>">Download</a>
 					</div>
@@ -182,6 +185,21 @@ $categories = get_all_categories($conn);
 			</div>
 		</div>
 		</div>
+
+		<footer>
+		<div class="container1">
+			<p>&copy; 2024 Digital Pages. All Rights Reserved.</p>
+			<!--<p>
+				<a href="contact.php" class="other text-black">Contact Us</a> | 
+				<a href="about.php" class="other text-black">About</a>
+			</p>
+			<p>Follow us on 
+				<a href="#" class="link text-white">Facebook</a>, 
+				<a href="#" class="link text-white">Twitter</a>, 
+				<a href="#" class="link text-white">Instagram</a>
+			</p> -->
+		</div>
+		</footer>
 	</div>
 </body>
 </html>
