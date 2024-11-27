@@ -1,0 +1,93 @@
+body {
+    background-color: #3D5300;
+}
+/*
+.container{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    
+    padding-left: 0;
+    padding-right: 0;
+}
+    */
+.navbar {
+    background-color: #FFE31A;
+    padding: 0px 10px 0px 10px;
+    top: 20px;
+}
+
+.navbar .navbar-nav {
+    margin-left: 600px; /* Push the nav items to the left */
+}
+
+.navbar .navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 0px; /* Space between the logo and the text */
+}
+
+.navbar-brand img {
+    width: 50px; /* Adjust size as needed */
+    height: 50px; /* Adjust size as needed */
+    object-fit: contain;
+}
+
+.navbar li {
+    color: #000000 !important; 
+    text-decoration: none; 
+    margin-right: 15px; 
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #F09319 !important;
+    border-color: #F09319 !important;
+}
+
+.btn-primary:hover {
+    filter: brightness(85%);
+}
+
+.category .active {
+    z-index: 2;
+    color: #fff;
+    background-color: #F09319 !important;
+    border-color: #F09319 !important;
+}
+
+.container {
+    color: black;
+}
+
+.container h4 {
+    color: #FFE31A;
+}
+
+th, td {
+    color: #fff;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #FFE31A !important;
+    color: black;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 50px;
+    position: relative;
+    width: 100%;
+    bottom: 20px;
+}
+
+footer a {
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+footer p {
+    margin: 5px 0;
+}
