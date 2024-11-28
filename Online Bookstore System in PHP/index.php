@@ -34,71 +34,77 @@ $categories = get_all_categories($conn);
     <link rel="stylesheet" href="css/style.css">
 	
 	<!--<link rel="stylesheet" href="css/custom.css"> -->
-
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 	<link rel="stylesheet" href="css/mycustomindex.css">
 
 </head>
 <body>
-	<div class="container">
-		<nav class="navbar navbar-expand-lg navbar-light">
-		  <div class="container-fluid">
-		  <a class="navbar-brand" href="index.php"><img src="img/dplogo.png" alt="Logo"> Digital Pages </a>
-		    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-		      <span class="navbar-toggler-icon"></span>
-		    </button>
-		    <div class="collapse navbar-collapse" 
-		         id="navbarSupportedContent">
-		      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-		        <li class="nav-item">
-		          <a class="nav-link active" 
-		             aria-current="page" 
-		             href="index.php">Store</a>
-		        </li>
-		        <li class="nav-item">
-		          <a class="nav-link" 
-		             href="#">Contact</a>
-		        </li>
-		        <li class="nav-item">
-		          <a class="nav-link" 
-		             href="#">About</a>
-		        </li>
-		        <li class="nav-item">
-		          <?php if (isset($_SESSION['user_id'])) {?>
-		          	<a class="nav-link" 
-		             href="admin.php">Admin</a>
-		          <?php }else{ ?>
-		          <a class="nav-link" 
-		             href="login.php">Login</a>
-		          <?php } ?>
+		 <!-- Navbar -->
+		 <nav class="navbar navbar-expand-lg navbar-dark shadow fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="index.php">
+      <img src="img/logo.png" alt="Logo" class="rounded-circle me-2" width="50"> 
+      <span class="fw-bold text-light">Digital Pages</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+	<span class="navbar-toggler-icon" style="background-color: #3D5300; background-image: url('data:image/svg+xml;charset=UTF8,%3Csvg xmlns%3D%27http%3A//www.w3.org/2000/svg%27 viewBox%3D%270 0 30 30%27%3E%3Cpath stroke%3D%27white%27 stroke-width%3D%272%27 d%3D%27M4 7h22M4 15h22M4 23h22%27/%3E%3C/svg%3E');"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a href="index.php" class="nav-link active" aria-current="page">Store</a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link text-light">Contact</a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link text-light">About</a>
+        </li>
+        <li class="nav-item">
+          <?php if (isset($_SESSION['user_id'])) { ?>
+            <a href="admin.php" class="nav-link text-light">Admin</a>
+          <?php } else { ?>
+            <a href="login.php" class="nav-link text-light">Login</a>
+          <?php } ?>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
-		        </li>
-		      </ul>
-		    </div>
-		  </div>
-		</nav>
 		
-		<form action="search.php"
-             method="get" 
-             style="width: 100%; max-width: 30rem">
+  <header class="text-center text-light py-5">
+  <h1 class="display-4 fw-bold">Welcome to Digital Pages</h1>
+  <p class="lead">Discover, Read, and Download Your Favorite Books</p>
+  
+  <!-- Centered Search Form -->
+  <form action="search.php" method="get" class="mt-4">
+    <div class="d-flex justify-content-center">
+      <div style="width: 50%; max-width: 600px;" class="input-group">
+        <!-- Input Field -->
+        <input 
+          type="text" 
+          name="key" 
+          class="form-control rounded-pill" 
+          placeholder="Search for books..." 
+          aria-label="Search Book..." 
+          aria-describedby="basic-addon2">
+        
+        <!-- Search Button with Font Awesome Search Icon -->
+        <button 
+          class="input-group-text btn btn-warning rounded-pill ms-2" 
+          type="submit" 
+          id="basic-addon2" 
+          style="display: flex; align-items: center; justify-content: center;">
+          <i class="fas fa-search" style="color: black;"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+</header>
 
-       	<div class="input-group my-5">
-		  <input type="text" 
-		         class="form-control"
-		         name="key" 
-		         placeholder="Search Book..." 
-		         aria-label="Search Book..." 
-		         aria-describedby="basic-addon2">
-
-		  <button class="input-group-text
-		                 btn btn-primary" 
-		          id="basic-addon2">
-		          <img src="img/search.png"
-		               width="20">
-
-		  </button>
-		</div>
-       </form>
-		<div class="d-flex pt-3">
+<div class="container">
+	<div class="d-flex justify-content-center pt-3">
 			<?php if ($books == 0){ ?>
 				<div class="alert alert-warning 
         	            text-center p-5" 
@@ -185,21 +191,29 @@ $categories = get_all_categories($conn);
 			</div>
 		</div>
 		</div>
+		</div>
 
-		<footer>
-		<div class="container1">
-			<p>&copy; 2024 Digital Pages. All Rights Reserved.</p>
-			<!--<p>
-				<a href="contact.php" class="other text-black">Contact Us</a> | 
-				<a href="about.php" class="other text-black">About</a>
-			</p>
-			<p>Follow us on 
-				<a href="#" class="link text-white">Facebook</a>, 
-				<a href="#" class="link text-white">Twitter</a>, 
-				<a href="#" class="link text-white">Instagram</a>
-			</p> -->
+		<!-- Footer -->
+		<footer class="text-light py-4">
+		<div class="container text-center">
+			<p class="mb-0">© 2024 Digital Pages. All rights reserved.</p>
+			<div class="social-icons mt-3">
+			<!-- Social Media Icons -->
+			<a href="#" class="text-light me-3">
+				<i class="fab fa-facebook-square"></i>
+			</a>
+			<a href="#" class="text-light me-3">
+				<i class="fab fa-twitter-square"></i>
+			</a>
+			<a href="#" class="text-light me-3">
+				<i class="fab fa-instagram"></i>
+			</a>
+			<a href="#" class="text-light">
+				<i class="fab fa-linkedin"></i>
+			</a>
+			</div>
+			<p class="mt-3"><a href="privacy-policy.html" class="text-light">Privacy Policy</a> | <a href="terms.html" class="text-light">Terms of Service</a></p>
 		</div>
 		</footer>
-	</div>
 </body>
 </html>
