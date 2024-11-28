@@ -1,51 +1,188 @@
+/* Global Styles */
 body {
-    background-color: #3D5300;
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    background-color: #ABBA7C; /* Muted Olive Green */
+    color: #333;
 }
-/*
-.container{
-    margin-top: 20px;
-    margin-bottom: 20px;
-    
-    padding-left: 0;
-    padding-right: 0;
+
+a {
+    text-decoration: none;
+    color: inherit;
 }
-    */
+
+a:hover {
+    color: #FFE31A; /* Bright Yellow on hover */
+}
+
+/* Navbar */
 .navbar {
-    background-color: #FFE31A;
-    padding: 0px 10px 0px 10px;
-    top: 20px;
+    background-color: #3D5300; /* Rich Olive Green */
+    border-bottom: 2px solid #FFE31A; /* Bright Yellow border */
 }
 
-.navbar .navbar-nav {
-    margin-left: 600px; /* Push the nav items to the left */
+.navbar-brand {
+    font-size: 1.5rem;
+    color: #FFE31A; /* Bright Yellow for brand */
+}
+/* Navbar Link Hover */
+.nav-link:hover {
+    color: #F09319; /* Change link color to the orange color */
+    background-color: #ABBA7C; /* Add a background color on hover */
+    border-radius: 5px; /* Optional: rounded corners */
 }
 
-.navbar .navbar-brand {
-    display: flex;
-    align-items: center;
-    gap: 0px; /* Space between the logo and the text */
+.navbar .navbar-nav .nav-link {
+    font-size: 1rem;
+    color: #FFE31A; /* Bright Yellow links */
+    transition: color 0.3s;
 }
 
-.navbar-brand img {
-    width: 50px; /* Adjust size as needed */
-    height: 50px; /* Adjust size as needed */
-    object-fit: contain;
+.navbar .navbar-nav .nav-link:hover {
+    color: #F09319; /* Warm Orange on hover */
 }
 
-.navbar li {
-    color: #000000 !important; 
-    text-decoration: none; 
-    margin-right: 15px; 
+/* Active Link Styling */
+.navbar-nav .nav-item .nav-link.active {
+    color: #FFE31A; /* Warm Orange for active link */
+    font-weight: bold; /* Make active link bold */
+}
+
+/* Mobile Responsive Navbar */
+.navbar-toggler {
+    border-color: #fff; /* White color for the hamburger icon border */
+    background-color: #3D5300 !important ;
+}
+
+.navbar-toggler-icon {
+    background-color: #3D5300 !important;/* White color for the hamburger icon */
+}
+
+/* Footer or General Styling to Match the Page */
+.navbar .navbar-collapse {
+    justify-content: flex-end; /* Align items to the right on large screens */
+}
+
+/* Optional: Add a little more space between links */
+.navbar-nav .nav-item {
+    margin-left: 15px;
+}
+
+/* Hero Section */
+header {
+    background-image: url('../img/imagebg.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #f9f6f1;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+    margin-top: 77px;
+}
+
+header h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+header p {
+    font-size: 1.2rem;
+}
+
+header input[type="text"] {
+    padding: 0.8rem 1rem;
+    border: 2px solid #FFE31A !important; /* Warm Orange border */
+    border-radius: 30px;
+}
+
+header input[type="text"]:focus {
+    outline: none;
+    border-color: #FFE31A !important; /* Bright Yellow on focus */
+}
+
+header button {
+    padding: 0.8rem 1.5rem;
+    border: none;
+    background-color: #FFE31A !important; /* Warm Orange */
+    color: #f9f6f1;
+    border-radius: 30px;
+    transition: background-color 0.3s;
+}
+header input[type="text"]:focus {
+    outline: none; /* Removes the blue outline on focus */
+    box-shadow: none; /* Removes any glow effect */
+}
+
+header button:hover {
+    filter: brightness(85%);
 }
 
 .btn-primary {
-    color: #fff;
-    background-color: #F09319 !important;
+    color: black;
+    background-color: #F09319 !important; 
     border-color: #F09319 !important;
 }
 
 .btn-primary:hover {
+    color: black;
     filter: brightness(85%);
+}
+
+.btn-success {
+    color: black;
+    background-color: #FFE31A !important; 
+    border-color: #FFE31A !important;
+}
+
+.btn-success:hover {
+    color: black;
+    filter: brightness(85%);
+}
+
+/* Books Section */
+.card {
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+    object-fit: cover;
+    /* height: 200px; */
+}
+
+.card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #2c2c2c;
+}
+
+.card-body p {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* Sidebar */
+.list-group-item {
+    background-color: #f9f6f1;
+    border: none;
+    padding: 0.7rem 1rem;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.list-group-item:hover {
+    background-color: #eae4d9;
+    color: #F09319; /* Warm Orange */
+}
+
+.list-group-item a:hover {
+    color: #F09319;
 }
 
 .category .active {
@@ -55,39 +192,51 @@ body {
     border-color: #F09319 !important;
 }
 
-.container {
-    color: black;
-}
-
-.container h4 {
-    color: #FFE31A;
-}
-
-th, td {
-    color: #fff;
-}
-
-/* Footer Styling */
+/* Footer */
 footer {
-    background-color: #FFE31A !important;
-    color: black;
-    text-align: center;
-    padding: 10px 0;
-    margin-top: 50px;
-    position: relative;
-    width: 100%;
-    bottom: 20px;
+    margin-top: 20px;
+    background-color: #3D5300; /* Rich Olive Green */
+    color: #f9f6f1;
+    font-size: 0.9rem;
+    padding: 1.5rem 0;
 }
 
 footer a {
-    text-decoration: none;
-    margin: 0 10px;
+    color: #FFE31A; /* Bright Yellow */
+    transition: color 0.3s;
 }
 
 footer a:hover {
-    text-decoration: underline;
+    color: #F09319; /* Warm Orange on hover */
 }
 
-footer p {
-    margin: 5px 0;
+footer i {
+    font-size: 1.2rem;
+}
+
+footer i:hover {
+    color: #F09319;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.2rem;
+    }
+
+    header p {
+        font-size: 1rem;
+    }
+
+    header input[type="text"] {
+        width: 90%;
+    }
+
+    header button {
+        width: auto;
+    }
+
+    .card img {
+        height: 150px;
+    }
 }
