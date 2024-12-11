@@ -1,4 +1,3 @@
-
 <?php
 include('includes/dbconnection.php');
 if (isset($_POST['submit'])) {
@@ -120,4 +119,3 @@ if (isset($_POST['submit'])) {
 
 </html>
 <!-- end document-->
-
