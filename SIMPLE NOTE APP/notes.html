@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Notes</title>
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<style>
+  :root{
+    --bg: #fafafa;
+    --panel: #ffffff;
+    --text: #202124;
+    --muted: #5f6368;
+    --card-shadow: 0 2px 6px rgba(0,0,0,0.12);
+  }
+  body.dark{
+    --bg: #202124;
+    --panel: #2b2b2b;
+    --text: #e8eaed;
+    --muted: #b0b0b0;
+    --card-shadow: 0 6px 18px rgba(0,0,0,0.6);
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin:0;
+    font-family: "Segoe UI", Roboto, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    padding: 18px;
+  }
+
+  .topbar {
+    max-width:1100px;
+    margin: 0 auto 18px;
+    display:flex;
+    gap:12px;
+    align-items:center;
+    justify-content:space-between;
+  }
+  .brand {
+    display:flex;
+    gap:12px;
+    align-items:center;
+  }
+  .logo {
+    width:36px;height:36px;border-radius:6px;background:linear-gradient(135deg,#fbbc04,#34a853);
+    display:flex;align-items:center;justify-content:center;color:white;font-weight:700;
+  }
+  .title { font-size:18px; font-weight:600; color:var(--text); }
+
+  .controls {
+    display:flex;gap:8px;align-items:center;
+  }
+  .btn {
+    background:transparent;border:1px solid rgba(0,0,0,0.08);padding:8px 10px;border-radius:8px;cursor:pointer;
+    color:var(--text);
+  }
+  .btn.primary { background:#fbbc04;border:none;color:#222;font-weight:600; }
+  .btn.icon { display:flex;gap:8px;align-items:center; }
+
+  .container {
+    max-width:1100px;
+    margin: 0 auto;
+  }
+
+  /* add-note bar (like Keep) */
+  .add-note {
+    background: var(--panel);
+    padding:14px;
+    border-radius:10px;
+    box-shadow: var(--card-shadow);
+    margin-bottom:16px;
+    display:flex;
+    gap:12px;
+    align-items:flex-start;
+  }
+  .add-left { width:100%; }
+  .add-left input, .add-left textarea {
+    width:100%;
+    border:none;
+    outline:none;
+    padding:8px;
+    font-size:15px;
+    background:transparent;
+    color:var(--text);
+  }
+  .add-left textarea { resize:none; height:56px; }
+
+  .add-actions {
+    display:flex;align-items:center;gap:8px;margin-top:8px;
+    justify-content:space-between;
+  }
+
+  .palette {
+    display:flex;gap:6px;align-items:center;
+  }
+  .swatch {
+    width:26px;height:20px;border-radius:6px;border:1px solid rgba(0,0,0,0.06);cursor:pointer;
+  }
+
+  /* grid of notes (masonry-like) */
+  .notes-grid {
+    display:grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px,1fr));
+    gap:14px;
+  }
+
+  .note-card {
+    background: var(--panel);
+    border-radius:12px;
+    padding:12px;
+    box-shadow: var(--card-shadow);
+    position:relative;
+    min-height:70px;
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+    cursor:default;
+    transition:transform .12s ease, box-shadow .12s ease;
+    word-break:break-word;
+  }
+  .note-card:hover { transform: translateY(-4px); }
+
+  .note-title { font-weight:600; font-size:15px; color:var(--text); }
+  .note-body { font-size:14px; color:var(--text); white-space:pre-wrap; flex:1; }
+  .note-footer { display:flex; align-items:center; justify-content:space-between; gap:8px; }
+
+  .note-meta { font-size:12px; color:var(--muted); }
+
+  .card-actions { display:flex; gap:6px; align-items:center; }
+  .icon-btn {
+    border: none; background: rgba(0,0,0,0.06); padding:6px;border-radius:8px;cursor:pointer;
+    display:inline-flex;align-items:center;justify-content:center;font-size:13px;
+  }
+  .icon-btn.ghost { background:transparent; }
+
+  /* pinned label */
+  .pinned-strip {
+    display:flex; gap:8px; align-items:center; margin-bottom:10px;
+    color:var(--muted); font-size:13px;
+  }
+
+  /* modal */
+  .modal-bg {
+    position:fixed; inset:0; display:none; align-items:center; justify-content:center;
+    background: rgba(0,0,0,0.45); z-index:40;
+  }
+  .modal {
+    width:420px; max-width:92%; background:var(--panel); border-radius:12px; padding:16px; box-shadow:0 10px 30px rgba(0,0,0,0.35);
+  }
+  .modal input, .modal textarea { width:100%; border:none; outline:none; background:transparent; padding:8px; color:var(--text); }
+  .modal textarea { height:120px; resize:vertical; margin-top:8px; }
+
+  /* trash view */
+  .view-toggle { margin-right:8px; font-size:14px; color:var(--muted); }
+
+  /* small helpers */
+  .hr { height:1px; background:rgba(0,0,0,0.06); margin:8px 0; border-radius:2px; }
+  .muted { color:var(--muted); font-size:13px; }
+
+  /* responsive small tweaks */
+  @media (max-width:560px){
+    .add-note { flex-direction:column; }
+    .add-actions { flex-direction:column; gap:6px; align-items:stretch; }
+  }
+</style>
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="brand">
+      <div class="logo">N</div>
+      <div>
+        <div class="title">My Notes</div>
+        <div class="muted" style="font-size:12px;">For Keeps</div>
+      </div>
+    </div>
+
+    <div class="controls">
+      <div class="view-toggle muted" id="modeLabel">Notes</div>
+      <button class="btn" id="toggleViewBtn" title="Show Trash">Trash</button>
+      <button class="btn" id="darkToggle" title="Toggle dark mode">🌙</button>
+      <button class="btn primary" id="exportBtn" title="Export JSON">Export</button>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <!-- Add note -->
+    <div class="add-note" role="region" aria-label="Add note">
+      <div class="add-left">
+        <input id="newTitle" placeholder="Title" autocomplete="off">
+        <textarea id="newText" placeholder="Take a note..."></textarea>
+
+        <div class="add-actions">
+          <div style="display:flex;gap:8px;align-items:center">
+            <div class="palette" id="addPalette">
+              <!-- swatches inserted by JS -->
+            </div>
+
+            <label style="display:flex;gap:6px;align-items:center;color:var(--muted);font-size:13px;">
+              <input type="checkbox" id="newPinned" style="width:16px;height:16px"> Pin
+            </label>
+          </div>
+
+          <div>
+            <button id="addBtn" class="btn primary">Add</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Notes grid -->
+    <div>
+      <input id="searchBox" placeholder="Search notes..." style="width:100%;padding:10px;border-radius:8px;border:1px solid rgba(0,0,0,0.08);margin-bottom:12px;font-size:14px;">
+      <div id="pinnedStrip" class="pinned-strip" style="display:none">Pinned</div>
+      <div id="notesGrid" class="notes-grid"></div>
+    </div>
+  </div>
+
+  <!-- Edit modal -->
+  <div class="modal-bg" id="modalBg" role="dialog" aria-modal="true">
+    <div class="modal" id="editModal">
+      <input id="editTitle" placeholder="Title">
+      <textarea id="editText" placeholder="Note"></textarea>
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-top:8px">
+        <div style="display:flex;gap:8px;align-items:center;">
+          <div id="editPalette" class="palette"></div>
+          <label style="display:flex;align-items:center;gap:6px;color:var(--muted);font-size:13px">
+            <input type="checkbox" id="editPinned"> Pin
+          </label>
+        </div>
+        <div style="display:flex;gap:8px">
+          <button class="btn" id="deleteFromModal">Delete</button>
+          <button class="btn primary" id="saveEditBtn">Save</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<script>
+/* -------------------------
+   Data structures & storage
+   ------------------------- */
+const STORAGE_KEY = "keep_notes_v1";
+const TRASH_KEY = "keep_trash_v1";
+const THEME_KEY = "keep_dark_v1";
+
+let notes = JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]");
+let trash = JSON.parse(localStorage.getItem(TRASH_KEY) || "[]");
+let darkMode = JSON.parse(localStorage.getItem(THEME_KEY) || "false");
+
+const paletteColors = [
+  "#fff59d", // yellow
+  "#ffd7b5", // orange
+  "#ff9aa2", // pink
+  "#d7f7e6", // mint
+  "#cfe9ff", // light blue
+  "#e8dfff", // purple
+  "#ffffff"  // white (default)
+];
+
+const els = {
+  notesGrid: document.getElementById("notesGrid"),
+  addPalette: document.getElementById("addPalette"),
+  editPalette: document.getElementById("editPalette"),
+  addBtn: document.getElementById("addBtn"),
+  newTitle: document.getElementById("newTitle"),
+  newText: document.getElementById("newText"),
+  newPinned: document.getElementById("newPinned"),
+  searchBox: document.getElementById("searchBox"),
+  modalBg: document.getElementById("modalBg"),
+  editTitle: document.getElementById("editTitle"),
+  editText: document.getElementById("editText"),
+  editPinned: document.getElementById("editPinned"),
+  saveEditBtn: document.getElementById("saveEditBtn"),
+  deleteFromModal: document.getElementById("deleteFromModal"),
+  toggleViewBtn: document.getElementById("toggleViewBtn"),
+  modeLabel: document.getElementById("modeLabel"),
+  darkToggle: document.getElementById("darkToggle"),
+  exportBtn: document.getElementById("exportBtn"),
+  pinnedStrip: document.getElementById("pinnedStrip")
+};
+
+let editIndex = null;
+let view = "notes"; // or "trash"
+
+/* -------------------------
+   Helper utilities
+   ------------------------- */
+function saveAll(){
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(notes));
+  localStorage.setItem(TRASH_KEY, JSON.stringify(trash));
+}
+function uid(){ return Date.now().toString(36) + Math.random().toString(36).slice(2,8); }
+function nowLabel(){ return new Date().toLocaleString(); }
+
+/* -------------------------
+   Theme
+   ------------------------- */
+function applyTheme(){
+  if(darkMode){
+    document.body.classList.add("dark");
+    els.darkToggle.textContent = "☀️";
+  } else {
+    document.body.classList.remove("dark");
+    els.darkToggle.textContent = "🌙";
+  }
+  localStorage.setItem(THEME_KEY, JSON.stringify(darkMode));
+}
+els.darkToggle.addEventListener("click", ()=>{
+  darkMode = !darkMode;
+  applyTheme();
+});
+
+/* -------------------------
+   Palette rendering
+   ------------------------- */
+function makeSwatch(color, cb, initial){
+  const s = document.createElement("div");
+  s.className = "swatch";
+  s.style.background = color;
+  s.title = color;
+  if(initial) s.style.outline = "2px solid rgba(0,0,0,0.12)";
+  s.addEventListener("click", (e)=>{
+    cb(color);
+    // mark selected
+    const parent = s.parentElement;
+    Array.from(parent.children).forEach(ch => ch.style.outline = "");
+    s.style.outline = "2px solid rgba(0,0,0,0.12)";
+  });
+  return s;
+}
+
+function setupPalettes(){
+  // add palette in add-box
+  els.addPalette.innerHTML = "";
+  paletteColors.forEach((c,idx) => {
+    const sw = makeSwatch(c, (col) => {
+      els.newTitle.dataset.color = col;
+      els.newText.dataset.color = col;
+    }, idx===6);
+    els.addPalette.appendChild(sw);
+    if(idx===6){ // default white selected
+      sw.style.outline = "2px solid rgba(0,0,0,0.12)";
+      els.newTitle.dataset.color = c;
+      els.newText.dataset.color = c;
+    }
+  });
+
+  // edit palette
+  els.editPalette.innerHTML = "";
+  paletteColors.forEach((c,idx) => {
+    const sw = makeSwatch(c, (col) => {
+      els.editTitle.dataset.color = col;
+      els.editText.dataset.color = col;
+    }, false);
+    els.editPalette.appendChild(sw);
+  });
+}
+
+/* -------------------------
+   Add note
+   ------------------------- */
+els.addBtn.addEventListener("click", ()=>{
+  const title = els.newTitle.value.trim();
+  const text = els.newText.value.trim();
+  // allow empty title or body individually; require at least one
+  if(!title && !text) return;
+
+  const color = els.newTitle.dataset.color || "#ffffff";
+  const pinned = !!els.newPinned.checked;
+
+  const note = {
+    id: uid(),
+    title,
+    text,
+    color,
+    pinned,
+    createdAt: Date.now(),
+    timestamp: nowLabel()
+  };
+
+  // add to front (like Keep newest first)
+  notes.unshift(note);
+  // reset inputs
+  els.newTitle.value = "";
+  els.newText.value = "";
+  els.newPinned.checked = false;
+  // reset palette selection (default white)
+  setupPalettes();
+
+  saveAll();
+  renderNotes();
+});
+
+/* -------------------------
+   Trash & Restore
+   ------------------------- */
+function moveToTrash(index){
+  const note = notes.splice(index,1)[0];
+  if(!note) return;
+  note.deletedAt = Date.now();
+  note.deletedLabel = new Date(note.deletedAt).toLocaleString();
+  trash.unshift(note);
+  saveAll();
+  renderNotes();
+}
+function restoreFromTrash(index){
+  const note = trash.splice(index,1)[0];
+  if(!note) return;
+  delete note.deletedAt;
+  delete note.deletedLabel;
+  notes.unshift(note);
+  saveAll();
+  renderNotes();
+}
+function permanentlyDelete(index){
+  trash.splice(index,1);
+  saveAll();
+  renderNotes();
+}
+
+/* -------------------------
+   Pin/unpin
+   ------------------------- */
+function togglePinById(id){
+  const idx = notes.findIndex(n=>n.id===id);
+  if(idx===-1) return;
+  notes[idx].pinned = !notes[idx].pinned;
+  // keep the note in place but re-sort render will place pinned on top
+  saveAll();
+  renderNotes();
+}
+
+/* -------------------------
+   Edit modal handling
+   ------------------------- */
+els.saveEditBtn.addEventListener("click", ()=>{
+  const title = els.editTitle.value.trim();
+  const text = els.editText.value.trim();
+  const color = els.editTitle.dataset.color || "#ffffff";
+  const pinned = !!els.editPinned.checked;
+
+  if(editIndex == null) return;
+  // update note by id (editIndex is note id)
+  const idx = notes.findIndex(n=>n.id===editIndex);
+  if(idx===-1) return;
+
+  notes[idx].title = title;
+  notes[idx].text = text;
+  notes[idx].color = color;
+  notes[idx].pinned = pinned;
+  notes[idx].timestamp = "Edited: " + nowLabel();
+
+  saveAll();
+  closeModal();
+  renderNotes();
+});
+
+els.deleteFromModal.addEventListener("click", ()=>{
+  if(editIndex == null) return;
+  const idx = notes.findIndex(n=>n.id===editIndex);
+  if(idx===-1) { closeModal(); return; }
+  moveToTrash(idx);
+  closeModal();
+});
+
+/* -------------------------
+   Modal open/close
+   ------------------------- */
+function openModalForNoteId(id){
+  const idx = notes.findIndex(n=>n.id===id);
+  if(idx===-1) return;
+  const note = notes[idx];
+  editIndex = id;
+  els.editTitle.value = note.title;
+  els.editText.value = note.text;
+  els.editPinned.checked = !!note.pinned;
+  els.editTitle.dataset.color = note.color;
+  els.editText.dataset.color = note.color;
+  // highlight the color swatch in edit palette
+  Array.from(els.editPalette.children).forEach(ch => ch.style.outline = "");
+  const match = Array.from(els.editPalette.children).find(ch => ch.style.background === note.color);
+  if(match) match.style.outline = "2px solid rgba(0,0,0,0.12)";
+
+  els.modalBg.style.display = "flex";
+}
+function closeModal(){
+  editIndex = null;
+  els.modalBg.style.display = "none";
+}
+
+/* close modal when clicking outside the modal box */
+els.modalBg.addEventListener("click", (e)=>{
+  if(e.target === els.modalBg) closeModal();
+});
+
+/* -------------------------
+   Render notes or trash
+   ------------------------- */
+function renderNotes(filtered=null){
+  // handle view
+  if(view === "trash"){
+    els.modeLabel.textContent = "Trash";
+    els.toggleViewBtn.textContent = "Back to Notes";
+    // render trash list
+    els.pinnedStrip.style.display = "none";
+    renderTrash(filtered);
+    return;
+  } else {
+    els.modeLabel.textContent = "Notes";
+    els.toggleViewBtn.textContent = "Trash";
+  }
+
+  const list = filtered || notes;
+  // pinned first
+  const pinned = list.filter(n => n.pinned);
+  const others = list.filter(n => !n.pinned);
+
+  els.notesGrid.innerHTML = "";
+
+  if(pinned.length){
+    els.pinnedStrip.style.display = "flex";
+  } else {
+    els.pinnedStrip.style.display = "none";
+  }
+
+  const ordered = [...pinned, ...others];
+
+  ordered.forEach((note, i) => {
+    const card = document.createElement("div");
+    card.className = "note-card";
+    card.style.background = note.color || "#ffffff";
+    // content
+    const title = document.createElement("div");
+    title.className = "note-title";
+    title.textContent = note.title || "";
+
+    const body = document.createElement("div");
+    body.className = "note-body";
+    body.textContent = note.text || "";
+
+    const footer = document.createElement("div");
+    footer.className = "note-footer";
+
+    const meta = document.createElement("div");
+    meta.className = "note-meta";
+    meta.textContent = note.timestamp || note.createdAt && new Date(note.createdAt).toLocaleString();
+
+    const actions = document.createElement("div");
+    actions.className = "card-actions";
+
+    // pin button
+    const pinBtn = document.createElement("button");
+    pinBtn.className = "icon-btn";
+    pinBtn.title = note.pinned ? "Unpin" : "Pin";
+    pinBtn.innerHTML = note.pinned ? "📌" : "📍";
+    pinBtn.addEventListener("click", (ev) => {
+      ev.stopPropagation();
+      togglePinById(note.id);
+    });
+
+    // edit button
+    const editBtn = document.createElement("button");
+    editBtn.className = "icon-btn";
+    editBtn.title = "Edit";
+    editBtn.innerHTML = "✏️";
+    editBtn.addEventListener("click", (ev)=>{
+      ev.stopPropagation();
+      openModalForNoteId(note.id);
+    });
+
+    // color quick picker (shows small dropdown)
+    const colorBtn = document.createElement("button");
+    colorBtn.className = "icon-btn";
+    colorBtn.title = "Color";
+    colorBtn.textContent = "🎨";
+    colorBtn.addEventListener("click", (ev) => {
+      ev.stopPropagation();
+      showColorPopup(note.id, ev.currentTarget);
+    });
+
+    // delete -> to trash
+    const delBtn = document.createElement("button");
+    delBtn.className = "icon-btn";
+    delBtn.title = "Delete";
+    delBtn.innerHTML = "🗑️";
+    delBtn.addEventListener("click", (ev)=>{
+      ev.stopPropagation();
+      const idxReal = notes.findIndex(n=>n.id===note.id);
+      if(idxReal>-1) moveToTrash(idxReal);
+    });
+
+    actions.appendChild(pinBtn);
+    actions.appendChild(editBtn);
+    actions.appendChild(colorBtn);
+    actions.appendChild(delBtn);
+
+    footer.appendChild(meta);
+    footer.appendChild(actions);
+
+    card.appendChild(title);
+    card.appendChild(body);
+    card.appendChild(footer);
+
+    // clicking on card opens edit modal
+    card.addEventListener("click", ()=> openModalForNoteId(note.id));
+
+    els.notesGrid.appendChild(card);
+  });
+}
+
+/* -------------------------
+   Color popup (quick)
+   ------------------------- */
+function showColorPopup(noteId, anchor){
+  // build popup
+  const popup = document.createElement("div");
+  popup.style.position = "absolute";
+  popup.style.padding = "8px";
+  popup.style.display = "flex";
+  popup.style.gap = "6px";
+  popup.style.borderRadius = "8px";
+  popup.style.boxShadow = "0 4px 14px rgba(0,0,0,0.25)";
+  popup.style.background = getComputedStyle(document.body).getPropertyValue("--panel");
+  // create swatches
+  paletteColors.forEach(c => {
+    const s = document.createElement("div");
+    s.style.width = "28px";
+    s.style.height = "18px";
+    s.style.borderRadius = "6px";
+    s.style.background = c;
+    s.style.cursor = "pointer";
+    s.style.border = "1px solid rgba(0,0,0,0.06)";
+    s.addEventListener("click", (e) => {
+      e.stopPropagation();
+      // set color on note
+      const idx = notes.findIndex(n=>n.id===noteId);
+      if(idx!==-1){
+        notes[idx].color = c;
+        saveAll();
+        renderNotes();
+      }
+      document.body.removeChild(popup);
+    });
+    popup.appendChild(s);
+  });
+
+  // position near anchor
+  document.body.appendChild(popup);
+  const rect = anchor.getBoundingClientRect();
+  popup.style.left = (rect.left) + "px";
+  popup.style.top = (rect.bottom + window.scrollY + 6) + "px";
+
+  // remove on outside click
+  function removePopup(e){
+    if(!popup.contains(e.target)) {
+      popup.remove();
+      document.removeEventListener("click", removePopup);
+    }
+  }
+  setTimeout(()=> document.addEventListener("click", removePopup), 10);
+}
+
+/* -------------------------
+   Search
+   ------------------------- */
+els.searchBox.addEventListener("input", ()=>{
+  const q = els.searchBox.value.trim().toLowerCase();
+  if(!q){ renderNotes(); return; }
+  const filtered = notes.filter(n => 
+    (n.title && n.title.toLowerCase().includes(q)) ||
+    (n.text && n.text.toLowerCase().includes(q))
+  );
+  renderNotes(filtered);
+});
+
+/* -------------------------
+   Trash / View toggle
+   ------------------------- */
+els.toggleViewBtn.addEventListener("click", ()=>{
+  if(view === "notes"){
+    view = "trash";
+    renderNotes();
+  } else {
+    view = "notes";
+    renderNotes();
+  }
+});
+
+/* -------------------------
+   Render Trash view
+   ------------------------- */
+function renderTrash(){
+  els.notesGrid.innerHTML = "";
+  if(!trash.length){
+    els.notesGrid.innerHTML = "<div class='muted' style='padding:14px;'>Trash is empty</div>";
+    return;
+  }
+  trash.forEach((note, i) => {
+    const card = document.createElement("div");
+    card.className = "note-card";
+    card.style.background = note.color || "#fff";
+
+    const title = document.createElement("div");
+    title.className = "note-title";
+    title.textContent = note.title || "";
+
+    const body = document.createElement("div");
+    body.className = "note-body";
+    body.textContent = note.text || "";
+
+    const footer = document.createElement("div");
+    footer.className = "note-footer";
+
+    const meta = document.createElement("div");
+    meta.className = "note-meta";
+    meta.textContent = note.deletedLabel || "";
+
+    const actions = document.createElement("div");
+    actions.className = "card-actions";
+
+    const restoreBtn = document.createElement("button");
+    restoreBtn.className = "icon-btn";
+    restoreBtn.textContent = "↩️";
+    restoreBtn.title = "Restore";
+    restoreBtn.addEventListener("click", (ev) => {
+      ev.stopPropagation();
+      restoreFromTrash(i);
+    });
+
+    const delBtn = document.createElement("button");
+    delBtn.className = "icon-btn";
+    delBtn.textContent = "🗑️";
+    delBtn.title = "Delete permanently";
+    delBtn.addEventListener("click", (ev) => {
+      ev.stopPropagation();
+      if(confirm("Delete permanently?")) permanentlyDelete(i);
+    });
+
+    actions.appendChild(restoreBtn);
+    actions.appendChild(delBtn);
+    footer.appendChild(meta);
+    footer.appendChild(actions);
+
+    card.appendChild(title);
+    card.appendChild(body);
+    card.appendChild(footer);
+
+    els.notesGrid.appendChild(card);
+  });
+  els.modeLabel.textContent = "Trash";
+  els.toggleViewBtn.textContent = "Back to Notes";
+}
+
+/* -------------------------
+   Export (simple JSON)
+   ------------------------- */
+els.exportBtn.addEventListener("click", ()=>{
+  const data = { notes, trash, exportedAt: new Date().toISOString() };
+  const blob = new Blob([JSON.stringify(data, null, 2)], { type: "application/json" });
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = "notes-export.json";
+  a.click();
+});
+
+/* -------------------------
+   Initialization
+   ------------------------- */
+setupPalettes();
+applyTheme();
+renderNotes();
+
+/* expose some functions to window for inline handlers to use (not strictly necessary) */
+window.openModalForNoteId = openModalForNoteId;
+window.moveToTrash = moveToTrash;
+window.restoreFromTrash = restoreFromTrash;
+window.permanentlyDelete = permanentlyDelete;
+</script>
+
+</body>
+</html>
