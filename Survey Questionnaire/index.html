@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Survey</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: #f5f5f5;
+        margin: 0;
+        padding: 20px;
+    }
+
+    .tabs {
+        display: flex;
+        border-bottom: 2px solid #ccc;
+        margin-bottom: 20px;
+    }
+
+    .tab {
+        padding: 10px 20px;
+        cursor: pointer;
+        background: #eee;
+        border: 1px solid #ccc;
+        border-bottom: none;
+        margin-right: 4px;
+        border-radius: 5px 5px 0 0;
+        font-weight: bold;
+    }
+
+    .tab.active {
+        background: #fff;
+        border-bottom: 2px solid white;
+    }
+
+    .content {
+        display: none;
+        background: white;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 0 5px 5px 5px;
+    }
+
+    .content.active {
+        display: block;
+    }
+
+    .question {
+        margin-bottom: 25px;
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+    .slider-container {
+        margin: 10px 0;
+    }
+
+    input[type=range] {
+        width: 100%;
+    }
+
+    .labels {
+        display: flex;
+        justify-content: space-between;
+        font-size: 14px;
+        margin-top: 5px;
+    }
+
+    #saveBtn, #viewBtn, #clearBtn {
+        margin-top: 15px;
+        padding: 12px 25px;
+        background: #007bff;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        font-size: 18px;
+        cursor: pointer;
+        width: 100%;
+    }
+
+    #clearBtn {
+        background: #dc3545;
+    }
+
+    /* Viewer modal */
+    #viewerModal {
+        position: fixed;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        background: rgba(0,0,0,0.6);
+        display: none;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #viewerBox {
+        background: white;
+        padding: 20px;
+        width: 90%;
+        max-height: 80%;
+        overflow-y: auto;
+        border-radius: 10px;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 10px;
+    }
+
+    th, td {
+        border: 1px solid #ccc;
+        padding: 8px;
+        text-align: center;
+    }
+
+    th {
+        background: #f0f0f0;
+    }
+
+    #closeModal {
+        float: right;
+        padding: 6px 15px;
+        background: #333;
+        color: white;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+</style>
+</head>
+<body>
+
+<h2>Survey</h2>
+
+<div class="tabs">
+    <div class="tab active" onclick="openTab(0)">Tab 1</div>
+    <div class="tab" onclick="openTab(1)">Tab 2</div>
+    <div class="tab" onclick="openTab(2)">Tab 3</div>
+    <div class="tab" onclick="openTab(3)">Tab 4</div>
+    <div class="tab" onclick="openTab(4)">Tab 5</div>
+</div>
+
+<div id="content-0" class="content active"></div>
+<div id="content-1" class="content"></div>
+<div id="content-2" class="content"></div>
+<div id="content-3" class="content"></div>
+<div id="content-4" class="content"></div>
+
+<button id="saveBtn">Save Answers</button>
+<button id="viewBtn">View Saved Results</button>
+<button id="clearBtn">Clear All Saved Data</button>
+
+<!-- RESULTS VIEWER MODAL -->
+<div id="viewerModal">
+    <div id="viewerBox">
+        <span id="closeModal">Close</span>
+        <h3>Saved Results</h3>
+        <table id="resultsTable">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Tab</th>
+                <th>Answers</th>
+                <th>Date</th>
+                     <th>Actions</th> <!-- new column -->
+            </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+</div>
+
+<script>
+// =====================================================
+// UNIQUE QUESTIONS PER TAB
+// =====================================================
+const questionSets = [
+    [
+        "How satisfied are you with the user interface?",
+        "How easy was it to navigate the system?",
+        "How clear were the instructions provided?",
+        "How visually appealing is the layout?",
+        "How responsive does the system feel?"
+    ],
+    [
+        "How would you rate the speed of the application?",
+        "How satisfied are you with loading times?",
+        "How reliable is the system performance?",
+        "How often do you encounter errors?",
+        "How well does the system handle heavy usage?"
+    ],
+    [
+        "How helpful is customer support?",
+        "How quickly do support representatives respond?",
+        "How easy is it to reach customer support?",
+        "How knowledgeable is the support staff?",
+        "How satisfied are you with issue resolution?"
+    ],
+    [
+        "How easy was the signup or onboarding process?",
+        "How useful are the available features?",
+        "How intuitive is feature usage?",
+        "How satisfied are you with customization options?",
+        "How well do the features meet your needs?"
+    ],
+    [
+        "How likely are you to recommend this system?",
+        "How well does the system meet your expectations?",
+        "How satisfied are you overall?",
+        "How likely are you to continue using it?",
+        "How valuable is the system to you?"
+    ]
+];
+
+// Build slider HTML
+function createSlider(questionText) {
+    return `
+        <div class="question">${questionText}</div>
+        <div class="slider-container">
+            <input type="range" min="1" max="5" value="3" class="slider">
+            <div class="labels">
+                <span>Bad</span><span>Not Bad</span><span>Moderate</span><span>Good</span><span>Very Good</span>
+            </div>
+        </div>`;
+}
+
+// Load questions
+window.onload = function () {
+    for (let i = 0; i < 5; i++) {
+        let html = `<h3>Tab ${i + 1} Questions</h3>`;
+        questionSets[i].forEach(q => html += createSlider(q));
+        document.getElementById("content-" + i).innerHTML = html;
+    }
+};
+
+// =====================================================
+// TAB SWITCHER
+// =====================================================
+function openTab(index) {
+    document.querySelectorAll(".tab").forEach((tab, i) => {
+        tab.classList.toggle("active", i === index);
+    });
+    document.querySelectorAll(".content").forEach((c, i) => {
+        c.classList.toggle("active", i === index);
+    });
+}
+
+// =====================================================
+// INDEXEDDB SETUP
+// =====================================================
+let db;
+
+const request = indexedDB.open("SurveyDB", 1);
+
+request.onupgradeneeded = function (event) {
+    db = event.target.result;
+    db.createObjectStore("answers", { keyPath: "id", autoIncrement: true });
+};
+
+request.onsuccess = function (event) {
+    db = event.target.result;
+};
+
+// =====================================================
+// SAVE ANSWERS
+// =====================================================
+// document.getElementById("saveBtn").onclick = function () {
+//     const sliders = document.querySelectorAll(".slider");
+
+//     const tx = db.transaction("answers", "readwrite");
+//     const store = tx.objectStore("answers");
+
+//     sliders.forEach((slider, index) => {
+//         let tab = Math.floor(index / 5) + 1;
+//         let question = (index % 5) + 1;
+//         let value = slider.value;
+
+//         store.add({
+//             tab,
+//             question,
+//             value,
+//             timestamp: new Date().toLocaleString()
+//         });
+//     });
+
+//     alert("Saved locally!");
+// };
+
+
+document.getElementById("saveBtn").onclick = function () {
+    const activeContent = document.querySelector(".content.active");
+    const sliders = activeContent.querySelectorAll(".slider");
+    const activeTabIndex = Array.from(document.querySelectorAll(".content")).indexOf(activeContent) + 1;
+
+    if (sliders.length === 0) return alert("No answers to save in this tab.");
+
+    const answers = Array.from(sliders).map(slider => slider.value);
+
+    const tx = db.transaction("answers", "readwrite");
+    const store = tx.objectStore("answers");
+
+    // First, check if a row for this tab already exists
+    const indexRequest = store.openCursor();
+    indexRequest.onsuccess = function (event) {
+        const cursor = event.target.result;
+        if (cursor) {
+            if (cursor.value.tab === activeTabIndex) {
+                // Overwrite the existing row
+                cursor.update({
+                    id: cursor.value.id,
+                    tab: activeTabIndex,
+                    answers: answers,
+                    timestamp: new Date().toLocaleString()
+                });
+                alert("Updated answers for Tab " + activeTabIndex + "!");
+                return; // stop after updating
+            }
+            cursor.continue();
+        } else {
+            // No existing row for this tab, add new
+            store.add({
+                tab: activeTabIndex,
+                answers: answers,
+                timestamp: new Date().toLocaleString()
+            });
+            alert("Saved answers for Tab " + activeTabIndex + "!");
+        }
+    };
+};
+
+
+
+
+// =====================================================
+// VIEW RESULTS
+// =====================================================
+// document.getElementById("viewBtn").onclick = function () {
+//     const tx = db.transaction("answers", "readonly");
+//     const store = tx.objectStore("answers");
+
+//     const tableBody = document.querySelector("#resultsTable tbody");
+//     tableBody.innerHTML = "";
+
+//     store.openCursor().onsuccess = function (event) {
+//         const cursor = event.target.result;
+//         if (cursor) {
+//             const row = cursor.value;
+//             tableBody.innerHTML += `
+//                 <tr>
+//                     <td>${row.id}</td>
+//                     <td>${row.tab}</td>
+//                     <td>${row.question}</td>
+//                     <td>${row.value}</td>
+//                     <td>${row.timestamp}</td>
+//                 </tr>`;
+//             cursor.continue();
+//         }
+//     };
+
+//     document.getElementById("viewerModal").style.display = "flex";
+// };
+
+// // CLOSE VIEWER
+// document.getElementById("closeModal").onclick = function () {
+//     document.getElementById("viewerModal").style.display = "none";
+// };
+
+
+document.getElementById("viewBtn").onclick = function () {
+
+    // CLOSE VIEWER MODAL
+document.getElementById("closeModal").onclick = function () {
+    document.getElementById("viewerModal").style.display = "none";
+};
+
+    const tx = db.transaction("answers", "readonly");
+    const store = tx.objectStore("answers");
+    const tableBody = document.querySelector("#resultsTable tbody");
+    tableBody.innerHTML = "";
+
+    store.openCursor().onsuccess = function (event) {
+        const cursor = event.target.result;
+        if (cursor) {
+            const row = cursor.value;
+            tableBody.innerHTML += `
+                <tr>
+                    <td>${row.id}</td>
+                    <td>${row.tab}</td>
+                    <td>${row.answers.join(", ")}</td>
+                    <td>${row.timestamp}</td>
+                    <td>
+                        <button onclick="editRow(${row.id})">Edit</button>
+                        <button onclick="deleteRow(${row.id})">Delete</button>
+                        <button onclick="syncRow(${row.id})">Sync</button>
+                    </td>
+                </tr>`;
+            cursor.continue();
+        }
+
+    };
+
+    document.getElementById("viewerModal").style.display = "flex";
+};
+
+
+function editRow(id) {
+    const tx = db.transaction("answers", "readonly");
+    const store = tx.objectStore("answers");
+
+    store.get(id).onsuccess = function(event) {
+        const record = event.target.result;
+        if (!record) return alert("Record not found.");
+
+        // Switch to the tab
+        openTab(record.tab - 1);
+
+        // Fill sliders
+        const activeContent = document.querySelector(".content.active");
+        const sliders = activeContent.querySelectorAll(".slider");
+        record.answers.forEach((val, i) => {
+            if(sliders[i]) sliders[i].value = val;
+        });
+
+        alert("Loaded answers for Tab " + record.tab + ". You can edit and save again.");
+    };
+
+            // CLOSE VIEWER MODAL
+
+    document.getElementById("viewerModal").style.display = "none";
+
+
+}
+
+
+function deleteRow(id) {
+    if(!confirm("Are you sure you want to delete this record?")) return;
+
+    const tx = db.transaction("answers", "readwrite");
+    const store = tx.objectStore("answers");
+
+    store.delete(id).onsuccess = function() {
+        alert("Record deleted!");
+        // Refresh the table
+        document.getElementById("viewBtn").click();
+    };
+}
+
+
+// =====================================================
+// CLEAR ALL DATA
+// =====================================================
+document.getElementById("clearBtn").onclick = function () {
+    if (!confirm("Delete ALL saved data?")) return;
+
+    const tx = db.transaction("answers", "readwrite");
+    tx.objectStore("answers").clear();
+
+    alert("All saved data cleared.");
+};
+
+</script>
+
+<script>
+function sendToGoogleSheets(id, tab, answers, timestamp) {
+    fetch("https://script.google.com/macros/s/AKfycbyiizAkuZwB5zBGv94my1JLpOoHiJee4po9SxiLkJmiEQRi-gd3Ns43Gj9UNIziPSjK4g/exec", {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+            id: id,
+            tab: tab,
+            answers: answers,
+            timestamp: timestamp
+        })
+    });
+}
+
+function syncRow(id) {
+    const tx = db.transaction("answers", "readonly");
+    const store = tx.objectStore("answers");
+
+    store.get(id).onsuccess = function(event) {
+        const row = event.target.result;
+        if (!row) return alert("Record not found.");
+
+        // 🔥 CALL UPDATED FUNCTION
+        sendToGoogleSheets(row.id, row.tab, row.answers, row.timestamp);
+
+        alert("Synced row " + id + " to Google Sheets!");
+    };
+}
+</script>
+
+<script>
+    function sendToGoogleSheets(id, tab, answers, timestamp) {
+    let form = new FormData();
+    form.append("id", id);
+    form.append("tab", tab);
+    form.append("answers", JSON.stringify(answers));
+    form.append("timestamp", timestamp);
+
+    fetch("https://script.google.com/macros/s/AKfycbyiizAkuZwB5zBGv94my1JLpOoHiJee4po9SxiLkJmiEQRi-gd3Ns43Gj9UNIziPSjK4g/exec", {
+        method: "POST",
+        mode: "no-cors",
+        body: form
+    });
+}
+
+</script>
+</body>
+</html>
